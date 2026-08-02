@@ -347,7 +347,7 @@
 
             <!-- Left -->
 
-            <div data-aos="fade-right">
+            <div data-aos="fade-down">
 
                 <span class="inline-flex items-center gap-2 bg-white/20 px-5 py-2 rounded-full text-white">
 
@@ -393,7 +393,7 @@
 
             <!-- Right -->
 
-            <div class="relative" data-aos="fade-left">
+            <div class="relative" data-aos="fade-down">
 
                 <img
                 src="assets/images/hospital-hero.png"
@@ -789,11 +789,17 @@
 
         AOS.init({
 
-            duration:800,
+    duration: 800,
 
-            once:true
+    once: true,
 
-        });
+    disable: function () {
+
+        return window.innerWidth < 768;
+
+    }
+
+});
 
     </script>
 

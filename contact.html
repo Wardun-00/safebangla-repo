@@ -356,7 +356,7 @@ class="relative pt-40 pb-24 bg-gradient-to-r from-green-700 via-emerald-600 to-t
             <!-- Left -->
 
             <div
-            data-aos="fade-right">
+            data-aos="fade-down">
 
                 <span
                 class="inline-flex items-center gap-2 bg-white/20 text-white px-5 py-2 rounded-full">
@@ -1456,14 +1456,19 @@ class="relative pt-40 pb-24 bg-gradient-to-r from-green-700 via-emerald-600 to-t
 
     <script>
 
-        AOS.init({
+       AOS.init({
 
-            duration:800,
+    duration: 800,
 
-            once:true
+    once: true,
 
-        });
+    disable: function () {
 
+        return window.innerWidth < 768;
+
+    }
+
+});
     </script>
 
     <script src="assets/js/app.js"></script>

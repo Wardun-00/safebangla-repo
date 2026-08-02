@@ -575,7 +575,7 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
 
             <!-- Left -->
 
-            <div data-aos="fade-right">
+            <div data-aos="fade-up">
 
                 <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-green-300 px-5 py-2 rounded-full">
 
@@ -1219,7 +1219,7 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
             <!-- Left -->
 
             <div
-                data-aos="fade-right"
+                data-aos="fade-up"
                 class="bg-white rounded-3xl shadow-lg p-8">
 
                 <div class="flex justify-between items-center">
@@ -1518,7 +1518,7 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
             <!-- Emergency Trend -->
 
             <div
-                data-aos="fade-right"
+                data-aos="fade-up"
                 class="lg:col-span-2 bg-white rounded-3xl shadow-lg p-8">
 
                 <div class="flex justify-between items-center mb-8">
@@ -1813,7 +1813,7 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
             =========================== -->
 
             <div class="lg:col-span-2 bg-white rounded-3xl shadow-xl p-8"
-                data-aos="fade-right">
+                data-aos="fade-up">
 
                 <div class="flex items-center justify-between mb-10">
 
@@ -2279,11 +2279,17 @@ class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50 p-5">
 
         AOS.init({
 
-            duration:800,
+    duration: 800,
 
-            once:true
+    once: true,
 
-        });
+    disable: function () {
+
+        return window.innerWidth < 768;
+
+    }
+
+});
 
     </script>
 

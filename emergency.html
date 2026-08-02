@@ -350,7 +350,7 @@
 
             <!-- LEFT -->
 
-            <div data-aos="fade-right">
+            <div data-aos="fade-down">
 
                 <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full">
 
@@ -1453,11 +1453,17 @@
 
         AOS.init({
 
-            duration:800,
+    duration: 800,
 
-            once:true
+    once: true,
 
-        });
+    disable: function () {
+
+        return window.innerWidth < 768;
+
+    }
+
+});
 
     </script>
 
@@ -1465,8 +1471,9 @@
 
     <script src="assets/js/components.js"></script>
 
-    <script src="assets/js/emergency.js"></script>
     <script src="assets/js/location.js"></script>
+    <script src="assets/js/serviceData.js"></script>
+    <script src="assets/js/emergency.js"></script>   
 
 </body>
 
