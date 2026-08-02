@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Request | SafeBangla</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+    <link rel="stylesheet"
+        href="assets/css/animation.css">
+
+</head>
+
+<body class="bg-slate-100 font-[Poppins] overflow-x-hidden">
+
+    <!-- Navbar -->
+
+    <header id="navbar-container">
+
+        <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="flex items-center gap-3">
+
+                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+
+                    <i class="fa-solid fa-shield-heart text-white text-xl"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 class="text-2xl font-bold text-green-700 lang"
+                        data-key="logo">
+                        SafeBangla
+                    </h2>
+
+                    <p class="text-xs text-gray-500 hidden sm:block lang"
+                        data-key="subtitle">
+
+                        Smart Emergency Response Platform
+
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- Desktop Menu -->
+
+            <ul class="hidden lg:flex items-center gap-8 font-medium">
+
+                <li>
+
+                    <a href="index.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="home">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="emergency.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="emergency">
+
+                        Emergency
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="hospitals.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="hospital">
+
+                        Hospitals
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="dashboard.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="dashboard">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="about.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="about">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <!-- Right -->
+
+            <div class="flex items-center gap-3">
+
+                <!-- Date Time -->
+
+                <div class="hidden xl:block text-right">
+
+                    <p id="currentDate"
+                        class="text-sm font-semibold text-gray-700">
+
+                    </p>
+
+                    <p id="currentTime"
+                        class="text-xs text-gray-500">
+
+                    </p>
+
+                </div>
+
+                <!-- Language -->
+
+                <button id="languageBtn"
+
+                    class="hidden md:flex items-center gap-2 border rounded-lg px-4 py-2 hover:bg-green-600 hover:text-white duration-300">
+
+                    🌐
+
+                    <span id="languageText">
+
+                        বাংলা
+
+                    </span>
+
+                </button>
+
+                <!-- Button -->
+
+                <a href="emergency.html"
+
+                    class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg font-semibold duration-300">
+
+                    <span class="lang"
+                        data-key="request">
+
+                        Request Help
+
+                    </span>
+
+                </a>
+
+                <!-- Mobile -->
+
+                <button id="menuBtn"
+
+                    class="lg:hidden text-3xl">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Mobile Menu -->
+
+    <div id="mobileMenu"
+
+        class="hidden bg-white border-t lg:hidden">
+
+        <div class="p-6">
+
+            <ul class="space-y-5">
+
+                <li>
+
+                    <a href="index.html"
+                        class="lang"
+                        data-key="home">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="emergency.html"
+                        class="lang"
+                        data-key="emergency">
+
+                        Emergency
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="hospitals.html"
+                        class="lang"
+                        data-key="hospital">
+
+                        Hospitals
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="dashboard.html"
+                        class="lang"
+                        data-key="dashboard">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="about.html"
+                        class="lang"
+                        data-key="about">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html"
+                        class="lang"
+                        data-key="contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+    </header>
+
+    <!-- Main -->
+
+    <main>
+
+        <div class="pt-20"></div>
+
+
+       <!-- ==========================================
+        EMERGENCY HERO
+========================================== -->
+
+<h1>hi</h1>
+
+        <!-- Emergency Form -->
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer id="footer-container"></footer>
+
+    <!-- JS -->
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+
+            duration:800,
+
+            once:true
+
+        });
+
+    </script>
+
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/js/components.js"></script>
+
+</body>
+
+</html>

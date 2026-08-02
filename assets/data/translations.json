@@ -1,0 +1,34 @@
+{
+  "home": {
+    "en": "Home",
+    "bn": "হোম"
+  },
+  "emergency": {
+    "en": "Emergency",
+    "bn": "জরুরি সেবা"
+  },
+  "hospital": {
+    "en": "Hospitals",
+    "bn": "হাসপাতাল"
+  },
+  "dashboard": {
+    "en": "Dashboard",
+    "bn": "ড্যাশবোর্ড"
+  },
+  "about": {
+    "en": "About",
+    "bn": "আমাদের সম্পর্কে"
+  },
+  "contact": {
+    "en": "Contact",
+    "bn": "যোগাযোগ"
+  },
+  "request_help": {
+    "en": "Request Help",
+    "bn": "সাহায্য চান"
+  },
+  "smart_platform": {
+    "en": "Smart Emergency Platform",
+    "bn": "স্মার্ট জরুরি সেবা প্ল্যাটফর্ম"
+  }
+}

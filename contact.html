@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Request | SafeBangla</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+    <link rel="stylesheet"
+        href="assets/css/animation.css">
+
+</head>
+
+<body class="bg-slate-100 font-[Poppins] overflow-x-hidden">
+
+    <!-- Navbar -->
+
+    <header id="navbar-container">
+
+        <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="flex items-center gap-3">
+
+                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+
+                    <i class="fa-solid fa-shield-heart text-white text-xl"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 class="text-2xl font-bold text-green-700 lang"
+                        data-key="logo">
+                        SafeBangla
+                    </h2>
+
+                    <p class="text-xs text-gray-500 hidden sm:block lang"
+                        data-key="subtitle">
+
+                        Smart Emergency Response Platform
+
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- Desktop Menu -->
+
+            <ul class="hidden lg:flex items-center gap-8 font-medium">
+
+                <li>
+
+                    <a href="index.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="home">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="emergency.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="emergency">
+
+                        Emergency
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="hospitals.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="hospital">
+
+                        Hospitals
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="dashboard.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="dashboard">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="about.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="about">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <!-- Right -->
+
+            <div class="flex items-center gap-3">
+
+                <!-- Date Time -->
+
+                <div class="hidden xl:block text-right">
+
+                    <p id="currentDate"
+                        class="text-sm font-semibold text-gray-700">
+
+                    </p>
+
+                    <p id="currentTime"
+                        class="text-xs text-gray-500">
+
+                    </p>
+
+                </div>
+
+                <!-- Language -->
+
+                <button id="languageBtn"
+
+                    class="hidden md:flex items-center gap-2 border rounded-lg px-4 py-2 hover:bg-green-600 hover:text-white duration-300">
+
+                    🌐
+
+                    <span id="languageText">
+
+                        বাংলা
+
+                    </span>
+
+                </button>
+
+                <!-- Button -->
+
+                <a href="emergency.html"
+
+                    class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg font-semibold duration-300">
+
+                    <span class="lang"
+                        data-key="request">
+
+                        Request Help
+
+                    </span>
+
+                </a>
+
+                <!-- Mobile -->
+
+                <button id="menuBtn"
+
+                    class="lg:hidden text-3xl">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Mobile Menu -->
+
+    <div id="mobileMenu"
+
+        class="hidden bg-white border-t lg:hidden">
+
+        <div class="p-6">
+
+            <ul class="space-y-5">
+
+                <li>
+
+                    <a href="index.html"
+                        class="lang"
+                        data-key="home">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="emergency.html"
+                        class="lang"
+                        data-key="emergency">
+
+                        Emergency
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="hospitals.html"
+                        class="lang"
+                        data-key="hospital">
+
+                        Hospitals
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="dashboard.html"
+                        class="lang"
+                        data-key="dashboard">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="about.html"
+                        class="lang"
+                        data-key="about">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html"
+                        class="lang"
+                        data-key="contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+    </header>
+
+    <!-- Main -->
+
+    <main>
+
+        <div class="pt-20"></div>
+
+
+<!-- ==========================================
+        CONTACT HERO SECTION
+========================================== -->
+
+<section
+class="relative pt-40 pb-24 bg-gradient-to-r from-green-700 via-emerald-600 to-teal-600 overflow-hidden">
+
+    <!-- Background Blur -->
+
+    <div
+    class="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse">
+
+    </div>
+
+    <div
+    class="absolute bottom-0 right-0 w-80 h-80 bg-green-300/20 rounded-full blur-3xl">
+
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4">
+
+        <div
+        class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Left -->
+
+            <div
+            data-aos="fade-right">
+
+                <span
+                class="inline-flex items-center gap-2 bg-white/20 text-white px-5 py-2 rounded-full">
+
+                    📞 Contact SafeBangla
+
+                </span>
+
+                <h1
+                class="text-5xl lg:text-6xl font-extrabold text-white leading-tight mt-6">
+
+                    We're Here To Help
+
+                </h1>
+
+                <p
+                class="text-lg text-green-100 mt-6 leading-8">
+
+                    Need assistance or have questions about SafeBangla?
+
+                    Our emergency support team is available to help you.
+
+                    Contact us anytime and we'll respond as quickly as possible.
+
+                </p>
+
+                <div
+                class="flex flex-wrap gap-5 mt-10">
+
+                    <a
+                    href="#contactForm"
+
+                    class="bg-white text-green-700 px-8 py-4 rounded-xl font-semibold hover:scale-105 duration-300">
+
+                        Send Message
+
+                    </a>
+
+                    <a
+                    href="tel:999"
+
+                    class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-green-700 duration-300">
+
+                        📞 Call 999
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div
+            class="relative"
+            data-aos="fade-left">
+
+                <img
+
+                src="assets/images/contact-hero.png"
+
+                alt="Contact"
+
+                class="w-full max-w-xl mx-auto drop-shadow-2xl animate-float">
+
+                <!-- Floating Card -->
+
+                <div
+                class="absolute top-5 right-5 bg-white rounded-2xl shadow-xl px-6 py-5 hidden md:block">
+
+                    <h3 class="font-bold text-green-700">
+
+                        Emergency Support
+
+                    </h3>
+
+                    <p class="text-gray-500 text-sm mt-1">
+
+                        24 Hours Service
+
+                    </p>
+
+                    <div
+                    class="mt-4 text-3xl">
+
+                        🚑
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+       <!-- ==========================================
+        CONTACT INFORMATION
+========================================== -->
+
+<section class="py-20 bg-slate-100">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <!-- Section Title -->
+
+        <div class="text-center mb-14">
+
+            <h2 class="text-4xl font-bold">
+
+                Contact Information
+
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+
+                Reach us anytime through our official communication channels.
+
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+            <!-- Phone -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon bg-red-100 text-red-600">
+
+                    📞
+
+                </div>
+
+                <h3 class="text-xl font-bold mt-5">
+
+                    Emergency Hotline
+
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+
+                    Available 24 Hours
+
+                </p>
+
+                <a
+                href="tel:999"
+
+                class="inline-block mt-5 text-red-600 font-semibold">
+
+                    Call 999 →
+
+                </a>
+
+            </div>
+
+            <!-- Email -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon bg-blue-100 text-blue-600">
+
+                    ✉️
+
+                </div>
+
+                <h3 class="text-xl font-bold mt-5">
+
+                    Email
+
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+
+                    support@safebangla.com
+
+                </p>
+
+                <a
+                href="mailto:support@safebangla.com"
+
+                class="inline-block mt-5 text-blue-600 font-semibold">
+
+                    Send Email →
+
+                </a>
+
+            </div>
+
+            <!-- Address -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon bg-green-100 text-green-600">
+
+                    📍
+
+                </div>
+
+                <h3 class="text-xl font-bold mt-5">
+
+                    Office Address
+
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+
+                    Agargaon, Dhaka, Bangladesh
+
+                </p>
+
+                <a
+
+                href="https://maps.google.com"
+
+                target="_blank"
+
+                class="inline-block mt-5 text-green-600 font-semibold">
+
+                    View Map →
+
+                </a>
+
+            </div>
+
+            <!-- Office -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon bg-yellow-100 text-yellow-600">
+
+                    🕒
+
+                </div>
+
+                <h3 class="text-xl font-bold mt-5">
+
+                    Office Hours
+
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+
+                    Saturday - Thursday
+
+                </p>
+
+                <p class="font-semibold mt-2">
+
+                    9:00 AM - 6:00 PM
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+        CONTACT FORM
+========================================== -->
+
+<section id="contactForm" class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left -->
+
+            <div>
+
+                <span class="text-green-600 font-semibold">
+
+                    GET IN TOUCH
+
+                </span>
+
+                <h2 class="text-5xl font-bold mt-4">
+
+                    Send Us A Message
+
+                </h2>
+
+                <p class="text-gray-600 mt-6 leading-8">
+
+                    Have questions, suggestions, or need support?
+                    Fill out the form below and our team will get back to you
+                    as soon as possible.
+
+                </p>
+
+                <div class="mt-10 space-y-6">
+
+                    <div class="flex items-center gap-4">
+
+                        <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-2xl">
+
+                            📞
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-bold">
+
+                                Emergency Hotline
+
+                            </h4>
+
+                            <p class="text-gray-500">
+
+                                999 (24/7)
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4">
+
+                        <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-2xl">
+
+                            📧
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-bold">
+
+                                Email Support
+
+                            </h4>
+
+                            <p class="text-gray-500">
+
+                                support@safebangla.com
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="bg-white rounded-3xl shadow-2xl p-8 border">
+
+                <form id="contactFormData">
+
+                    <div class="grid md:grid-cols-2 gap-5">
+
+                        <input
+                        id="contactName"
+                        type="text"
+
+                        placeholder="Full Name"
+
+                        class="border rounded-xl p-4 w-full">
+
+                        <input
+                        id="contactPhone"
+                        type="tel"
+
+                        placeholder="Phone Number"
+
+                        class="border rounded-xl p-4 w-full">
+
+                    </div>
+
+                    <input
+                    id="contactEmail"
+                    type="email"
+
+                    placeholder="Email Address"
+
+                    class="border rounded-xl p-4 w-full mt-5">
+
+                    <input
+                    id="contactSubject"
+                    type="text"
+
+                    placeholder="Subject"
+
+                    class="border rounded-xl p-4 w-full mt-5">
+
+                    <textarea
+                    id="contactMessage"
+
+                    rows="6"
+
+                    placeholder="Write your message..."
+
+                    class="border rounded-xl p-4 w-full mt-5 resize-none"></textarea>
+
+                    <button
+                    id="sendMessage"
+
+                    type="submit"
+
+                    class="w-full mt-6 bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold duration-300">
+
+                        📩 Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+        OFFICE LOCATION
+========================================== -->
+
+<section class="py-20 bg-slate-100">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="text-center mb-12">
+
+            <h2 class="text-4xl font-bold">
+
+                Find Our Office
+
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+
+                Visit our office or get directions using Google Maps.
+
+            </p>
+
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+
+            <!-- Left -->
+
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+
+                <h3 class="text-3xl font-bold text-green-700">
+
+                    SafeBangla Headquarters
+
+                </h3>
+
+                <p class="text-gray-600 mt-6 leading-8">
+
+                    ICT Tower (Demo Office)<br>
+
+                    Agargaon, Sher-e-Bangla Nagar,<br>
+
+                    Dhaka-1207, Bangladesh
+
+                </p>
+
+                <div class="space-y-5 mt-8">
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="text-3xl">📞</span>
+
+                        <div>
+
+                            <h4 class="font-semibold">
+
+                                Hotline
+
+                            </h4>
+
+                            <p>
+
+                                +880 1700-000000
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="text-3xl">✉️</span>
+
+                        <div>
+
+                            <h4 class="font-semibold">
+
+                                Email
+
+                            </h4>
+
+                            <p>
+
+                                support@safebangla.com
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="text-3xl">🕒</span>
+
+                        <div>
+
+                            <h4 class="font-semibold">
+
+                                Office Time
+
+                            </h4>
+
+                            <p>
+
+                                Sat - Thu | 9:00 AM - 6:00 PM
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="flex flex-wrap gap-4 mt-10">
+
+                    <a
+
+                    href="https://maps.google.com"
+
+                    target="_blank"
+
+                    class="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 duration-300">
+
+                        📍 Open Google Maps
+
+                    </a>
+
+                    <a
+
+                    href="tel:999"
+
+                    class="bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 duration-300">
+
+                        📞 Call Now
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="rounded-3xl overflow-hidden shadow-xl">
+
+                <iframe
+
+                    src="https://www.google.com/maps?q=ICT+Tower+Dhaka&output=embed"
+
+                    width="100%"
+
+                    height="100%"
+
+                    style="border:0; min-height:500px;"
+
+                    loading="lazy"
+
+                    allowfullscreen>
+
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+        FAQ SECTION
+========================================== -->
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-5xl mx-auto px-4">
+
+        <div class="text-center mb-14">
+
+            <h2 class="text-4xl font-bold">
+
+                Frequently Asked Questions
+
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+
+                Find answers to the most common questions about SafeBangla.
+
+            </p>
+
+        </div>
+
+        <div class="space-y-5">
+
+            <!-- Item -->
+
+            <div class="faq-item">
+
+                <button class="faq-btn">
+
+                    <span>🚨 How do I request emergency help?</span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-content">
+
+                    Visit the Emergency page, select your emergency type,
+                    choose your location, fill in the required information,
+                    and submit your request.
+
+                </div>
+
+            </div>
+
+            <!-- Item -->
+
+            <div class="faq-item">
+
+                <button class="faq-btn">
+
+                    <span>📍 How can I track my emergency request?</span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-content">
+
+                    Use your Tracking ID on the Dashboard page to check
+                    your request status.
+
+                </div>
+
+            </div>
+
+            <!-- Item -->
+
+            <div class="faq-item">
+
+                <button class="faq-btn">
+
+                    <span>☎ Is SafeBangla available 24/7?</span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-content">
+
+                    Yes. Emergency services are available 24 hours a day,
+                    7 days a week.
+
+                </div>
+
+            </div>
+
+            <!-- Item -->
+
+            <div class="faq-item">
+
+                <button class="faq-btn">
+
+                    <span>🏥 Which emergency services are supported?</span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-content">
+
+                    Fire Service, Ambulance, Police, Hospitals,
+                    Flood & Disaster Response and Rescue Teams.
+
+                </div>
+
+            </div>
+
+            <!-- Item -->
+
+            <div class="faq-item">
+
+                <button class="faq-btn">
+
+                    <span>📞 How can I contact SafeBangla?</span>
+
+                    <span class="faq-icon">+</span>
+
+                </button>
+
+                <div class="faq-content">
+
+                    You can call 999 or contact us using the Contact Form.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+        EMERGENCY NUMBERS
+========================================== -->
+
+<section id="emergencyNumbers" class="py-20 bg-slate-100">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="text-center mb-14">
+
+            <h2 class="text-4xl font-bold">
+
+                Emergency Contact Numbers
+
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+
+                Quickly connect with emergency services across Bangladesh.
+
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+            <!-- Police -->
+
+            <div class="service-card">
+
+                <div class="service-icon bg-blue-100">
+
+                    🚓
+
+                </div>
+
+                <h3>Police</h3>
+
+                <h2>999</h2>
+
+                <p>National Emergency Police Service</p>
+
+                <a href="tel:999" class="service-btn">
+
+                    📞 Call Now
+
+                </a>
+
+            </div>
+
+            <!-- Fire -->
+
+            <div class="service-card">
+
+                <div class="service-icon bg-red-100">
+
+                    🚒
+
+                </div>
+
+                <h3>Fire Service</h3>
+
+                <h2>999</h2>
+
+                <p>Fire & Rescue Emergency</p>
+
+                <a href="tel:999" class="service-btn">
+
+                    📞 Call Now
+
+                </a>
+
+            </div>
+
+            <!-- Ambulance -->
+
+            <div class="service-card">
+
+                <div class="service-icon bg-green-100">
+
+                    🚑
+
+                </div>
+
+                <h3>Ambulance</h3>
+
+                <h2>999</h2>
+
+                <p>Emergency Medical Assistance</p>
+
+                <a href="tel:999" class="service-btn">
+
+                    📞 Call Now
+
+                </a>
+
+            </div>
+
+            <!-- Disaster -->
+
+            <div class="service-card">
+
+                <div class="service-icon bg-orange-100">
+
+                    🌊
+
+                </div>
+
+                <h3>Disaster Management</h3>
+
+                <h2>1090</h2>
+
+                <p>Flood & Cyclone Support</p>
+
+                <a href="tel:1090" class="service-btn">
+
+                    📞 Call Now
+
+                </a>
+
+            </div>
+
+            <!-- Electricity -->
+
+            <div class="service-card">
+
+                <div class="service-icon bg-yellow-100">
+
+                    ⚡
+
+                </div>
+
+                <h3>Electricity Emergency</h3>
+
+                <h2>16216</h2>
+
+                <p>Power Failure Support</p>
+
+                <a href="tel:16216" class="service-btn">
+
+                    📞 Call Now
+
+                </a>
+
+            </div>
+
+            <!-- Women & Children -->
+
+            <div class="service-card">
+
+                <div class="service-icon bg-pink-100">
+
+                    🛡️
+
+                </div>
+
+                <h3>Women & Children</h3>
+
+                <h2>109</h2>
+
+                <p>National Helpline</p>
+
+                <a href="tel:109" class="service-btn">
+
+                    📞 Call Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+        CONTACT CTA
+========================================== -->
+
+<section class="py-20 bg-gradient-to-r from-green-700 via-green-600 to-emerald-600">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="bg-white rounded-3xl shadow-2xl p-10 lg:p-14">
+
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                <!-- Left -->
+
+                <div>
+
+                    <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full font-semibold">
+
+                        🚨 Emergency Support
+
+                    </span>
+
+                    <h2 class="text-4xl font-bold mt-5">
+
+                        Need Immediate Help?
+
+                    </h2>
+
+                    <p class="text-gray-600 mt-5 leading-8">
+
+                        If you are facing an emergency, don't wait.
+                        Submit an emergency request or call the national emergency hotline immediately.
+
+                    </p>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="flex flex-wrap gap-5 justify-center lg:justify-end">
+
+                    <a href="emergency.html"
+                        class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold duration-300">
+
+                        🚑 Request Emergency
+
+                    </a>
+
+                    <a href="tel:999"
+                        class="border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white px-8 py-4 rounded-xl font-bold duration-300">
+
+                        📞 Call 999
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Divider -->
+
+            <div class="border-t my-10"></div>
+
+            <!-- Bottom -->
+
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <!-- Logo -->
+
+                <div>
+
+                    <h3 class="text-2xl font-bold text-green-700">
+
+                        SafeBangla
+
+                    </h3>
+
+                    <p class="text-gray-600 mt-4">
+
+                        Smart Emergency Response Platform for Bangladesh.
+
+                    </p>
+
+                </div>
+
+                <!-- Quick Links -->
+
+                <div>
+
+                    <h4 class="font-bold text-lg">
+
+                        Quick Links
+
+                    </h4>
+
+                    <ul class="mt-4 space-y-3 text-gray-600">
+
+                        <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+
+                        <li><a href="emergency.html" class="hover:text-green-600">Emergency</a></li>
+
+                        <li><a href="dashboard.html" class="hover:text-green-600">Dashboard</a></li>
+
+                        <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Social -->
+
+                <div>
+
+                    <h4 class="font-bold text-lg">
+
+                        Follow Us
+
+                    </h4>
+
+                    <div class="flex gap-5 mt-5 text-3xl">
+
+                        <a href="#" class="hover:text-blue-600 duration-300">
+
+                            <i class="fab fa-facebook"></i>
+
+                        </a>
+
+                        <a href="#" class="hover:text-sky-500 duration-300">
+
+                            <i class="fab fa-twitter"></i>
+
+                        </a>
+
+                        <a href="#" class="hover:text-pink-600 duration-300">
+
+                            <i class="fab fa-instagram"></i>
+
+                        </a>
+
+                        <a href="#" class="hover:text-red-600 duration-300">
+
+                            <i class="fab fa-youtube"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+
+            <div class="border-t mt-10 pt-6 text-center text-gray-500">
+
+                © 2026 SafeBangla. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer id="footer-container"></footer>
+
+    <!-- JS -->
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+
+            duration:800,
+
+            once:true
+
+        });
+
+    </script>
+
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/js/components.js"></script>
+
+    <script src="assets/js/contact.js"></script>
+
+</body>
+
+</html>

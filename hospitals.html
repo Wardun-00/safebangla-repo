@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Request | SafeBangla</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+    <link rel="stylesheet"
+        href="assets/css/animation.css">
+
+</head>
+
+<body class="bg-slate-100 font-[Poppins] overflow-x-hidden">
+
+    <!-- Navbar -->
+
+    <header id="navbar-container">
+
+        <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="flex items-center gap-3">
+
+                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+
+                    <i class="fa-solid fa-shield-heart text-white text-xl"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 class="text-2xl font-bold text-green-700 lang"
+                        data-key="logo">
+                        SafeBangla
+                    </h2>
+
+                    <p class="text-xs text-gray-500 hidden sm:block lang"
+                        data-key="subtitle">
+
+                        Smart Emergency Response Platform
+
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- Desktop Menu -->
+
+            <ul class="hidden lg:flex items-center gap-8 font-medium">
+
+                <li>
+
+                    <a href="index.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="home">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="emergency.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="emergency">
+
+                        Emergency
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="hospitals.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="hospital">
+
+                        Hospitals
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="dashboard.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="dashboard">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="about.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="about">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html"
+                        class="lang hover:text-green-600 duration-300"
+                        data-key="contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <!-- Right -->
+
+            <div class="flex items-center gap-3">
+
+                <!-- Date Time -->
+
+                <div class="hidden xl:block text-right">
+
+                    <p id="currentDate"
+                        class="text-sm font-semibold text-gray-700">
+
+                    </p>
+
+                    <p id="currentTime"
+                        class="text-xs text-gray-500">
+
+                    </p>
+
+                </div>
+
+                <!-- Language -->
+
+                <button id="languageBtn"
+
+                    class="hidden md:flex items-center gap-2 border rounded-lg px-4 py-2 hover:bg-green-600 hover:text-white duration-300">
+
+                    🌐
+
+                    <span id="languageText">
+
+                        বাংলা
+
+                    </span>
+
+                </button>
+
+                <!-- Button -->
+
+                <a href="emergency.html"
+
+                    class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg font-semibold duration-300">
+
+                    <span class="lang"
+                        data-key="request">
+
+                        Request Help
+
+                    </span>
+
+                </a>
+
+                <!-- Mobile -->
+
+                <button id="menuBtn"
+
+                    class="lg:hidden text-3xl">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Mobile Menu -->
+
+    <div id="mobileMenu"
+
+        class="hidden bg-white border-t lg:hidden">
+
+        <div class="p-6">
+
+            <ul class="space-y-5">
+
+                <li>
+
+                    <a href="index.html"
+                        class="lang"
+                        data-key="home">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="emergency.html"
+                        class="lang"
+                        data-key="emergency">
+
+                        Emergency
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="hospitals.html"
+                        class="lang"
+                        data-key="hospital">
+
+                        Hospitals
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="dashboard.html"
+                        class="lang"
+                        data-key="dashboard">
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="about.html"
+                        class="lang"
+                        data-key="about">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html"
+                        class="lang"
+                        data-key="contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+    </header>
+
+    <!-- Main -->
+
+    <main>
+
+        <div class="pt-20"></div>
+
+
+        <!-- ==========================================
+        HOSPITAL HERO
+========================================== -->
+
+<section class="relative pt-36 pb-24 bg-gradient-to-r from-blue-700 via-cyan-600 to-teal-500 overflow-hidden">
+
+    <!-- Background Effect -->
+
+    <div class="absolute -top-24 -left-24 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-300/20 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4">
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left -->
+
+            <div data-aos="fade-right">
+
+                <span class="inline-flex items-center gap-2 bg-white/20 px-5 py-2 rounded-full text-white">
+
+                    🏥 Smart Hospital Finder
+
+                </span>
+
+                <h1 class="text-5xl lg:text-6xl font-extrabold text-white mt-6 leading-tight">
+
+                    Find The Best Hospital Near You
+
+                </h1>
+
+                <p class="text-cyan-100 text-lg mt-6 leading-8">
+
+                    Search hospitals across Bangladesh by Division,
+                    District, Upazila and Hospital Type.
+                    Get emergency contact information, maps and hospital details instantly.
+
+                </p>
+
+                <div class="flex flex-wrap gap-5 mt-10">
+
+                    <a href="#hospitalSearch"
+
+                        class="bg-white text-blue-700 px-8 py-4 rounded-xl font-bold hover:scale-105 duration-300">
+
+                        🔍 Search Hospital
+
+                    </a>
+
+                    <a href="#hospitalList"
+
+                        class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-700 duration-300">
+
+                        🏥 Browse Hospitals
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="relative" data-aos="fade-left">
+
+                <img
+                src="assets/images/hospital-hero.png"
+
+                class="w-full max-w-xl mx-auto animate-float">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+        HOSPITAL STATISTICS
+========================================== -->
+
+<section class="-mt-12 relative z-20">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+            <!-- Card -->
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 text-center">
+
+                <div class="text-5xl">
+
+                    🏥
+
+                </div>
+
+                <h2
+                id="totalHospital"
+
+                class="text-4xl font-extrabold text-blue-700 mt-5">
+
+                    0
+
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+
+                    Total Hospitals
+
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 text-center">
+
+                <div class="text-5xl">
+
+                    🚑
+
+                </div>
+
+                <h2
+                id="emergencyHospital"
+
+                class="text-4xl font-extrabold text-red-600 mt-5">
+
+                    0
+
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+
+                    24/7 Emergency
+
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 text-center">
+
+                <div class="text-5xl">
+
+                    👨‍⚕️
+
+                </div>
+
+                <h2
+                id="doctorCounter"
+
+                class="text-4xl font-extrabold text-green-600 mt-5">
+
+                    0
+
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+
+                    Specialist Doctors
+
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 text-center">
+
+                <div class="text-5xl">
+
+                    📍
+
+                </div>
+
+                <h2
+                id="districtCounter"
+
+                class="text-4xl font-extrabold text-purple-600 mt-5">
+
+                    0
+
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+
+                    District Coverage
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- ==========================================
+        HOSPITAL SEARCH
+========================================== -->
+
+<section id="hospitalSearch" class="py-20 bg-slate-100">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="bg-white rounded-3xl shadow-xl p-8">
+
+            <div class="text-center mb-10">
+
+                <h2 class="text-4xl font-bold">
+
+                    Find Your Hospital
+
+                </h2>
+
+                <p class="text-gray-500 mt-3">
+
+                    Search hospitals by location and hospital type.
+
+                </p>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-6">
+
+                <!-- Division -->
+
+                <div>
+
+                    <label class="font-semibold">
+
+                        Division
+
+                    </label>
+
+                    <select
+                    id="division"
+
+                    class="w-full mt-2 border rounded-xl p-4">
+
+                        <option value="">Select Division</option>
+
+                        <option>Dhaka</option>
+
+                        <option>Chattogram</option>
+
+                        <option>Rajshahi</option>
+
+                        <option>Khulna</option>
+
+                        <option>Barishal</option>
+
+                        <option>Sylhet</option>
+
+                        <option>Rangpur</option>
+
+                        <option>Mymensingh</option>
+
+                    </select>
+
+                </div>
+
+                <!-- District -->
+
+                <div>
+
+                    <label class="font-semibold">
+
+                        District
+
+                    </label>
+
+                    <select
+                    id="district"
+
+                    class="w-full mt-2 border rounded-xl p-4">
+
+                        <option value="">Select District</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Upazila -->
+
+                <div>
+
+                    <label class="font-semibold">
+
+                        Upazila
+
+                    </label>
+
+                    <select
+                    id="upazila"
+
+                    class="w-full mt-2 border rounded-xl p-4">
+
+                        <option value="">Select Upazila</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Hospital Type -->
+
+                <div>
+
+                    <label class="font-semibold">
+
+                        Hospital Type
+
+                    </label>
+
+                    <select
+                    id="hospitalType"
+
+                    class="w-full mt-2 border rounded-xl p-4">
+
+                        <option value="All">
+
+                            All
+
+                        </option>
+
+                        <option>
+
+                            Government
+
+                        </option>
+
+                        <option>
+
+                            Private
+
+                        </option>
+
+                        <option>
+
+                            Medical College
+
+                        </option>
+
+                        <option>
+
+                            Specialized
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Search -->
+
+                <div>
+
+                    <label class="font-semibold">
+
+                        Search
+
+                    </label>
+
+                    <input
+
+                    id="hospitalSearchInput"
+
+                    type="text"
+
+                    placeholder="Hospital Name"
+
+                    class="w-full mt-2 border rounded-xl p-4">
+
+                </div>
+
+            </div>
+
+            <!-- Button -->
+
+            <div class="text-center mt-10">
+
+                <button
+
+                id="searchHospitalBtn"
+
+                class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-bold duration-300">
+
+                    🔍 Search Hospital
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+        HOSPITAL LIST
+========================================== -->
+
+<section id="hospitalList" class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="flex justify-between items-center mb-10">
+
+            <h2 class="text-4xl font-bold">
+
+                Available Hospitals
+
+            </h2>
+
+            <span
+            id="hospitalCount"
+
+            class="bg-blue-600 text-white px-5 py-2 rounded-full">
+
+                0 Hospitals
+
+            </span>
+
+        </div>
+
+        <!-- Hospital Cards -->
+
+        <div
+        id="hospitalContainer"
+
+        class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- Emergency Form -->
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer id="footer-container"></footer>
+
+    <!-- JS -->
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+
+            duration:800,
+
+            once:true
+
+        });
+
+    </script>
+
+ <script src="assets/js/app.js"></script>
+
+<script src="assets/js/components.js"></script>
+
+<script src="assets/js/location.js"></script>
+
+<script src="assets/js/hospitalData.js"></script>
+
+<script src="assets/js/hospitals.js"></script>
+
+</body>
+
+</html>
