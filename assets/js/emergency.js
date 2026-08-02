@@ -124,31 +124,121 @@ cards.forEach(card => {
 ========================================== */
 
 const statusCards = document.querySelectorAll(".status-card");
+
 const nextAI = document.getElementById("nextAI");
 
 let selectedStatus = "";
 
-/* Status Card */
 
-statusCards.forEach(card => {
+/* ==========================================
+        STATUS CARD
+========================================== */
 
-    card.addEventListener("click", () => {
+if (statusCards.length > 0) {
 
-        statusCards.forEach(c => {
+    statusCards.forEach(card => {
 
-            c.classList.remove("bg-blue-600","text-white","border-blue-600");
+        card.addEventListener("click", () => {
+
+            // Remove Previous Active Card
+
+            statusCards.forEach(item => {
+
+                item.classList.remove(
+                    "bg-blue-600",
+                    "text-white",
+                    "border-blue-600"
+                );
+
+            });
+
+            // Active Current Card
+
+            card.classList.add(
+                "bg-blue-600",
+                "text-white",
+                "border-blue-600"
+            );
+
+            // Get Radio Button
+
+            const input = card.querySelector("input");
+
+            if (input) {
+
+                input.checked = true;
+
+                selectedStatus = input.value;
+
+            }
+
+            console.log("Selected Status :", selectedStatus);
 
         });
 
-        card.classList.add("bg-blue-600","text-white","border-blue-600");
+    });
 
-        selectedStatus = card.querySelector("input").value;
+}
 
-        card.querySelector("input").checked = true;
+
+/* ==========================================
+        CONTINUE BUTTON
+========================================== */
+
+if (nextAI) {
+
+    nextAI.addEventListener("click", () => {
+
+        const fullName =
+            document.getElementById("fullName")?.value.trim() || "";
+
+        const phone =
+            document.getElementById("phone")?.value.trim() || "";
+
+        const family =
+            document.getElementById("family")?.value || "";
+
+        if (fullName === "") {
+
+            alert("Please Enter Your Name");
+
+            return;
+
+        }
+
+        if (phone.length !== 11) {
+
+            alert("Please Enter a Valid Mobile Number");
+
+            return;
+
+        }
+
+        if (selectedStatus === "") {
+
+            alert("Please Select Your Current Situation");
+
+            return;
+
+        }
+
+        alert("✅ Applicant Information Saved Successfully");
+
+        const aiSection = document.getElementById("aiRecommendation");
+
+        if (aiSection) {
+
+            aiSection.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
 
     });
 
-});
+}
 
 
 /* Continue Button */
@@ -414,3 +504,28 @@ function runAIAnalysis(emergency){
     }
 
 }
+
+
+
+
+document.getElementById("submitEmergency").addEventListener("click", function () {
+
+    Swal.fire({
+
+        icon: "success",
+
+        title: "Request Sent Successfully!",
+
+        text: "Your emergency request has been received. Our response team will contact you shortly.",
+
+        confirmButtonColor: "#16a34a",
+
+        confirmButtonText: "OK"
+
+    });
+
+});
+
+
+
+

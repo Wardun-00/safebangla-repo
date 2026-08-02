@@ -47,10 +47,13 @@ button{
 
 
 
+/* ==========================================
+        EMERGENCY LEVEL CARD
+========================================== */
 
-/* ===================================
-      Emergency Card
-=================================== */
+/* ==========================================
+        EMERGENCY CARD
+========================================== */
 
 .emergency-card{
 
@@ -60,25 +63,25 @@ button{
 
     border-radius:20px;
 
-    padding:35px;
+    padding:30px 20px;
+
+    min-height:180px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
 
     text-align:center;
+
+    gap:16px;
 
     cursor:pointer;
 
     transition:.3s;
-
-    font-size:45px;
-
-}
-
-.emergency-card h3{
-
-    margin-top:15px;
-
-    font-size:18px;
-
-    font-weight:600;
 
 }
 
@@ -86,58 +89,71 @@ button{
 
     transform:translateY(-8px);
 
-    border-color:#16a34a;
+    border-color:#dc2626;
 
-    box-shadow:0 20px 35px rgba(0,0,0,.08);
+    box-shadow:0 15px 30px rgba(220,38,38,.15);
 
 }
 
-.emergency-card.active{
+.emergency-card h3{
 
-    background:#16a34a;
+    font-size:18px;
 
-    color:#fff;
+    font-weight:700;
 
-    border-color:#16a34a;
+    color:#374151;
+
+    margin:0;
 
 }
 
 
 .level-card{
 
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:12px;
+
+    background:#fff;
+
     border:2px solid #e5e7eb;
 
-    border-radius:16px;
+    border-radius:20px;
 
-    padding:25px;
-
-    text-align:center;
+    padding:28px;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.35s;
 
-    font-size:30px;
+    font-size:42px;
 
-    font-weight:600;
+    font-weight:700;
+
+    user-select:none;
 
 }
 
 .level-card span{
 
-    display:block;
-
-    margin-top:10px;
-
     font-size:18px;
+
+    font-weight:600;
+
+    color:#374151;
 
 }
 
 .level-card:hover{
 
+    transform:translateY(-6px);
+
     border-color:#16a34a;
 
-    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(22,163,74,.18);
 
 }
 
@@ -145,40 +161,154 @@ button{
 
     background:#16a34a;
 
-    color:#fff;
-
     border-color:#16a34a;
 
+    color:#fff;
+
 }
+
+.level-card:has(input:checked) span{
+
+    color:#fff;
+
+}
+
+.emergency-card.active{
+
+    background:#dc2626;
+
+    border-color:#dc2626;
+
+    color:#fff;
+
+}
+
+.emergency-card.active h3{
+
+    color:#fff;
+
+}
+
+
+/* ==========================================
+        DAMAGE CARD
+========================================== */
 
 .damage-card{
 
     display:flex;
 
-    gap:12px;
-
     align-items:center;
+
+    gap:14px;
+
+    background:#fff;
 
     border:2px solid #e5e7eb;
 
-    padding:18px;
+    border-radius:18px;
 
-    border-radius:14px;
+    padding:22px;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.35s;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    user-select:none;
 
 }
 
 .damage-card:hover{
 
+    transform:translateY(-5px);
+
     border-color:#16a34a;
 
     background:#f0fdf4;
 
+    box-shadow:0 12px 25px rgba(22,163,74,.12);
+
 }
 
+.damage-card:has(input:checked){
+
+    background:#16a34a;
+
+    border-color:#16a34a;
+
+    color:#fff;
+
+}
+
+.damage-card span{
+
+    flex:1;
+
+}
+
+
+/* ==========================================
+        INPUT & TEXTAREA
+========================================== */
+
+input[type="number"],
+input[type="text"],
+input[type="file"],
+textarea,
+select{
+
+    transition:.3s;
+
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:#16a34a;
+
+    box-shadow:0 0 0 4px rgba(22,163,74,.12);
+
+}
+
+
+/* ==========================================
+        RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .level-card{
+
+        font-size:32px;
+
+        padding:22px;
+
+    }
+
+    .level-card span{
+
+        font-size:16px;
+
+    }
+
+    .damage-card{
+
+        padding:18px;
+
+        font-size:16px;
+
+    }
+
+}
 
 /* ===================================
       Applicant Status
