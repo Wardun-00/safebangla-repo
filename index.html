@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeBangla | Smart Emergency Response Platform</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/animation.css">
+
+</head>
+
+<body class="bg-slate-50">
+<!-- Header section -->
+<header>
+<nav class="bg-white shadow-md sticky top-0 z-50">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3">
+
+                <div class="w-11 h-11 rounded-full bg-green-600 flex items-center justify-center">
+
+                    <i class="fa-solid fa-shield-heart text-white text-xl"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 class="text-xl sm:text-2xl font-bold text-green-700">
+                        SafeBangla
+                    </h1>
+
+                    <p class="text-xs text-gray-500 hidden sm:block">
+                        Smart Emergency Response Platform
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center gap-8 font-medium text-gray-700">
+
+                <li>
+                    <a href="index.html"
+                        class="hover:text-green-600 transition duration-300">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="emergency.html"
+                        class="hover:text-green-600 transition duration-300">
+                        Emergency
+                    </a>
+                </li>
+
+                <li>
+                    <a href="hospitals.html"
+                        class="hover:text-green-600 transition duration-300">
+                        Hospitals
+                    </a>
+                </li>
+
+                <li>
+                    <a href="dashboard.html"
+                        class="hover:text-green-600 transition duration-300">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html"
+                        class="hover:text-green-600 transition duration-300">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html"
+                        class="hover:text-green-600 transition duration-300">
+                        About
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-3">
+
+                <!-- Request Button -->
+                <a href="emergency.html"
+                    class="hidden md:inline-flex bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg font-medium transition duration-300">
+
+                    Request Help
+
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn"
+                    class="lg:hidden text-2xl text-gray-700">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Mobile Menu -->
+
+    <div id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t">
+
+        <ul class="flex flex-col p-5 space-y-4 font-medium">
+
+            <li>
+                <a href="index.html" class="block hover:text-green-600">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="emergency.html" class="block hover:text-green-600">
+                    Emergency
+                </a>
+            </li>
+
+            <li>
+                <a href="hospitals.html" class="block hover:text-green-600">
+                    Hospitals
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html" class="block hover:text-green-600">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html" class="block hover:text-green-600">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html" class="block hover:text-green-600">
+                    About
+                </a>
+            </li>
+
+            <li>
+
+                <a href="emergency.html"
+                    class="block text-center bg-red-600 text-white py-3 rounded-lg">
+
+                    Request Help
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+</header>
+<!-- main section -->
+
+
+<main>
+<!-- hero section start -->
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="bg-gradient-to-br from-green-50 via-white to-red-50 py-16 lg:py-24">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left Content -->
+
+            <div data-aos="fade-right">
+
+                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+
+                    🇧🇩 Smart Emergency Response Platform
+
+                </span>
+
+                <h1 class="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+
+                    Your Safety <br>
+
+                    Starts With
+
+                    <span class="text-green-600">
+
+                        SafeBangla
+
+                    </span>
+
+                </h1>
+
+                <p class="mt-6 text-gray-600 text-lg leading-8">
+
+                    A smart emergency response platform that helps citizens
+                    request government assistance, find hospitals,
+                    contact emergency services and receive faster support
+                    during disasters and medical emergencies.
+
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+
+                    <a href="emergency.html"
+                        class="bg-red-600 hover:bg-red-700 text-white px-7 py-4 rounded-xl text-center font-semibold transition">
+
+                        🚨 Request Help
+
+                    </a>
+
+                    <a href="hospitals.html"
+                        class="border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white px-7 py-4 rounded-xl text-center font-semibold transition">
+
+                        🏥 Find Hospital
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right Content -->
+
+            <div class="relative" data-aos="fade-left">
+
+                <img src="assets/images/hero/hero.png"
+                    alt="Emergency Illustration"
+                    class="w-full max-w-lg mx-auto">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ------------------------------------- -->
+ <!-- ================= LIVE STATISTICS ================= -->
+
+<section class="py-12 bg-white">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Card 1 -->
+            <div class="bg-green-50 rounded-2xl p-6 text-center shadow hover:shadow-lg duration-300">
+
+                <i class="fa-solid fa-hospital text-4xl text-green-600"></i>
+
+                <h2 class="text-4xl font-bold mt-4">320+</h2>
+
+                <p class="text-gray-600 mt-2">
+                    Registered Hospitals
+                </p>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-red-50 rounded-2xl p-6 text-center shadow hover:shadow-lg duration-300">
+
+                <i class="fa-solid fa-truck-medical text-4xl text-red-600"></i>
+
+                <h2 class="text-4xl font-bold mt-4">150+</h2>
+
+                <p class="text-gray-600 mt-2">
+                    Ambulances
+                </p>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-blue-50 rounded-2xl p-6 text-center shadow hover:shadow-lg duration-300">
+
+                <i class="fa-solid fa-bed text-4xl text-blue-600"></i>
+
+                <h2 class="text-4xl font-bold mt-4">5200+</h2>
+
+                <p class="text-gray-600 mt-2">
+                    Available Beds
+                </p>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-yellow-50 rounded-2xl p-6 text-center shadow hover:shadow-lg duration-300">
+
+                <i class="fa-solid fa-user-doctor text-4xl text-yellow-500"></i>
+
+                <h2 class="text-4xl font-bold mt-4">2100+</h2>
+
+                <p class="text-gray-600 mt-2">
+                    Doctors
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EMERGENCY SERVICES ================= -->
+
+<section class="py-20 bg-slate-50">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Heading -->
+
+        <div class="text-center mb-14">
+
+            <span class="text-green-600 font-semibold uppercase tracking-widest">
+                Emergency Services
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-bold mt-3 text-gray-800">
+                Choose Your Emergency Type
+            </h2>
+
+            <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+                Select the type of emergency so SafeBangla can guide you to the
+                appropriate government service and support.
+            </p>
+
+        </div>
+
+        <!-- Cards -->
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Flood -->
+
+            <a href="emergency.html"
+                class="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+
+                    <i class="fa-solid fa-water text-3xl text-blue-600"></i>
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-800">
+                    Flood
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+                    Request rescue, food, shelter, or emergency assistance during floods.
+                </p>
+
+            </a>
+
+            <!-- Fire -->
+
+            <a href="emergency.html"
+                class="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-6">
+
+                    <i class="fa-solid fa-fire text-3xl text-red-600"></i>
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-800">
+                    Fire
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+                    Instantly request Fire Service support for fire emergencies.
+                </p>
+
+            </a>
+
+            <!-- Earthquake -->
+
+            <a href="emergency.html"
+                class="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
+
+                    <i class="fa-solid fa-house-crack text-3xl text-yellow-600"></i>
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-800">
+                    Earthquake
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+                    Report collapsed buildings and request emergency rescue teams.
+                </p>
+
+            </a>
+
+            <!-- Building Collapse -->
+
+            <a href="emergency.html"
+                class="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center mb-6">
+
+                    <i class="fa-solid fa-building-circle-xmark text-3xl text-gray-700"></i>
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-800">
+                    Building Collapse
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+                    Notify authorities immediately for rescue operations.
+                </p>
+
+            </a>
+
+            <!-- Road Accident -->
+
+            <a href="emergency.html"
+                class="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+
+                    <i class="fa-solid fa-truck-medical text-3xl text-green-600"></i>
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-800">
+                    Road Accident
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+                    Request ambulance and emergency medical assistance.
+                </p>
+
+            </a>
+
+            <!-- Other -->
+
+            <a href="emergency.html"
+                class="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:-translate-y-2 transition duration-300">
+
+                <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-6">
+
+                    <i class="fa-solid fa-circle-question text-3xl text-purple-600"></i>
+
+                </div>
+
+                <h3 class="text-2xl font-bold text-gray-800">
+                    Other Emergency
+                </h3>
+
+                <p class="text-gray-500 mt-3">
+                    Request help for any emergency situation not listed above.
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+</main>
+
+<!-- footer section -->
+<footer>
+
+</footer>
+
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init();
+</script>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
