@@ -554,74 +554,141 @@
 </section>
 
 
-       <!-- ==========================================
-        STEP 1 : LOCATION
+  <!-- ==========================================
+        LOCATION INFORMATION
 ========================================== -->
-<!-- ================= Location ================= -->
 
-<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-white rounded-3xl shadow-lg border border-gray-200 p-8">
 
-    <!-- Division -->
+    <!-- Heading -->
 
-    <div>
+    <div class="flex items-center gap-3 mb-8">
 
-        <label class="block mb-2 font-semibold">
-            Division
-        </label>
+        <div class="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center">
 
-        <select id="division" class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <i class="fa-solid fa-location-dot text-2xl text-green-600"></i>
 
-          <option value="">Select Division</option>
+        </div>
 
-<option value="Dhaka">Dhaka</option>
+        <div>
 
-<option value="Chattogram">Chattogram</option>
+            <h3 class="text-2xl font-bold text-gray-800">
 
-<option value="Rajshahi">Rajshahi</option>
+                Select Your Location
 
-<option value="Khulna">Khulna</option>
+            </h3>
 
-<option value="Barishal">Barishal</option>
+            <p class="text-gray-500 text-sm">
 
-<option value="Sylhet">Sylhet</option>
+                Choose your Division, District and Upazila
 
-<option value="Rangpur">Rangpur</option>
+            </p>
 
-<option value="Mymensingh">Mymensingh</option>
-
-        </select>
+        </div>
 
     </div>
 
-    <!-- District -->
+    <!-- Location Grid -->
 
-    <div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <label class="block mb-2 font-semibold">
-            District
-        </label>
+        <!-- Division -->
 
-        <select id="district" class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+        <div>
 
-            <option value="">Select District</option>
+            <label class="flex items-center gap-2 mb-3 font-semibold text-gray-700">
 
-        </select>
+                <i class="fa-solid fa-earth-asia text-green-600"></i>
+
+                Division
+
+            </label>
+
+            <select
+                id="division"
+                class="w-full bg-slate-50 border-2 border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:border-green-600 focus:ring-4 focus:ring-green-100 transition">
+
+                <option value="">Select Division</option>
+
+                <option value="Dhaka">Dhaka</option>
+
+                <option value="Chattogram">Chattogram</option>
+
+                <option value="Rajshahi">Rajshahi</option>
+
+                <option value="Khulna">Khulna</option>
+
+                <option value="Barishal">Barishal</option>
+
+                <option value="Sylhet">Sylhet</option>
+
+                <option value="Rangpur">Rangpur</option>
+
+                <option value="Mymensingh">Mymensingh</option>
+
+            </select>
+
+        </div>
+
+        <!-- District -->
+
+        <div>
+
+            <label class="flex items-center gap-2 mb-3 font-semibold text-gray-700">
+
+                <i class="fa-solid fa-city text-blue-600"></i>
+
+                District
+
+            </label>
+
+            <select
+                id="district"
+                class="w-full bg-slate-50 border-2 border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100 transition">
+
+                <option value="">Select District</option>
+
+            </select>
+
+        </div>
+
+        <!-- Upazila -->
+
+        <div>
+
+            <label class="flex items-center gap-2 mb-3 font-semibold text-gray-700">
+
+                <i class="fa-solid fa-map-location-dot text-red-600"></i>
+
+                Upazila
+
+            </label>
+
+            <select
+                id="upazila"
+                class="w-full bg-slate-50 border-2 border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-100 transition">
+
+                <option value="">Select Upazila</option>
+
+            </select>
+
+        </div>
 
     </div>
 
-    <!-- Upazila -->
+    <!-- Bottom Note -->
 
-    <div>
+    <div class="mt-8 flex items-start gap-3 bg-green-50 border border-green-200 rounded-2xl p-4">
 
-        <label class="block mb-2 font-semibold">
-            Upazila
-        </label>
+        <i class="fa-solid fa-circle-info text-green-600 mt-1"></i>
 
-        <select id="upazila" class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+        <p class="text-sm text-gray-600 leading-7">
 
-            <option value="">Select Upazila</option>
+            Your selected location helps SafeBangla find the nearest hospitals,
+            emergency shelters, ambulance services and government support
+            available in your area.
 
-        </select>
+        </p>
 
     </div>
 
