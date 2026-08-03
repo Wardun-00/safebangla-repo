@@ -1,15 +1,4 @@
-/* ==========================================
-            MOBILE MENU
-========================================== */
 
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-
-menuBtn.addEventListener("click", () => {
-
-    mobileMenu.classList.toggle("hidden");
-
-});
 
 
 /* ==========================================
@@ -320,18 +309,25 @@ counter("hospitalCounter",312);
 counter("rescueCounter",824);
 
 
-function initializeNavbar(){
+function initializeNavbar() {
 
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-if(menuBtn && mobileMenu){
+    if (menuBtn && mobileMenu) {
 
-    menuBtn.addEventListener("click",()=>{
+        menuBtn.addEventListener("click", () => {
 
-        mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("hidden");
 
-    });
+        });
+
+    }
 
 }
-}
+
+/* ==========================================
+        INITIALIZE
+========================================== */
+
+initializeNavbar();
