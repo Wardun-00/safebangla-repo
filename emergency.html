@@ -329,48 +329,310 @@
         <div class="pt-20"></div>
 
 
+<!-- //============================================================
+ //============================================================ -->
 
 <!-- ==========================================
-        STEP 3 : EMERGENCY DETAILS
+        EMERGENCY REQUEST FORM
 ========================================== -->
 
 <section class="py-20 bg-slate-100">
 
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-6xl mx-auto px-4">
 
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
 
             <!-- Header -->
 
-          <div class="bg-gradient-to-r from-red-600 to-red-700 p-8 text-white">
+            <div class="bg-gradient-to-r from-red-600 via-red-700 to-red-800 p-8 text-white">
 
-    <span class="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm">
+                <span class="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm font-semibold">
 
-        🚨 Step 3 of 5
+                    🚨 SafeBangla Emergency Response
 
-    </span>
+                </span>
 
-    <h2 class="text-4xl md:text-5xl font-bold mt-5">
+                <h2 class="text-4xl font-bold mt-5">
 
-        Emergency Details
+                    Emergency Request Form
 
-    </h2>
+                </h2>
 
-    <p class="mt-3 text-red-100">
+                <p class="mt-3 text-red-100 max-w-2xl">
 
-        Provide complete emergency information so we can dispatch the correct rescue team immediately.
+                    Submit your emergency request. Our Government Emergency Response Team
+                    will review your request immediately.
 
-    </p>
+                </p>
 
-</div>
+            </div>
 
-            <div class="p-8 md:p-10">
+            <!-- FORM START -->
 
-               <!-- ==========================================
-        EMERGENCY LEVEL
+            <form id="emergencyForm" class="p-8 lg:p-10">
+
+                <!-- Applicant Information Here -->
+
+<!-- ==========================================
+        APPLICANT INFORMATION
 ========================================== -->
 
 <div>
+
+    <div class="flex items-center gap-3">
+
+        <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
+
+            <i class="fa-solid fa-user text-blue-600 text-xl"></i>
+
+        </div>
+
+        <div>
+
+            <h3 class="text-2xl font-bold text-gray-800">
+
+                Applicant Information
+
+            </h3>
+
+            <p class="text-gray-500">
+
+                Please enter your contact information.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr class="my-6">
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Full Name -->
+
+        <div>
+
+            <label class="block font-semibold mb-2">
+
+                Full Name
+                <span class="text-red-500">*</span>
+
+            </label>
+
+            <input
+
+                id="fullName"
+
+                type="text"
+
+                placeholder="Enter your full name"
+
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500 duration-300">
+
+            <small class="text-gray-500">
+
+                Your official name.
+
+            </small>
+
+        </div>
+
+        <!-- Mobile Number -->
+
+        <div>
+
+            <label class="block font-semibold mb-2">
+
+                Mobile Number
+                <span class="text-red-500">*</span>
+
+            </label>
+
+            <input
+
+                id="phone"
+
+                type="tel"
+
+                maxlength="11"
+
+                placeholder="01XXXXXXXXX"
+
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500 duration-300">
+
+            <small
+
+                id="phoneStatus"
+
+                class="text-gray-500">
+
+                We will contact you using this number.
+
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+        EMERGENCY LOCATION
+========================================== -->
+
+<div class="mt-14">
+
+    <div class="flex items-center gap-3">
+
+        <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
+
+            <i class="fa-solid fa-location-dot text-green-600 text-xl"></i>
+
+        </div>
+
+        <div>
+
+            <h3 class="text-2xl font-bold text-gray-800">
+
+                Emergency Location
+
+            </h3>
+
+            <p class="text-gray-500">
+
+                Select the exact location where the emergency occurred.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr class="my-6">
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+        <!-- Division -->
+
+        <div>
+
+            <label class="block font-semibold mb-2">
+
+                Division
+                <span class="text-red-500">*</span>
+
+            </label>
+
+            <select
+
+                id="division"
+
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500 duration-300">
+
+                <option value="">Select Division</option>
+
+                <option>Dhaka</option>
+
+                <option>Chattogram</option>
+
+                <option>Rajshahi</option>
+
+                <option>Khulna</option>
+
+                <option>Barishal</option>
+
+                <option>Sylhet</option>
+
+                <option>Rangpur</option>
+
+                <option>Mymensingh</option>
+
+            </select>
+
+        </div>
+
+        <!-- District -->
+
+        <div>
+
+            <label class="block font-semibold mb-2">
+
+                District
+                <span class="text-red-500">*</span>
+
+            </label>
+
+            <select
+
+                id="district"
+
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500 duration-300">
+
+                <option value="">Select District</option>
+
+            </select>
+
+        </div>
+
+        <!-- Upazila -->
+
+        <div>
+
+            <label class="block font-semibold mb-2">
+
+                Upazila
+                <span class="text-red-500">*</span>
+
+            </label>
+
+            <select
+
+                id="upazila"
+
+                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500 duration-300">
+
+                <option value="">Select Upazila</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- GPS Button -->
+
+    <div class="mt-6">
+
+        <button
+
+            id="gpsBtn"
+
+            type="button"
+
+            class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold duration-300 shadow-lg">
+
+            <i class="fa-solid fa-location-crosshairs me-2"></i>
+
+            Detect Current Location
+
+        </button>
+
+        <p class="text-sm text-gray-500 mt-3">
+
+            Allow location access for faster emergency response.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+        EMERGENCY TYPE
+========================================== -->
+
+<div class="mt-14">
 
     <div class="flex items-center gap-3">
 
@@ -384,13 +646,13 @@
 
             <h3 class="text-2xl font-bold text-gray-800">
 
-                Emergency Level
+                Emergency Type
 
             </h3>
 
             <p class="text-gray-500">
 
-                Select the severity level of your emergency.
+                Select the emergency that best matches your current situation.
 
             </p>
 
@@ -400,63 +662,299 @@
 
     <hr class="my-6">
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+    <div id="emergencyCards"
+        class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
 
-        <label class="level-card">
+        <!-- Fire -->
 
-            <input type="radio" name="level" value="Low" hidden>
+        <div class="emergency-card group relative" data-type="Fire">
 
-            🟢
+            <div class="text-5xl mb-4">
 
-            <span>Low</span>
+                🔥
 
-        </label>
+            </div>
 
-        <label class="level-card">
+            <h3 class="font-bold text-lg">
 
-            <input type="radio" name="level" value="Medium" hidden>
+                Fire
 
-            🟡
+            </h3>
 
-            <span>Medium</span>
+            <p class="text-sm text-gray-500 mt-2">
 
-        </label>
+                Building, Forest, Electrical
 
-        <label class="level-card">
+            </p>
 
-            <input type="radio" name="level" value="High" hidden>
+            <span
+                class="absolute top-3 right-3 hidden check-icon">
 
-            🔴
+                ✅
 
-            <span>High</span>
+            </span>
 
-        </label>
+        </div>
 
-        <label class="level-card">
+        <!-- Flood -->
 
-            <input type="radio" name="level" value="Critical" hidden>
+        <div class="emergency-card group relative" data-type="Flood">
 
-            ⚫
+            <div class="text-5xl mb-4">
 
-            <span>Critical</span>
+                🌊
 
-        </label>
+            </div>
+
+            <h3 class="font-bold text-lg">
+
+                Flood
+
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2">
+
+                Water Level Rising
+
+            </p>
+
+            <span
+                class="absolute top-3 right-3 hidden check-icon">
+
+                ✅
+
+            </span>
+
+        </div>
+
+        <!-- Medical -->
+
+        <div class="emergency-card group relative" data-type="Medical">
+
+            <div class="text-5xl mb-4">
+
+                🚑
+
+            </div>
+
+            <h3 class="font-bold text-lg">
+
+                Medical
+
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2">
+
+                Health Emergency
+
+            </p>
+
+            <span
+                class="absolute top-3 right-3 hidden check-icon">
+
+                ✅
+
+            </span>
+
+        </div>
+
+        <!-- Road Accident -->
+
+        <div class="emergency-card group relative" data-type="Road Accident">
+
+            <div class="text-5xl mb-4">
+
+                🚗
+
+            </div>
+
+            <h3 class="font-bold text-lg">
+
+                Road Accident
+
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2">
+
+                Vehicle Collision
+
+            </p>
+
+            <span
+                class="absolute top-3 right-3 hidden check-icon">
+
+                ✅
+
+            </span>
+
+        </div>
+
+        <!-- Building Collapse -->
+
+        <div class="emergency-card group relative" data-type="Building Collapse">
+
+            <div class="text-5xl mb-4">
+
+                🏚️
+
+            </div>
+
+            <h3 class="font-bold text-lg">
+
+                Building Collapse
+
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2">
+
+                Structural Damage
+
+            </p>
+
+            <span
+                class="absolute top-3 right-3 hidden check-icon">
+
+                ✅
+
+            </span>
+
+        </div>
+
+        <!-- Cyclone -->
+
+        <div class="emergency-card group relative" data-type="Cyclone">
+
+            <div class="text-5xl mb-4">
+
+                🌪️
+
+            </div>
+
+            <h3 class="font-bold text-lg">
+
+                Cyclone
+
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2">
+
+                Storm & Strong Wind
+
+            </p>
+
+            <span
+                class="absolute top-3 right-3 hidden check-icon">
+
+                ✅
+
+            </span>
+
+        </div>
+
+        <!-- Electric Shock -->
+
+        <div class="emergency-card group relative" data-type="Electric Shock">
+
+            <div class="text-5xl mb-4">
+
+                ⚡
+
+            </div>
+
+            <h3 class="font-bold text-lg">
+
+                Electric Shock
+
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2">
+
+                High Voltage Accident
+
+            </p>
+
+            <span
+                class="absolute top-3 right-3 hidden check-icon">
+
+                ✅
+
+            </span>
+
+        </div>
+
+        <!-- Others -->
+
+        <div class="emergency-card group relative" data-type="Others">
+
+            <div class="text-5xl mb-4">
+
+                ❓
+
+            </div>
+
+            <h3 class="font-bold text-lg">
+
+                Others
+
+            </h3>
+
+            <p class="text-sm text-gray-500 mt-2">
+
+                Other Emergency
+
+            </p>
+
+            <span
+                class="absolute top-3 right-3 hidden check-icon">
+
+                ✅
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Hidden Input -->
+
+    <input
+        type="hidden"
+        id="selectedEmergency">
+
+    <!-- Selected -->
+
+    <div
+        class="mt-8 bg-red-50 border border-red-200 rounded-2xl p-5">
+
+        <h4 class="font-semibold text-gray-700">
+
+            Selected Emergency
+
+        </h4>
+
+        <p
+            id="selectedEmergencyText"
+            class="text-red-600 font-bold text-xl mt-2">
+
+            No Emergency Selected
+
+        </p>
 
     </div>
 
 </div>
 
 <!-- ==========================================
-        PEOPLE INFORMATION
+        EMERGENCY DETAILS
 ========================================== -->
 
 <div class="mt-14">
 
     <div class="flex items-center gap-3">
 
-        <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
+        <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center">
 
-            <i class="fa-solid fa-users text-blue-600 text-xl"></i>
+            <i class="fa-solid fa-circle-exclamation text-orange-600 text-xl"></i>
 
         </div>
 
@@ -464,13 +962,13 @@
 
             <h3 class="text-2xl font-bold text-gray-800">
 
-                People Information
+                Emergency Details
 
             </h3>
 
             <p class="text-gray-500">
 
-                Enter the number of affected and injured people.
+                Provide essential information for a faster emergency response.
 
             </p>
 
@@ -480,21 +978,48 @@
 
     <hr class="my-6">
 
-    <div class="grid md:grid-cols-2 gap-6">
+    <!-- Priority -->
+
+    <div>
+
+        <label class="block font-semibold mb-3">
+
+            Emergency Priority
+
+        </label>
+
+        <select
+            id="priority"
+            class="w-full border border-gray-300 rounded-xl p-4 focus:ring-2 focus:ring-red-500">
+
+            <option value="">Select Priority</option>
+            <option>🔴 Critical</option>
+            <option>🟠 High</option>
+            <option>🟡 Medium</option>
+            <option>🟢 Low</option>
+
+        </select>
+
+    </div>
+
+    <!-- People -->
+
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
 
         <div>
 
             <label class="block font-semibold mb-2">
 
-                People Affected
+                Affected People
 
             </label>
 
             <input
+                id="affectedPeople"
                 type="number"
-                min="1"
-                placeholder="e.g. 5"
-                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                min="0"
+                placeholder="Ex: 5"
+                class="w-full border border-gray-300 rounded-xl p-4">
 
         </div>
 
@@ -507,10 +1032,11 @@
             </label>
 
             <input
+                id="injuredPeople"
                 type="number"
                 min="0"
-                placeholder="e.g. 2"
-                class="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                placeholder="Ex: 2"
+                class="w-full border border-gray-300 rounded-xl p-4">
 
         </div>
 
@@ -519,99 +1045,71 @@
 </div>
 
 <!-- ==========================================
-        DAMAGE INFORMATION
+        IMMEDIATE HELP
 ========================================== -->
 
 <div class="mt-14">
 
-    <div class="flex items-center gap-3">
+    <h3 class="text-2xl font-bold">
 
-        <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center">
+        Immediate Help Needed
 
-            <i class="fa-solid fa-house-crack text-orange-600 text-xl"></i>
+    </h3>
 
-        </div>
+    <p class="text-gray-500 mt-2">
 
-        <div>
+        Select all required emergency services.
 
-            <h3 class="text-2xl font-bold text-gray-800">
+    </p>
 
-                Damage Information
-
-            </h3>
-
-            <p class="text-gray-500">
-
-                Select all damages related to this emergency.
-
-            </p>
-
-        </div>
-
-    </div>
-
-    <hr class="my-6">
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-6">
 
         <label class="damage-card">
-
             <input type="checkbox" hidden>
-
-            <span class="text-3xl">🏠</span>
-
-            <span>House Damaged</span>
-
+            🚑
+            <span>Ambulance</span>
         </label>
 
         <label class="damage-card">
-
             <input type="checkbox" hidden>
-
-            <span class="text-3xl">🌊</span>
-
-            <span>Water Entered House</span>
-
+            🚒
+            <span>Fire Service</span>
         </label>
 
         <label class="damage-card">
-
             <input type="checkbox" hidden>
-
-            <span class="text-3xl">🔥</span>
-
-            <span>Fire Damage</span>
-
+            👮
+            <span>Police</span>
         </label>
 
         <label class="damage-card">
-
             <input type="checkbox" hidden>
-
-            <span class="text-3xl">🚗</span>
-
-            <span>Vehicle Damaged</span>
-
+            ⛑
+            <span>Rescue Team</span>
         </label>
 
         <label class="damage-card">
-
             <input type="checkbox" hidden>
-
-            <span class="text-3xl">🌾</span>
-
-            <span>Crop Damage</span>
-
+            🏥
+            <span>Hospital</span>
         </label>
 
         <label class="damage-card">
-
             <input type="checkbox" hidden>
+            🍞
+            <span>Food</span>
+        </label>
 
-            <span class="text-3xl">🐄</span>
+        <label class="damage-card">
+            <input type="checkbox" hidden>
+            💧
+            <span>Water</span>
+        </label>
 
-            <span>Livestock Loss</span>
-
+        <label class="damage-card">
+            <input type="checkbox" hidden>
+            💊
+            <span>Medicine</span>
         </label>
 
     </div>
@@ -619,658 +1117,104 @@
 </div>
 
 <!-- ==========================================
-        EMERGENCY DESCRIPTION
+        DESCRIPTION
 ========================================== -->
 
 <div class="mt-14">
 
-    <div class="flex items-center gap-3">
+    <label class="block font-semibold text-lg mb-3">
 
-        <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-
-            <i class="fa-solid fa-file-lines text-green-600 text-xl"></i>
-
-        </div>
-
-        <div>
-
-            <h3 class="text-2xl font-bold text-gray-800">
-
-                Emergency Description
-
-            </h3>
-
-            <p class="text-gray-500">
-
-                Describe your emergency in detail.
-
-            </p>
-
-        </div>
-
-    </div>
-
-    <hr class="my-6">
-
-    <label class="block font-semibold mb-3">
-
-        Describe Your Situation
+        Describe the Situation
 
     </label>
 
     <textarea
+        id="description"
+        rows="5"
+        maxlength="250"
+        placeholder="Briefly explain your emergency..."
+        class="w-full border border-gray-300 rounded-2xl p-5 resize-none"></textarea>
 
-        rows="6"
+    <p class="text-sm text-gray-500 mt-2">
 
-        placeholder="Explain your emergency in detail..."
+        Maximum 250 characters.
 
-        class="w-full border border-gray-300 rounded-2xl p-5 resize-none focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+    </p>
 
 </div>
 
 <!-- ==========================================
-        UPLOAD EVIDENCE
+        UPLOAD
 ========================================== -->
 
 <div class="mt-14">
 
-    <div class="flex items-center gap-3">
+    <label class="block font-semibold text-lg mb-4">
 
-        <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
+        Upload Photo / Video (Optional)
 
-            <i class="fa-solid fa-cloud-arrow-up text-purple-600 text-xl"></i>
+    </label>
 
-        </div>
+    <input
+        id="evidence"
+        type="file"
+        accept="image/*,video/*"
+        class="w-full border border-dashed border-gray-300 rounded-2xl p-5">
 
-        <div>
+</div>
 
-            <h3 class="text-2xl font-bold text-gray-800">
+<!-- ==========================================
+        DECLARATION
+========================================== -->
 
-                Upload Evidence
+<div class="mt-12">
 
-            </h3>
-
-            <p class="text-gray-500">
-
-                Upload photos or videos (optional).
-
-            </p>
-
-        </div>
-
-    </div>
-
-    <hr class="my-6">
-
-    <label
-        class="flex flex-col items-center justify-center border-2 border-dashed border-green-300 rounded-2xl p-10 bg-green-50 hover:bg-green-100 transition cursor-pointer">
-
-        <i class="fa-solid fa-cloud-arrow-up text-5xl text-green-600 mb-4"></i>
-
-        <h4 class="text-lg font-bold text-gray-700">
-
-            Click to Upload
-
-        </h4>
-
-        <p class="text-gray-500 mt-2">
-
-            JPG, PNG or MP4
-
-        </p>
+    <label class="flex items-start gap-3 cursor-pointer">
 
         <input
-            type="file"
-            accept="image/*,video/*"
-            class="hidden">
+            id="agree"
+            type="checkbox"
+            class="mt-1">
+
+        <span class="text-gray-600">
+
+            I confirm that all the information provided is true. I understand that submitting false emergency reports may delay assistance to people who genuinely need help.
+
+        </span>
 
     </label>
 
 </div>
 
-
 <!-- ==========================================
-        IMPORTANT NOTICE
+        SUBMIT BUTTON
 ========================================== -->
 
-<div class="mt-14">
-
-    <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6">
-
-        <div class="flex gap-4">
-
-            <i class="fa-solid fa-circle-exclamation text-yellow-500 text-3xl mt-1"></i>
-
-            <div>
-
-                <h4 class="font-bold text-lg">
-
-                    Important Notice
-
-                </h4>
-
-                <p class="text-gray-600 mt-2">
-
-                    Please provide accurate information. False reports may delay emergency response.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ==========================================
-        BUTTONS
-========================================== -->
-
-<div class="mt-14 flex flex-col sm:flex-row justify-between gap-4">
-
-    <button
-        type="button"
-        class="border-2 border-gray-300 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold duration-300">
-
-        ← Previous
-
-    </button>
+<div class="mt-14 text-center">
 
     <button
         id="submitEmergency"
-        type="button"
-        class="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-xl font-semibold duration-300 shadow-lg">
+        type="submit"
+        class="bg-red-600 hover:bg-red-700 text-white px-12 py-4 rounded-2xl text-lg font-bold shadow-xl duration-300">
 
-        Continue →
+        <i class="fa-solid fa-paper-plane me-2"></i>
+
+        Submit Emergency Request
 
     </button>
 
 </div>
 
-            </div>
+</form>
 
-        </div>
+</div>
 
-    </div>
+</div>
+
+</div>
 
 </section>
 
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- ==========================================
-        STEP 4 : APPLICANT INFORMATION
-========================================== -->
-
-<section class="py-20 bg-white">
-
-    <div class="max-w-7xl mx-auto px-4">
-
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border">
-
-            <!-- Header -->
-
-            <div class="bg-blue-600 p-8 text-white">
-
-                <h2 class="text-4xl font-bold">
-
-                    Applicant Information
-
-                </h2>
-                <div id="aiRecommendation"></div>
-
-                <p class="mt-2 text-blue-100">
-
-                    Please provide your contact information.
-
-                </p>
-
-            </div>
-
-            <div class="p-8">
-
-                <div class="grid md:grid-cols-2 gap-6">
-
-                    <!-- Name -->
-
-                    <div>
-
-                        <label class="font-semibold">
-
-                            Full Name
-
-                        </label>
-
-                        <input
-                        id="fullName"
-                        type="text"
-
-                        placeholder="Enter Your Name"
-
-                        class="w-full mt-2 border rounded-xl p-4 focus:ring-2 focus:ring-blue-500">
-
-                    </div>
-
-                    <!-- Phone -->
-
-                    <div>
-
-                        <label class="font-semibold">
-
-                            Mobile Number
-
-                        </label>
-
-                        <input
-                        id="phone"
-                        type="tel"
-
-                        placeholder="01XXXXXXXXX"
-
-                        class="w-full mt-2 border rounded-xl p-4 focus:ring-2 focus:ring-blue-500">
-
-                    </div>
-
-                    <!-- NID -->
-
-                    <div>
-
-                        <label class="font-semibold">
-
-                            National ID (Optional)
-
-                        </label>
-
-                        <input
-                        id="nid"
-                        type="text"
-
-                        placeholder="NID Number"
-
-                        class="w-full mt-2 border rounded-xl p-4 focus:ring-2 focus:ring-blue-500">
-
-                    </div>
-
-                    <!-- Family -->
-
-                    <div>
-
-                        <label class="font-semibold">
-
-                            Family Members
-
-                        </label>
-
-                        <input
-                        id="family"
-                        type="number"
-
-                        placeholder="Number of Family Members"
-
-                        class="w-full mt-2 border rounded-xl p-4 focus:ring-2 focus:ring-blue-500">
-
-                    </div>
-
-                </div>
-
-                <!-- Current Situation -->
-
-                <div class="mt-10">
-
-                    <label class="font-semibold text-lg">
-
-                        Current Situation
-
-                    </label>
-
-                    <div class="grid md:grid-cols-3 gap-5 mt-5">
-
-                        <label class="status-card">
-
-                            <input type="radio" name="status" value="Safe" hidden>
-
-                            ✅
-
-                            <span>Safe</span>
-
-                        </label>
-
-                        <label class="status-card">
-
-                            <input type="radio" name="status" value="Injured" hidden>
-
-                            🤕
-
-                            <span>Injured</span>
-
-                        </label>
-
-                        <label class="status-card">
-
-                            <input type="radio" name="status" value="Trapped" hidden>
-
-                            🆘
-
-                            <span>Trapped</span>
-
-                        </label>
-
-                    </div>
-
-                </div>
-
-                <!-- Submit -->
-
-                <div class="mt-12 text-right">
-
-                    <button
-                    id="nextAI"
-
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold duration-300">
-
-                        Continue →
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ==========================================
-        STEP 1 : SMART EMERGENCY ANALYSIS
-========================================== -->
-
-<section id="aiPanel" class="py-20 bg-slate-100 hidden">
-
-    <div class="max-w-7xl mx-auto px-4">
-
-        <!-- Main Card -->
-
-        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
-
-            <!-- Header -->
-
-            <div class="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-8">
-
-                <div class="flex items-center gap-5">
-
-                    <div
-                        class="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center text-5xl">
-
-                        🤖
-
-                    </div>
-
-                    <div>
-
-                        <h2 class="text-4xl font-bold text-white">
-
-                            Smart Emergency Analysis
-
-                        </h2>
-
-                        <p class="text-red-100 mt-2">
-
-                            AI analyzes your emergency and recommends the fastest response.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Body -->
-
-            <div class="p-8">
-
-                <!-- Priority -->
-
-                <div class="mb-12">
-
-                    <div class="flex justify-between items-center">
-
-                        <h3 class="text-2xl font-bold">
-
-                            Emergency Priority
-
-                        </h3>
-
-                        <span
-                            id="priorityBadge"
-                            class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">
-
-                            HIGH
-
-                        </span>
-
-                    </div>
-
-                    <div
-                        class="w-full h-4 rounded-full bg-gray-200 mt-5 overflow-hidden">
-
-                        <div
-                            id="priorityBar"
-                            class="bg-red-600 h-4 duration-700"
-                            style="width:90%">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Analysis -->
-
-                <div
-                    id="analysisCards"
-                    class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-                    <!-- Card -->
-
-                    <div
-                        class="rounded-2xl border p-6 hover:shadow-xl duration-300">
-
-                        <div
-                            class="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center text-3xl">
-
-                            🚒
-
-                        </div>
-
-                        <h3 class="font-bold text-xl mt-5">
-
-                            Fire Service
-
-                        </h3>
-
-                        <p
-                            id="fireStation"
-                            class="text-gray-500 mt-3">
-
-                            Waiting...
-
-                        </p>
-
-                    </div>
-
-                    <!-- Card -->
-
-                    <div
-                        class="rounded-2xl border p-6 hover:shadow-xl duration-300">
-
-                        <div
-                            class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-3xl">
-
-                            🏥
-
-                        </div>
-
-                        <h3 class="font-bold text-xl mt-5">
-
-                            Hospital
-
-                        </h3>
-
-                        <p
-                            id="hospitalName"
-                            class="text-gray-500 mt-3">
-
-                            Waiting...
-
-                        </p>
-
-                    </div>
-
-                    <!-- Card -->
-
-                    <div
-                        class="rounded-2xl border p-6 hover:shadow-xl duration-300">
-
-                        <div
-                            class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-3xl">
-
-                            🚑
-
-                        </div>
-
-                        <h3 class="font-bold text-xl mt-5">
-
-                            Ambulance
-
-                        </h3>
-
-                        <p
-                            id="ambulanceNeed"
-                            class="text-gray-500 mt-3">
-
-                            Waiting...
-
-                        </p>
-
-                    </div>
-
-                    <!-- Card -->
-
-                    <div
-                        class="rounded-2xl border p-6 hover:shadow-xl duration-300">
-
-                        <div
-                            class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center text-3xl">
-
-                            📋
-
-                        </div>
-
-                        <h3 class="font-bold text-xl mt-5">
-
-                            AI Advice
-
-                        </h3>
-
-                        <p
-                            id="aiAdvice"
-                            class="text-gray-500 mt-3">
-
-                            Waiting...
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <!-- Bottom -->
-
-                <div
-                    class="mt-10 bg-slate-50 rounded-2xl p-6 border">
-
-                    <h3 class="text-2xl font-bold">
-
-                        AI Summary
-
-                    </h3>
-
-                    <p
-                        id="summaryText"
-                        class="mt-3 text-gray-600 leading-8">
-
-                        Waiting for emergency information...
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-        STEP 6 : SUBMIT REQUEST
-========================================== -->
-
-<section class="py-20 bg-white">
-
-    <div class="max-w-4xl mx-auto px-4">
-
-        <div class="bg-green-600 rounded-3xl p-10 text-center text-white">
-
-            <h2 class="text-4xl font-bold">
-
-                Ready to Submit?
-
-            </h2>
-
-            <p class="mt-4 text-green-100">
-
-                Please review your information before submitting your emergency request.
-
-            </p>
-
-            <button
-                id="submitRequest"
-                class="mt-8 bg-white text-green-700 font-bold px-10 py-4 rounded-xl hover:scale-105 duration-300">
-
-                🚨 Submit Emergency Request
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
 
     </main>
 
@@ -1539,8 +1483,9 @@
 
     <script src="assets/js/location.js"></script>
     <script src="assets/js/serviceData.js"></script>
-    <script src="assets/js/emergency.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="assets/js/emergency.js"></script>  
 
 </body>
 

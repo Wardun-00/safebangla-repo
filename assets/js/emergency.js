@@ -50,21 +50,128 @@ numberBtn?.addEventListener("click", () => {
 
 
 
+// ====================================
+// ===================================
 
 
 
 
 
+/* ==========================================
+        PHONE VALIDATION
+========================================== */
 
-/* ===============================
-    LOCATION BUTTON
-================================ */
+const phoneInput = document.getElementById("phone");
+const phoneStatus = document.getElementById("phoneStatus");
 
-const gpsBtn = document.getElementById("gpsBtn");
+phoneInput?.addEventListener("input", () => {
 
-gpsBtn?.addEventListener("click", () => {
+    const phone = phoneInput.value.trim();
 
-    gpsBtn.innerHTML = "📍 Location Detected";
+    const regex = /^01[3-9]\d{8}$/;
+
+    if (phone === "") {
+
+        phoneStatus.innerHTML =
+            "We will contact you using this number.";
+
+        phoneStatus.className =
+            "text-gray-500 mt-2 block";
+
+        return;
+
+    }
+
+    if (regex.test(phone)) {
+
+        phoneStatus.innerHTML =
+            "✅ Valid Mobile Number";
+
+        phoneStatus.className =
+            "text-green-600 mt-2 block";
+
+    }
+
+    else {
+
+        phoneStatus.innerHTML =
+            "❌ Invalid Mobile Number";
+
+        phoneStatus.className =
+            "text-red-600 mt-2 block";
+
+    }
+
+});
+
+
+
+/* ==========================================
+        EMERGENCY CARD
+========================================== */
+
+const emergencyCards =
+document.querySelectorAll(".emergency-card");
+
+const selectedEmergency =
+document.getElementById("selectedEmergency");
+
+const selectedEmergencyText =
+document.getElementById("selectedEmergencyText");
+
+emergencyCards.forEach(card=>{
+
+    card.addEventListener("click",()=>{
+
+        emergencyCards.forEach(c=>{
+
+            c.classList.remove("active");
+
+            const icon =
+            c.querySelector(".check-icon");
+
+            if(icon){
+
+                icon.classList.add("hidden");
+
+            }
+
+        });
+
+        card.classList.add("active");
+
+        const check =
+        card.querySelector(".check-icon");
+
+        if(check){
+
+            check.classList.remove("hidden");
+
+        }
+
+        selectedEmergency.value =
+        card.dataset.type;
+
+        selectedEmergencyText.innerHTML =
+        "🚨 "+card.dataset.type;
+
+    });
+
+});
+
+
+
+/* ==========================================
+        GPS BUTTON
+========================================== */
+
+const gpsBtn =
+document.getElementById("gpsBtn");
+
+gpsBtn?.addEventListener("click",()=>{
+
+    gpsBtn.innerHTML=
+    "📍 Current Location Detected";
 
     gpsBtn.classList.remove("bg-green-600");
 
@@ -74,254 +181,190 @@ gpsBtn?.addEventListener("click", () => {
 
 
 
-const nextLocation = document.getElementById("nextLocation");
+/* ==========================================
+        FORM SUBMIT
+========================================== */
 
-nextLocation?.addEventListener("click", () => {
+const emergencyForm =
+document.getElementById("emergencyForm");
 
-    alert("Location Saved Successfully");
+emergencyForm?.addEventListener("submit",(e)=>{
 
-});
+    e.preventDefault();
 
+    const name =
+    document.getElementById("fullName").value.trim();
 
+    const phone =
+    document.getElementById("phone").value.trim();
 
+    const division =
+    document.getElementById("division").value;
 
+    const district =
+    document.getElementById("district").value;
 
-/* ===================================
-      Emergency Card
-=================================== */
+    const upazila =
+    document.getElementById("upazila").value;
 
-const cards = document.querySelectorAll(".emergency-card");
-const selectedEmergency = document.getElementById("selectedEmergency");
+    const priority =
+    document.getElementById("priority").value;
 
-cards.forEach(card => {
+    const description =
+    document.getElementById("description").value.trim();
 
-    card.addEventListener("click", () => {
+    const agree =
+    document.getElementById("agree").checked;
 
-        // আগের Active Card Remove
-        cards.forEach(c => {
+    const phoneRegex =
+    /^01[3-9]\d{8}$/;
 
-            c.classList.remove("active");
+    if(name===""){
+
+        Swal.fire({
+
+            icon:"warning",
+
+            title:"Full Name Required"
 
         });
 
-        // নতুন Card Active
-        card.classList.add("active");
+        return;
 
-        // Hidden Input-এ Value Save
-        selectedEmergency.value = card.dataset.type;
+    }
 
-        console.log(selectedEmergency.value);
+    if(!phoneRegex.test(phone)){
 
-        // AI Analysis
-        runAIAnalysis(card.dataset.type);
+        Swal.fire({
 
-    });
+            icon:"warning",
 
-});
-
-/* ==========================================
-        APPLICANT INFORMATION
-========================================== */
-
-const statusCards = document.querySelectorAll(".status-card");
-
-const nextAI = document.getElementById("nextAI");
-
-let selectedStatus = "";
-
-
-/* ==========================================
-        STATUS CARD
-========================================== */
-
-if (statusCards.length > 0) {
-
-    statusCards.forEach(card => {
-
-        card.addEventListener("click", () => {
-
-            // Remove Previous Active Card
-
-            statusCards.forEach(item => {
-
-                item.classList.remove(
-                    "bg-blue-600",
-                    "text-white",
-                    "border-blue-600"
-                );
-
-            });
-
-            // Active Current Card
-
-            card.classList.add(
-                "bg-blue-600",
-                "text-white",
-                "border-blue-600"
-            );
-
-            // Get Radio Button
-
-            const input = card.querySelector("input");
-
-            if (input) {
-
-                input.checked = true;
-
-                selectedStatus = input.value;
-
-            }
-
-            console.log("Selected Status :", selectedStatus);
+            title:"Enter a Valid Mobile Number"
 
         });
 
-    });
+        return;
 
-}
+    }
 
+    if(division===""){
 
-/* ==========================================
-        CONTINUE BUTTON
-========================================== */
+        Swal.fire({
 
-if (nextAI) {
+            icon:"warning",
 
-    nextAI.addEventListener("click", () => {
+            title:"Select Division"
 
-        const fullName =
-            document.getElementById("fullName")?.value.trim() || "";
-
-        const phone =
-            document.getElementById("phone")?.value.trim() || "";
-
-        const family =
-            document.getElementById("family")?.value || "";
-
-        if (fullName === "") {
-
-            alert("Please Enter Your Name");
-
-            return;
-
-        }
-
-        if (phone.length !== 11) {
-
-            alert("Please Enter a Valid Mobile Number");
-
-            return;
-
-        }
-
-        if (selectedStatus === "") {
-
-            alert("Please Select Your Current Situation");
-
-            return;
-
-        }
-
-        alert("✅ Applicant Information Saved Successfully");
-
-        const aiSection = document.getElementById("aiRecommendation");
-
-        if (aiSection) {
-
-            aiSection.scrollIntoView({
-
-                behavior: "smooth"
-
-            });
-
-        }
-
-    });
-
-}
-
-
-/* Continue Button */
-
-nextAI.addEventListener("click", () => {
-
-    const fullName = document.getElementById("fullName").value.trim();
-
-    const phone = document.getElementById("phone").value.trim();
-
-    const family = document.getElementById("family").value;
-
-    if(fullName==""){
-
-        alert("Please Enter Your Name");
+        });
 
         return;
 
     }
 
-    if(phone.length!=11){
+    if(district===""){
 
-        alert("Enter Valid Mobile Number");
+        Swal.fire({
 
-        return;
+            icon:"warning",
 
-    }
+            title:"Select District"
 
-    if(selectedStatus==""){
-
-        alert("Select Current Situation");
+        });
 
         return;
 
     }
 
-    alert("Applicant Information Saved Successfully ✅");
+    if(upazila===""){
 
-    document.getElementById("aiRecommendation").scrollIntoView({
+        Swal.fire({
 
-        behavior:"smooth"
+            icon:"warning",
 
-    });
+            title:"Select Upazila"
 
-});
-
-
-
-/* ==========================================
-        SUBMIT REQUEST
-========================================== */
-
-const submitBtn = document.getElementById("submitRequest");
-
-submitBtn.addEventListener("click", () => {
-
-    const fullName = document.getElementById("fullName").value.trim();
-
-    const phone = document.getElementById("phone").value.trim();
-
-    const division = document.getElementById("division").value;
-
-    const district = document.getElementById("district").value;
-
-    const upazila = document.getElementById("upazila").value;
-
-    const emergency = document.getElementById("selectedEmergency").value;
-
-    if(fullName=="" || phone=="" || division=="" || district=="" || upazila=="" || emergency==""){
-
-        alert("Please Complete All Required Information");
+        });
 
         return;
 
     }
 
-    const trackingID="SB-"+Date.now();
+    if(selectedEmergency.value===""){
+
+        Swal.fire({
+
+            icon:"warning",
+
+            title:"Select Emergency Type"
+
+        });
+
+        return;
+
+    }
+
+    if(priority===""){
+
+        Swal.fire({
+
+            icon:"warning",
+
+            title:"Select Emergency Priority"
+
+        });
+
+        return;
+
+    }
+
+    if(description===""){
+
+        Swal.fire({
+
+            icon:"warning",
+
+            title:"Please Describe the Emergency"
+
+        });
+
+        return;
+
+    }
+
+    if(!agree){
+
+        Swal.fire({
+
+            icon:"warning",
+
+            title:"Please Accept the Declaration"
+
+        });
+
+        return;
+
+    }
+
+
+
+    /* ======================
+            Tracking ID
+    ====================== */
+
+    const trackingID =
+    "SB-"+Date.now();
+
+
+
+    /* ======================
+            Save LocalStorage
+    ====================== */
 
     const request={
 
         trackingID,
 
-        fullName,
+        name,
 
         phone,
 
@@ -331,7 +374,11 @@ submitBtn.addEventListener("click", () => {
 
         upazila,
 
-        emergency,
+        emergency:selectedEmergency.value,
+
+        priority,
+
+        description,
 
         status:"Pending",
 
@@ -339,193 +386,104 @@ submitBtn.addEventListener("click", () => {
 
     };
 
-    let requests=JSON.parse(localStorage.getItem("safeBanglaRequests")) || [];
+    let requests=
+    JSON.parse(localStorage.getItem("safeBanglaRequests")) || [];
 
     requests.push(request);
 
-    localStorage.setItem("safeBanglaRequests",JSON.stringify(requests));
+    localStorage.setItem(
 
-    alert(
+        "safeBanglaRequests",
 
-`✅ Request Submitted Successfully
+        JSON.stringify(requests)
 
-Tracking ID:
-${trackingID}
+    );
 
-Please save this Tracking ID.`
 
-);
 
-    window.location.href="dashboard.html";
-
-});
-
-
-
-
-
-function runAIAnalysis(emergency){
-
-    const panel = document.getElementById("aiPanel");
-
-    panel.classList.remove("hidden");
-
-    const division = document.getElementById("division").value;
-    const district = document.getElementById("district").value;
-
-    const priority = document.getElementById("priorityBadge");
-    const bar = document.getElementById("priorityBar");
-
-    const hospital = document.getElementById("hospitalName");
-    const fire = document.getElementById("fireStation");
-    const police = document.getElementById("policeStation");
-    const shelter = document.getElementById("shelterName");
-    const phone = document.getElementById("emergencyPhone");
-
-    const ambulance = document.getElementById("ambulanceNeed");
-    const advice = document.getElementById("aiAdvice");
-    const summary = document.getElementById("summaryText");
-
-
-    /* ===============================
-            Service Data
-    =============================== */
-
-    if(serviceData[division] && serviceData[division][district]){
-
-        const service = serviceData[division][district];
-
-        hospital.innerHTML = service.hospital;
-
-        fire.innerHTML = service.fire;
-
-        police.innerHTML = service.police;
-
-        shelter.innerHTML = service.shelter;
-
-        phone.innerHTML = service.phone;
-
-    }else{
-
-        hospital.innerHTML = "No Data";
-
-        fire.innerHTML = "No Data";
-
-        police.innerHTML = "No Data";
-
-        shelter.innerHTML = "No Data";
-
-        phone.innerHTML = "999";
-
-    }
-
-
-    /* ===============================
-            AI Analysis
-    =============================== */
-
-    switch(emergency){
-
-        case "Fire":
-
-            priority.innerHTML="CRITICAL";
-
-            priority.className="bg-red-600 text-white px-6 py-2 rounded-full";
-
-            bar.style.width="100%";
-
-            bar.className="bg-red-600 h-4 duration-700";
-
-            ambulance.innerHTML="Required Immediately";
-
-            advice.innerHTML="Evacuate immediately.";
-
-            summary.innerHTML="Fire emergency detected. Fire Service and Ambulance have the highest priority.";
-
-            break;
-
-
-        case "Flood":
-
-            priority.innerHTML="HIGH";
-
-            priority.className="bg-blue-600 text-white px-6 py-2 rounded-full";
-
-            bar.style.width="85%";
-
-            bar.className="bg-blue-600 h-4 duration-700";
-
-            ambulance.innerHTML="Required";
-
-            advice.innerHTML="Move to a safe shelter.";
-
-            summary.innerHTML="Flood emergency detected. Stay on higher ground and wait for rescue.";
-
-            break;
-
-
-        case "Medical":
-
-            priority.innerHTML="MEDIUM";
-
-            priority.className="bg-green-600 text-white px-6 py-2 rounded-full";
-
-            bar.style.width="65%";
-
-            bar.className="bg-green-600 h-4 duration-700";
-
-            ambulance.innerHTML="Required";
-
-            advice.innerHTML="Keep the patient stable.";
-
-            summary.innerHTML="Medical emergency detected. Nearest hospital has been recommended.";
-
-            break;
-
-
-        case "Road Accident":
-
-            priority.innerHTML="HIGH";
-
-            priority.className="bg-orange-500 text-white px-6 py-2 rounded-full";
-
-            bar.style.width="90%";
-
-            bar.className="bg-orange-500 h-4 duration-700";
-
-            ambulance.innerHTML="Urgent";
-
-            advice.innerHTML="Do not move seriously injured victims.";
-
-            summary.innerHTML="Road accident detected. Trauma care and emergency response are recommended.";
-
-            break;
-
-    }
-
-}
-
-
-
-
-document.getElementById("submitEmergency").addEventListener("click", function () {
+    /* ======================
+        Success Popup
+    ====================== */
 
     Swal.fire({
 
-        icon: "success",
+        icon:"success",
 
-        title: "Request Sent Successfully!",
+        title:"Emergency Request Submitted",
 
-        text: "Your emergency request has been received. Our response team will contact you shortly.",
+        html:`
 
-        confirmButtonColor: "#16a34a",
+        <h3 style="color:#16a34a">
 
-        confirmButtonText: "OK"
+        🇧🇩 Government Emergency Command Center
+
+        </h3>
+
+        <br>
+
+        <b>
+
+        Tracking ID
+
+        </b>
+
+        <br>
+
+        <span style="font-size:20px;color:#dc2626">
+
+        ${trackingID}
+
+        </span>
+
+        <br><br>
+
+        Your emergency request has been successfully received.
+
+        <br><br>
+
+        The nearest Government Emergency Response Team has been notified.
+
+        <br><br>
+
+        Please keep your mobile phone active.
+        Our response team may contact you shortly.
+
+        `,
+
+        confirmButtonColor:"#16a34a",
+
+        confirmButtonText:"OK"
+
+    }).then(()=>{
+
+        emergencyForm.reset();
+
+        selectedEmergency.value="";
+
+        selectedEmergencyText.innerHTML=
+        "No Emergency Selected";
+
+        emergencyCards.forEach(card=>{
+
+            card.classList.remove("active");
+
+            const icon=
+            card.querySelector(".check-icon");
+
+            if(icon){
+
+                icon.classList.add("hidden");
+
+            }
+
+        });
+
+        phoneStatus.innerHTML=
+        "We will contact you using this number.";
+
+        phoneStatus.className=
+        "text-gray-500 mt-2 block";
 
     });
 
 });
-
-
-
-
