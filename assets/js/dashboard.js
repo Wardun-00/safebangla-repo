@@ -1,211 +1,303 @@
 /* ==========================================
-        DASHBOARD
+        LOAD REQUEST DATA
 ========================================== */
 
-const table = document.getElementById("requestTable");
+const requests = JSON.parse(localStorage.getItem("safeBanglaRequests")) || [];
 
-let requests = JSON.parse(localStorage.getItem("safeBanglaRequests")) || [];
+if (requests.length === 0) {
 
-function loadTable(data){
+    console.log("No Request Found");
 
-    table.innerHTML="";
+} else {
 
-    data.forEach((item,index)=>{
+    const latest = requests[requests.length - 1];
 
-        table.innerHTML+=`
+    /* ===============================
+            HERO
+    ============================== */
 
-        <tr class="border-b hover:bg-gray-50">
+    document.getElementById("trackingID").innerHTML =
+        latest.trackingID;
 
-            <td class="p-4">${item.trackingID}</td>
+    document.getElementById("dashboardEmergency").innerHTML =
+        latest.emergency;
 
-            <td class="p-4">${item.fullName}</td>
+    document.getElementById("dashboardPriority").innerHTML =
+        latest.priority;
 
-            <td class="p-4">${item.emergency}</td>
+    document.getElementById("dashboardDate").innerHTML =
+        latest.date;
 
-            <td class="p-4">
+    /* ===============================
+            REQUEST SUMMARY
+    ============================== */
 
-                ${item.district}
+    document.getElementById("summaryName").innerHTML =
+        latest.name;
 
-            </td>
+    document.getElementById("summaryPhone").innerHTML =
+        latest.phone;
 
-            <td class="p-4">
+    document.getElementById("summaryEmergency").innerHTML =
+        latest.emergency;
 
-                <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">
+    document.getElementById("summaryPriority").innerHTML =
+        latest.priority;
 
-                    ${item.status}
+    document.getElementById("summaryLocation").innerHTML =
+        latest.division + " ➜ " +
+        latest.district + " ➜ " +
+        latest.upazila;
 
-                </span>
+    document.getElementById("summaryDescription").innerHTML =
+        latest.description;
 
-            </td>
+    /* ===============================
+            RESPONSE
+    ============================== */
 
-            <td class="p-4">
-
-                <button
-
-                onclick="viewRequest(${index})"
-
-                class="bg-blue-600 text-white px-4 py-2 rounded-lg">
-
-                    View
-
-                </button>
-
-            </td>
-
-        </tr>
-
-        `;
-
-    });
-
-}
-
-loadTable(requests);
-
-
-
-/* Search */
-
-document.getElementById("searchInput")
-
-.addEventListener("keyup",function(){
-
-    const value=this.value.toLowerCase();
-
-    const filter=requests.filter(item=>{
-
-        return item.trackingID.toLowerCase().includes(value);
-
-    });
-
-    loadTable(filter);
-
-});
-
-
-/* View */
-
-let currentIndex = null;
-
-function viewRequest(index){
-
-    currentIndex=index;
-
-    const item=requests[index];
-
-    document.getElementById("requestModal").classList.remove("hidden");
-
-    document.getElementById("requestModal").classList.add("flex");
-
-    document.getElementById("mTracking").innerHTML=item.trackingID;
-
-    document.getElementById("mName").innerHTML=item.fullName;
-
-    document.getElementById("mPhone").innerHTML=item.phone;
-
-    document.getElementById("mEmergency").innerHTML=item.emergency;
-
-    document.getElementById("mLocation").innerHTML=
-
-    item.division+" / "+item.district+" / "+item.upazila;
-
-    document.getElementById("mStatus").innerHTML=item.status;
+    document.getElementById("trackingCard").innerHTML =
+        latest.trackingID;
 
 }
 
-/* Close */
+/* ==========================================
+        LIVE PROGRESS
+========================================== */
 
-document.getElementById("closeModal")
+setTimeout(() => {
 
-.addEventListener("click",()=>{
+    document.getElementById("progressBar").style.width = "45%";
 
-document.getElementById("requestModal")
+    document.getElementById("step2Circle").className =
+        "w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg";
 
-.classList.add("hidden");
+    document.getElementById("step2Circle").innerHTML = "✓";
 
-document.getElementById("requestModal")
+    document.getElementById("step3Circle").className =
+        "w-12 h-12 bg-yellow-500 animate-pulse text-white rounded-full flex items-center justify-center mx-auto shadow-lg";
 
-.classList.remove("flex");
+    document.getElementById("statusMessage").innerHTML = `
 
-});
+    <div class="flex items-center gap-4">
 
+        <div class="text-5xl">🚑</div>
 
-/* Approve */
+        <div>
 
-document.getElementById("approveBtn")
+            <h3 class="font-bold text-xl">
 
-.addEventListener("click",()=>{
+                Emergency Team Assigned
 
-requests[currentIndex].status="Approved";
+            </h3>
 
-localStorage.setItem(
-"safeBanglaRequests",
-JSON.stringify(requests)
-);
+            <p class="text-gray-600 mt-2">
 
-loadTable(requests);
+                The nearest emergency response team has been assigned and is preparing to respond.
 
-updateStatistics();
+            </p>
 
-document.getElementById("closeModal").click();
+        </div>
 
-});
+    </div>
 
+    `;
 
-/* Reject */
+    document.getElementById("responseStatus").innerHTML =
+        "Team Assigned";
 
-document.getElementById("rejectBtn")
-
-.addEventListener("click",()=>{
-
-requests[currentIndex].status="Rejected";
-
-localStorage.setItem(
-"safeBanglaRequests",
-JSON.stringify(requests)
-);
-
-loadTable(requests);
-
-updateStatistics();
-
-document.getElementById("closeModal").click();
-
-});
+}, 5000);
 
 
-/* Print */
 
-document.getElementById("printBtn")
+setTimeout(() => {
 
-.addEventListener("click",()=>{
+    document.getElementById("progressBar").style.width = "70%";
 
-window.print();
+    document.getElementById("step3Circle").className =
+        "w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg";
 
-});
+    document.getElementById("step3Circle").innerHTML = "✓";
+
+    document.getElementById("step4Circle").className =
+        "w-12 h-12 bg-yellow-500 animate-pulse text-white rounded-full flex items-center justify-center mx-auto shadow-lg";
+
+    document.getElementById("statusMessage").innerHTML = `
+
+    <div class="flex items-center gap-4">
+
+        <div class="text-5xl">🚒</div>
+
+        <div>
+
+            <h3 class="font-bold text-xl">
+
+                Response Team On The Way
+
+            </h3>
+
+            <p class="text-gray-600 mt-2">
+
+                The emergency response team is travelling to your location.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    `;
+
+    document.getElementById("responseStatus").innerHTML =
+        "On The Way";
+
+}, 5000);
+
+
+
+setTimeout(() => {
+
+    document.getElementById("progressBar").style.width = "100%";
+
+    document.getElementById("step4Circle").className =
+        "w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg";
+
+    document.getElementById("step4Circle").innerHTML = "✓";
+
+    document.getElementById("step5Circle").className =
+        "w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg";
+
+    document.getElementById("step5Circle").innerHTML = "✓";
+
+    document.getElementById("statusMessage").innerHTML = `
+
+    <div class="flex items-center gap-4">
+
+        <div class="text-5xl">✅</div>
+
+        <div>
+
+            <h3 class="font-bold text-xl">
+
+                Emergency Response Completed
+
+            </h3>
+
+            <p class="text-gray-600 mt-2">
+
+                Your emergency request has been completed successfully.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    `;
+
+    document.getElementById("responseStatus").innerHTML =
+        "Completed";
+
+}, 15000);
+
+/* ==========================================
+        RANDOM RESPONSE TIME
+========================================== */
+
+const arrivalTime =
+document.getElementById("arrivalTime");
+
+if(arrivalTime){
+
+    const randomTime =
+    Math.floor(Math.random()*8)+5;
+
+    arrivalTime.innerHTML =
+    randomTime+" Minutes";
+
+}
 
 
 
 /* ==========================================
-        DASHBOARD STATISTICS
+        COPY TRACKING ID
 ========================================== */
 
-function updateStatistics(){
+const copyTracking =
+document.getElementById("copyTracking");
 
-    const total=requests.length;
+if(copyTracking){
 
-    const pending=requests.filter(item=>item.status=="Pending").length;
+    copyTracking.addEventListener("click",()=>{
 
-    const approved=requests.filter(item=>item.status=="Approved").length;
+        const trackingID =
+        document.getElementById("trackingCard").innerText;
 
-    const rejected=requests.filter(item=>item.status=="Rejected").length;
+        navigator.clipboard.writeText(trackingID);
 
-    document.getElementById("totalRequest").innerHTML=total;
+        Swal.fire({
 
-    document.getElementById("pendingRequest").innerHTML=pending;
+            icon:"success",
 
-    document.getElementById("approvedRequest").innerHTML=approved;
+            title:"Tracking ID Copied",
 
-    document.getElementById("rejectedRequest").innerHTML=rejected;
+            text:"Your Tracking ID has been copied successfully.",
+
+            timer:1800,
+
+            showConfirmButton:false
+
+        });
+
+    });
 
 }
+
+
+
+/* ==========================================
+        VIEW MY REQUEST
+========================================== */
+
+const viewRequestBtn =
+document.getElementById("viewRequestBtn");
+
+if(viewRequestBtn){
+
+    viewRequestBtn.addEventListener("click",()=>{
+
+        document.getElementById("requestSummary")
+        .scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+}
+
+
+
+/* ==========================================
+        NO REQUEST FOUND
+========================================== */
+
+if(requests.length===0){
+
+    document.querySelectorAll(".loading-data")
+    .forEach(item=>{
+
+        item.innerHTML="No Request Found";
+
+    });
+
+}
+
+
+
+/* ==========================================
+        CONSOLE
+========================================== */
+
+console.log("Dashboard Loaded Successfully");

@@ -607,6 +607,127 @@ select:focus{
 
 
 
+/* ==========================================
+        REQUEST SUMMARY
+========================================== */
+
+.summary-card{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    transition:.35s;
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.summary-title{
+
+    color:#6b7280;
+
+    font-size:15px;
+
+    margin-bottom:10px;
+
+}
+
+.summary-value{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+
+/* ==========================================
+        LIVE TIMELINE
+========================================== */
+
+.timeline-item{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+}
+
+.timeline-dot{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    margin-top:8px;
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================
+        RESPONSE INFORMATION
+========================================== */
+
+.response-card{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:20px;
+
+    padding:24px;
+
+    transition:.35s;
+
+}
+
+.response-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.response-title{
+
+    color:#6b7280;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+}
+
+.response-value{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+
+
 
 
 /* ==========================================

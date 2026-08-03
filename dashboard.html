@@ -335,289 +335,79 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
 
         <div class="pt-20"></div>
 
-        <!-- ==========================================
-        DASHBOARD STATISTICS
+
+
+<!-- ==========================================
+        DASHBOARD HERO
 ========================================== -->
 
-<section class="mb-10 mt-10">
-
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <div class="bg-white rounded-2xl shadow-lg p-6">
-
-            <div class="flex items-center justify-between">
-
-                <div>
-
-                    <p class="text-gray-500">
-
-                        Total Requests
-
-                    </p>
-
-                    <h2
-                    id="totalRequest"
-
-                    class="text-4xl font-bold mt-2">
-
-                        0
-
-                    </h2>
-
-                </div>
-
-                <div
-                class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
-
-                    📋
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-6">
-
-            <div class="flex items-center justify-between">
-
-                <div>
-
-                    <p class="text-gray-500">
-
-                        Pending
-
-                    </p>
-
-                    <h2
-                    id="pendingRequest"
-
-                    class="text-4xl font-bold text-yellow-500 mt-2">
-
-                        0
-
-                    </h2>
-
-                </div>
-
-                <div
-                class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center">
-
-                    🟡
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-6">
-
-            <div class="flex items-center justify-between">
-
-                <div>
-
-                    <p class="text-gray-500">
-
-                        Approved
-
-                    </p>
-
-                    <h2
-                    id="approvedRequest"
-
-                    class="text-4xl font-bold text-green-600 mt-2">
-
-                        0
-
-                    </h2>
-
-                </div>
-
-                <div
-                class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-
-                    ✅
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-6">
-
-            <div class="flex items-center justify-between">
-
-                <div>
-
-                    <p class="text-gray-500">
-
-                        Rejected
-
-                    </p>
-
-                    <h2
-                    id="rejectedRequest"
-
-                    class="text-4xl font-bold text-red-600 mt-2">
-
-                        0
-
-                    </h2>
-
-                </div>
-
-                <div
-                class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center">
-
-                    ❌
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-        <section class="py-12">
+<section class="py-20 bg-gradient-to-br from-red-700 via-red-600 to-red-500">
 
     <div class="max-w-7xl mx-auto px-4">
 
-        <div class="flex justify-between items-center mb-8">
-
-            <div>
-
-                <h2 class="text-4xl font-bold">
-
-                    Emergency Requests
-
-                </h2>
-
-                <p class="text-gray-500 mt-2">
-
-                    All Submitted Emergency Requests
-
-                </p>
-
-            </div>
-
-            <input
-                id="searchInput"
-                type="text"
-                placeholder="Search Tracking ID..."
-
-                class="border rounded-xl px-5 py-3 w-80">
-
-        </div>
-
-        <div class="overflow-x-auto">
-
-            <table class="min-w-full bg-white rounded-2xl shadow">
-
-                <thead class="bg-green-600 text-white">
-
-                    <tr>
-
-                        <th class="p-4">Tracking ID</th>
-
-                        <th class="p-4">Name</th>
-
-                        <th class="p-4">Emergency</th>
-
-                        <th class="p-4">Location</th>
-
-                        <th class="p-4">Status</th>
-
-                        <th class="p-4">Action</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="requestTable">
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-
-
-
-
-        <!-- ==========================================
-            DASHBOARD HERO
-========================================== -->
-
-<section class="relative overflow-hidden bg-gradient-to-r from-slate-900 via-green-900 to-slate-900 py-20">
-
-    <!-- Background Blur -->
-
-    <div class="absolute -top-24 -left-20 w-80 h-80 bg-green-500 rounded-full blur-[150px] opacity-20"></div>
-
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-500 rounded-full blur-[150px] opacity-20"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
 
             <!-- Left -->
 
-            <div data-aos="fade-up">
+            <div class="text-white">
 
-                <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-green-300 px-5 py-2 rounded-full">
+                <span
+                    class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-lg px-5 py-2 rounded-full text-sm font-semibold border border-white/20">
 
-                    <i class="fa-solid fa-shield-halved"></i>
-
-                    Government Monitoring Dashboard
+                    🇧🇩 Government Emergency Response System
 
                 </span>
 
-                <h1 class="text-5xl md:text-6xl font-bold text-white mt-8 leading-tight">
+                <h1
+                    class="text-4xl lg:text-6xl font-extrabold mt-6 leading-tight">
 
-                    National Emergency
+                    Emergency Request
+                    <br>
 
-                    <span class="text-green-400">
+                    <span class="text-yellow-300">
 
-                        Command Center
+                        Successfully Received
 
                     </span>
 
                 </h1>
 
-                <p class="text-gray-300 text-lg leading-8 mt-8">
+                <p
+                    class="mt-6 text-lg text-red-100 leading-8 max-w-xl">
 
-                    Monitor emergency requests, rescue teams,
-                    ambulance services and hospitals from one
-                    centralized government dashboard.
+                    Your emergency request has been securely received by the
+                    SafeBangla Emergency Response Center.
+
+                    Please keep your mobile phone active.
+                    Our emergency team is reviewing your request.
 
                 </p>
 
-                <div class="flex flex-wrap gap-4 mt-10">
+                <!-- Buttons -->
 
-                    <button class="bg-red-600 hover:bg-red-700 px-7 py-4 rounded-xl text-white font-semibold duration-300">
+                <div class="flex flex-wrap gap-5 mt-10">
 
-                        🚨 Active Requests
+                    <button
+                        id="viewRequestBtn"
+                        class="bg-white text-red-700 px-8 py-4 rounded-2xl font-bold shadow-xl hover:scale-105 duration-300">
+
+                        <i class="fa-solid fa-file-lines me-2"></i>
+
+                        View My Request
 
                     </button>
 
-                    <button class="bg-white/10 hover:bg-white/20 backdrop-blur-md px-7 py-4 rounded-xl text-white duration-300">
+                    <a
 
-                        📊 View Analytics
+                        href="tel:999"
 
-                    </button>
+                        class="bg-red-900 hover:bg-black text-white px-8 py-4 rounded-2xl font-bold shadow-xl duration-300">
+
+                        <i class="fa-solid fa-phone-volume me-2"></i>
+
+                        Emergency Call (999)
+
+                    </a>
 
                 </div>
 
@@ -625,79 +415,46 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
 
             <!-- Right -->
 
-            <div data-aos="fade-left">
+            <div>
 
-                <div class="bg-white rounded-3xl p-8 shadow-2xl">
+                <div
+                    class="bg-white rounded-3xl shadow-2xl p-8">
 
-                    <h3 class="text-2xl font-bold">
+                    <div class="flex justify-between items-center">
 
-                        System Status
+                        <h2
+                            class="text-2xl font-bold">
 
-                    </h3>
+                            Current Status
 
-                    <div class="space-y-6 mt-8">
+                        </h2>
 
-                        <div class="flex justify-between items-center">
+                        <span
+                            id="statusBadge"
+                            class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full font-semibold animate-pulse">
 
-                            <span>Government Server</span>
+                            🟡 Under Review
 
-                            <span class="text-green-600 font-bold">
+                        </span>
 
-                                ● Online
+                    </div>
 
-                            </span>
+                    <hr class="my-6">
 
-                        </div>
+                    <div class="space-y-5">
 
-                        <hr>
+                        <div
+                            class="flex justify-between">
 
-                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500">
 
-                            <span>Emergency Requests</span>
-
-                            <span class="text-red-600 font-bold">
-
-                                248 Active
-
-                            </span>
-
-                        </div>
-
-                        <hr>
-
-                        <div class="flex justify-between items-center">
-
-                            <span>Rescue Teams</span>
-
-                            <span class="text-green-600 font-bold">
-
-                                82 Active
+                                Tracking ID
 
                             </span>
 
-                        </div>
-
-                        <hr>
-
-                        <div class="flex justify-between items-center">
-
-                            <span>Hospitals Connected</span>
-
-                            <span class="text-blue-600 font-bold">
-
-                                312
-
-                            </span>
-
-                        </div>
-
-                        <hr>
-
-                        <div class="flex justify-between items-center">
-
-                            <span>Last Update</span>
-
-                            <span id="dashboardTime" class="font-bold text-gray-700">
+                            <span
+                                id="trackingID"
+                                class="font-bold text-red-600">
 
                                 Loading...
 
@@ -705,244 +462,126 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
 
                         </div>
 
+                        <div
+                            class="flex justify-between">
+
+                            <span class="text-gray-500">
+
+                                Emergency
+
+                            </span>
+
+                            <span
+                                id="dashboardEmergency"
+                                class="font-bold">
+
+                                Loading...
+
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="flex justify-between">
+
+                            <span class="text-gray-500">
+
+                                Priority
+
+                            </span>
+
+                            <span
+                                id="dashboardPriority"
+                                class="font-bold text-red-600">
+
+                                Loading...
+
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="flex justify-between">
+
+                            <span class="text-gray-500">
+
+                                Submitted
+
+                            </span>
+
+                            <span
+                                id="dashboardDate"
+                                class="font-semibold">
+
+                                Loading...
+
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="flex justify-between">
+
+                            <span class="text-gray-500">
+
+                                Estimated Response
+
+                            </span>
+
+                            <span
+                                id="responseTime"
+                                class="font-bold text-green-600">
+
+                                5-10 Minutes
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Success -->
+
+                    <div
+                        class="mt-8 rounded-2xl bg-green-50 border border-green-200 p-5">
+
+                        <div class="flex gap-4">
+
+                            <div
+                                class="text-4xl">
+
+                                ✅
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-bold text-green-700">
+
+                                    Request Confirmed
+
+                                </h3>
+
+                                <p
+                                    class="text-gray-600 mt-2 leading-7">
+
+                                    Your request has been registered successfully.
+
+                                    Our Government Emergency Response Team
+                                    is reviewing your request.
+
+                                    Please keep your mobile phone switched on.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-        <!-- Dashboard Hero -->
-
-        <!-- ==========================================
-            OVERVIEW STATISTICS
-========================================== -->
-
-<section class="py-20 bg-slate-100">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Heading -->
-
-        <div class="mb-12" data-aos="fade-up">
-
-            <h2 class="text-4xl font-bold text-gray-900">
-
-                Today's Overview
-
-            </h2>
-
-            <p class="mt-3 text-gray-500">
-
-                Real-time statistics from the SafeBangla Emergency System.
-
-            </p>
-
-        </div>
-
-        <!-- Cards -->
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-
-            <!-- Card -->
-
-            <div data-aos="zoom-in"
-                class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-red-200 hover:-translate-y-2 duration-500">
-
-                <div class="flex justify-between items-center">
-
-                    <i class="fa-solid fa-triangle-exclamation text-4xl text-red-600"></i>
-
-                    <span class="text-red-600 text-sm font-semibold">
-
-                        +12%
-
-                    </span>
-
-                </div>
-
-                <h2 id="activeCounter"
-                    class="text-4xl font-bold mt-6">
-
-                    248
-
-                </h2>
-
-                <p class="mt-2 text-gray-500">
-
-                    Active Cases
-
-                </p>
-
-            </div>
-
-            <!-- Card -->
-
-            <div data-aos="zoom-in"
-                data-aos-delay="100"
-                class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-yellow-200 hover:-translate-y-2 duration-500">
-
-                <div class="flex justify-between items-center">
-
-                    <i class="fa-solid fa-clock text-4xl text-yellow-500"></i>
-
-                    <span class="text-yellow-600 text-sm font-semibold">
-
-                        Pending
-
-                    </span>
-
-                </div>
-
-                <h2 id="pendingCounter"
-                    class="text-4xl font-bold mt-6">
-
-                    96
-
-                </h2>
-
-                <p class="mt-2 text-gray-500">
-
-                    Pending
-
-                </p>
-
-            </div>
-
-            <!-- Card -->
-
-            <div data-aos="zoom-in"
-                data-aos-delay="200"
-                class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-green-200 hover:-translate-y-2 duration-500">
-
-                <div class="flex justify-between items-center">
-
-                    <i class="fa-solid fa-circle-check text-4xl text-green-600"></i>
-
-                    <span class="text-green-600 text-sm font-semibold">
-
-                        Done
-
-                    </span>
-
-                </div>
-
-                <h2 id="completedCounter"
-                    class="text-4xl font-bold mt-6">
-
-                    1580
-
-                </h2>
-
-                <p class="mt-2 text-gray-500">
-
-                    Completed
-
-                </p>
-
-            </div>
-
-            <!-- Card -->
-
-            <div data-aos="zoom-in"
-                data-aos-delay="300"
-                class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-blue-200 hover:-translate-y-2 duration-500">
-
-                <div class="flex justify-between items-center">
-
-                    <i class="fa-solid fa-truck-medical text-4xl text-blue-600"></i>
-
-                    <span class="text-blue-600 text-sm font-semibold">
-
-                        Online
-
-                    </span>
-
-                </div>
-
-                <h2 id="ambulanceCounter"
-                    class="text-4xl font-bold mt-6">
-
-                    142
-
-                </h2>
-
-                <p class="mt-2 text-gray-500">
-
-                    Ambulances
-
-                </p>
-
-            </div>
-
-            <!-- Card -->
-
-            <div data-aos="zoom-in"
-                data-aos-delay="400"
-                class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-purple-200 hover:-translate-y-2 duration-500">
-
-                <div class="flex justify-between items-center">
-
-                    <i class="fa-solid fa-hospital text-4xl text-purple-600"></i>
-
-                    <span class="text-purple-600 text-sm font-semibold">
-
-                        Ready
-
-                    </span>
-
-                </div>
-
-                <h2 id="hospitalCounter"
-                    class="text-4xl font-bold mt-6">
-
-                    312
-
-                </h2>
-
-                <p class="mt-2 text-gray-500">
-
-                    Hospitals
-
-                </p>
-
-            </div>
-
-            <!-- Card -->
-
-            <div data-aos="zoom-in"
-                data-aos-delay="500"
-                class="bg-white rounded-3xl p-6 shadow-lg hover:shadow-indigo-200 hover:-translate-y-2 duration-500">
-
-                <div class="flex justify-between items-center">
-
-                    <i class="fa-solid fa-user-shield text-4xl text-indigo-600"></i>
-
-                    <span class="text-indigo-600 text-sm font-semibold">
-
-                        Active
-
-                    </span>
-
-                </div>
-
-                <h2 id="rescueCounter"
-                    class="text-4xl font-bold mt-6">
-
-                    824
-
-                </h2>
-
-                <p class="mt-2 text-gray-500">
-
-                    Rescue Teams
-
-                </p>
 
             </div>
 
@@ -954,1058 +593,183 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
 
 
 <!-- ==========================================
-        LIVE EMERGENCY REQUESTS
-========================================== -->
-
-<section class="py-20 bg-white">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Heading -->
-
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
-
-            <div>
-
-                <h2 class="text-3xl md:text-4xl font-bold">
-
-                    Live Emergency Requests
-
-                </h2>
-
-                <p class="text-gray-500 mt-2">
-
-                    Latest emergency reports received from citizens.
-
-                </p>
-
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-3">
-
-                <input
-                    type="text"
-                    placeholder="Search Request..."
-                    class="border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-green-500">
-
-                <button
-                    class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl duration-300">
-
-                    Search
-
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- Responsive Table -->
-
-        <div class="overflow-x-auto rounded-3xl shadow-xl">
-
-            <table class="min-w-[1000px] w-full">
-
-                <thead class="bg-slate-900 text-white">
-
-                    <tr>
-
-                        <th class="px-6 py-4 text-left">ID</th>
-
-                        <th class="px-6 py-4 text-left">Citizen</th>
-
-                        <th class="px-6 py-4 text-left">Location</th>
-
-                        <th class="px-6 py-4 text-left">Emergency</th>
-
-                        <th class="px-6 py-4 text-left">Priority</th>
-
-                        <th class="px-6 py-4 text-left">Assigned Team</th>
-
-                        <th class="px-6 py-4 text-left">Status</th>
-
-                        <th class="px-6 py-4 text-center">Action</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody class="bg-white">
-
-                    <tr class="border-b hover:bg-slate-50 duration-300">
-
-                        <td class="px-6 py-5 font-semibold">SB-1001</td>
-
-                        <td class="px-6 py-5">Rahim Ahmed</td>
-
-                        <td class="px-6 py-5">Dhaka</td>
-
-                        <td class="px-6 py-5">Flood</td>
-
-                        <td class="px-6 py-5">
-
-                            <span class="bg-red-100 text-red-600 px-4 py-1 rounded-full text-sm">
-
-                                High
-
-                            </span>
-
-                        </td>
-
-                        <td class="px-6 py-5">
-
-                            Army Team-02
-
-                        </td>
-
-                        <td class="px-6 py-5">
-
-                            <span class="bg-yellow-100 text-yellow-600 px-4 py-1 rounded-full text-sm">
-
-                                Pending
-
-                            </span>
-
-                        </td>
-
-                        <td class="px-6 py-5 text-center">
-
-                            <button
-                                class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg">
-
-                                View
-
-                            </button>
-
-                        </td>
-
-                    </tr>
-
-                    <tr class="border-b hover:bg-slate-50 duration-300">
-
-                        <td class="px-6 py-5 font-semibold">SB-1002</td>
-
-                        <td class="px-6 py-5">Karim Hasan</td>
-
-                        <td class="px-6 py-5">Chattogram</td>
-
-                        <td class="px-6 py-5">Fire</td>
-
-                        <td class="px-6 py-5">
-
-                            <span class="bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm">
-
-                                Medium
-
-                            </span>
-
-                        </td>
-
-                        <td class="px-6 py-5">
-
-                            Fire Unit-05
-
-                        </td>
-
-                        <td class="px-6 py-5">
-
-                            <span class="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-sm">
-
-                                Processing
-
-                            </span>
-
-                        </td>
-
-                        <td class="px-6 py-5 text-center">
-
-                            <button
-                                class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg">
-
-                                View
-
-                            </button>
-
-                        </td>
-
-                    </tr>
-
-                    <tr class="border-b hover:bg-slate-50 duration-300">
-
-                        <td class="px-6 py-5 font-semibold">SB-1003</td>
-
-                        <td class="px-6 py-5">Nusrat Jahan</td>
-
-                        <td class="px-6 py-5">Sylhet</td>
-
-                        <td class="px-6 py-5">Medical</td>
-
-                        <td class="px-6 py-5">
-
-                            <span class="bg-green-100 text-green-600 px-4 py-1 rounded-full text-sm">
-
-                                Low
-
-                            </span>
-
-                        </td>
-
-                        <td class="px-6 py-5">
-
-                            Ambulance-12
-
-                        </td>
-
-                        <td class="px-6 py-5">
-
-                            <span class="bg-green-100 text-green-600 px-4 py-1 rounded-full text-sm">
-
-                                Completed
-
-                            </span>
-
-                        </td>
-
-                        <td class="px-6 py-5 text-center">
-
-                            <button
-                                class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg">
-
-                                View
-
-                            </button>
-
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</section>
-
-       <!-- ==========================================
-      EMERGENCY MONITORING
+        LIVE RESPONSE PROGRESS
 ========================================== -->
 
 <section class="py-20 bg-slate-100">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4">
 
         <!-- Heading -->
 
-        <div class="mb-12" data-aos="fade-up">
+        <div class="text-center mb-14">
 
-            <h2 class="text-4xl font-bold">
+            <span class="inline-flex items-center gap-2 bg-red-100 text-red-600 px-5 py-2 rounded-full font-semibold">
 
-                Emergency Monitoring Center
+                🚨 Live Emergency Progress
+
+            </span>
+
+            <h2 class="text-4xl font-bold mt-5">
+
+                Track Your Emergency Request
 
             </h2>
 
-            <p class="text-gray-500 mt-3">
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
 
-                Monitor emergency zones, hospitals and rescue operations across Bangladesh.
+                Follow every stage of your emergency request in real time.
 
             </p>
 
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Progress Card -->
 
-            <!-- Left -->
+        <div class="bg-white rounded-3xl shadow-xl p-8">
 
-            <div
-                data-aos="fade-up"
-                class="bg-white rounded-3xl shadow-lg p-8">
+            <!-- Progress Bar -->
 
-                <div class="flex justify-between items-center">
+            <div class="relative">
 
-                    <h3 class="text-2xl font-bold">
+                <div class="absolute left-0 top-5 w-full h-2 bg-gray-200 rounded-full"></div>
 
-                        Emergency Status
-
-                    </h3>
-
-                    <span class="bg-green-100 text-green-600 px-4 py-2 rounded-full">
-
-                        Live
-
-                    </span>
+                <div
+                    id="progressBar"
+                    class="absolute left-0 top-5 h-2 bg-green-600 rounded-full duration-700"
+                    style="width:20%;">
 
                 </div>
 
-                <div class="space-y-6 mt-8">
+                <div class="relative grid grid-cols-5">
 
-                    <div class="flex justify-between">
+                    <!-- STEP 1 -->
 
-                        <span>🔴 High Risk District</span>
-
-                        <span class="font-bold text-red-600">
-
-                            08
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex justify-between">
-
-                        <span>🟠 Medium Risk</span>
-
-                        <span class="font-bold text-orange-500">
-
-                            15
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex justify-between">
-
-                        <span>🟢 Safe District</span>
-
-                        <span class="font-bold text-green-600">
-
-                            41
-
-                        </span>
-
-                    </div>
-
-                    <hr>
-
-                    <div class="flex justify-between">
-
-                        <span>Total Active Requests</span>
-
-                        <span class="font-bold">
-
-                            248
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex justify-between">
-
-                        <span>Completed Today</span>
-
-                        <span class="font-bold text-green-600">
-
-                            173
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Right -->
-
-            <div
-                data-aos="fade-left"
-                class="bg-white rounded-3xl shadow-lg p-8">
-
-                <h3 class="text-2xl font-bold mb-8">
-
-                    Hospital Availability
-
-                </h3>
-
-                <div class="space-y-5">
-
-                    <div class="flex justify-between items-center">
-
-                        <span>🏥 Dhaka Medical</span>
-
-                        <span class="text-green-600 font-semibold">
-
-                            32 Beds
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex justify-between items-center">
-
-                        <span>🏥 BSMMU</span>
-
-                        <span class="text-yellow-500 font-semibold">
-
-                            12 Beds
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex justify-between items-center">
-
-                        <span>🏥 CMH Dhaka</span>
-
-                        <span class="text-green-600 font-semibold">
-
-                            27 Beds
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex justify-between items-center">
-
-                        <span>🏥 National Institute</span>
-
-                        <span class="text-red-600 font-semibold">
-
-                            Full
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex justify-between items-center">
-
-                        <span>🏥 Chattogram Medical</span>
-
-                        <span class="text-green-600 font-semibold">
-
-                            18 Beds
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <button
-                    class="w-full mt-8 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl duration-300">
-
-                    View All Hospitals
-
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- Rescue Teams -->
-
-        <div
-            data-aos="fade-up"
-            class="bg-white rounded-3xl shadow-lg p-8 mt-10">
-
-            <h3 class="text-2xl font-bold mb-8">
-
-                Rescue Team Status
-
-            </h3>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-                <div class="bg-slate-50 rounded-2xl p-6 text-center">
-
-                    <i class="fa-solid fa-shield-halved text-4xl text-green-600"></i>
-
-                    <h4 class="font-bold mt-4">
-
-                        Army
-
-                    </h4>
-
-                    <p class="text-green-600 mt-2">
-
-                        15 Teams Active
-
-                    </p>
-
-                </div>
-
-                <div class="bg-slate-50 rounded-2xl p-6 text-center">
-
-                    <i class="fa-solid fa-fire text-4xl text-red-600"></i>
-
-                    <h4 class="font-bold mt-4">
-
-                        Fire Service
-
-                    </h4>
-
-                    <p class="text-red-600 mt-2">
-
-                        28 Units
-
-                    </p>
-
-                </div>
-
-                <div class="bg-slate-50 rounded-2xl p-6 text-center">
-
-                    <i class="fa-solid fa-truck-medical text-4xl text-blue-600"></i>
-
-                    <h4 class="font-bold mt-4">
-
-                        Ambulance
-
-                    </h4>
-
-                    <p class="text-blue-600 mt-2">
-
-                        142 Online
-
-                    </p>
-
-                </div>
-
-                <div class="bg-slate-50 rounded-2xl p-6 text-center">
-
-                    <i class="fa-solid fa-user-shield text-4xl text-purple-600"></i>
-
-                    <h4 class="font-bold mt-4">
-
-                        Police
-
-                    </h4>
-
-                    <p class="text-purple-600 mt-2">
-
-                        48 Patrols
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-       <!-- ==========================================
-            ANALYTICS DASHBOARD
-========================================== -->
-
-<section class="py-20 bg-white">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Heading -->
-
-        <div class="mb-12" data-aos="fade-up">
-
-            <h2 class="text-4xl font-bold text-gray-900">
-
-                Emergency Analytics
-
-            </h2>
-
-            <p class="mt-3 text-gray-500">
-
-                Analyze emergency trends and government response performance.
-
-            </p>
-
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8">
-
-            <!-- Emergency Trend -->
-
-            <div
-                data-aos="fade-up"
-                class="lg:col-span-2 bg-white rounded-3xl shadow-lg p-8">
-
-                <div class="flex justify-between items-center mb-8">
-
-                    <h3 class="text-2xl font-bold">
-
-                        Weekly Emergency Trend
-
-                    </h3>
-
-                    <span
-                        class="bg-green-100 text-green-600 px-4 py-2 rounded-full">
-
-                        Last 7 Days
-
-                    </span>
-
-                </div>
-
-                <!-- Fake Chart -->
-
-                <div class="flex items-end justify-between h-72 gap-3">
-
-                    <div class="flex flex-col items-center">
-
-                        <div class="w-10 bg-red-500 rounded-t-xl h-24 hover:scale-110 duration-300"></div>
-
-                        <span class="mt-3 text-sm">Mon</span>
-
-                    </div>
-
-                    <div class="flex flex-col items-center">
-
-                        <div class="w-10 bg-red-500 rounded-t-xl h-40 hover:scale-110 duration-300"></div>
-
-                        <span class="mt-3 text-sm">Tue</span>
-
-                    </div>
-
-                    <div class="flex flex-col items-center">
-
-                        <div class="w-10 bg-red-500 rounded-t-xl h-56 hover:scale-110 duration-300"></div>
-
-                        <span class="mt-3 text-sm">Wed</span>
-
-                    </div>
-
-                    <div class="flex flex-col items-center">
-
-                        <div class="w-10 bg-red-500 rounded-t-xl h-32 hover:scale-110 duration-300"></div>
-
-                        <span class="mt-3 text-sm">Thu</span>
-
-                    </div>
-
-                    <div class="flex flex-col items-center">
-
-                        <div class="w-10 bg-red-500 rounded-t-xl h-64 hover:scale-110 duration-300"></div>
-
-                        <span class="mt-3 text-sm">Fri</span>
-
-                    </div>
-
-                    <div class="flex flex-col items-center">
-
-                        <div class="w-10 bg-red-500 rounded-t-xl h-44 hover:scale-110 duration-300"></div>
-
-                        <span class="mt-3 text-sm">Sat</span>
-
-                    </div>
-
-                    <div class="flex flex-col items-center">
-
-                        <div class="w-10 bg-red-500 rounded-t-xl h-52 hover:scale-110 duration-300"></div>
-
-                        <span class="mt-3 text-sm">Sun</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Right Side -->
-
-            <div
-                data-aos="fade-left"
-                class="bg-white rounded-3xl shadow-lg p-8">
-
-                <h3 class="text-2xl font-bold mb-8">
-
-                    Emergency Types
-
-                </h3>
-
-                <div class="space-y-6">
-
-                    <div>
-
-                        <div class="flex justify-between mb-2">
-
-                            <span>Flood</span>
-
-                            <span>42%</span>
-
-                        </div>
-
-                        <div class="h-3 bg-gray-200 rounded-full">
-
-                            <div class="bg-blue-600 h-3 rounded-full w-[42%]"></div>
-
-                        </div>
-
-                    </div>
-
-                    <div>
-
-                        <div class="flex justify-between mb-2">
-
-                            <span>Fire</span>
-
-                            <span>28%</span>
-
-                        </div>
-
-                        <div class="h-3 bg-gray-200 rounded-full">
-
-                            <div class="bg-red-600 h-3 rounded-full w-[28%]"></div>
-
-                        </div>
-
-                    </div>
-
-                    <div>
-
-                        <div class="flex justify-between mb-2">
-
-                            <span>Medical</span>
-
-                            <span>15%</span>
-
-                        </div>
-
-                        <div class="h-3 bg-gray-200 rounded-full">
-
-                            <div class="bg-green-600 h-3 rounded-full w-[15%]"></div>
-
-                        </div>
-
-                    </div>
-
-                    <div>
-
-                        <div class="flex justify-between mb-2">
-
-                            <span>Cyclone</span>
-
-                            <span>10%</span>
-
-                        </div>
-
-                        <div class="h-3 bg-gray-200 rounded-full">
-
-                            <div class="bg-yellow-500 h-3 rounded-full w-[10%]"></div>
-
-                        </div>
-
-                    </div>
-
-                    <div>
-
-                        <div class="flex justify-between mb-2">
-
-                            <span>Others</span>
-
-                            <span>5%</span>
-
-                        </div>
-
-                        <div class="h-3 bg-gray-200 rounded-full">
-
-                            <div class="bg-purple-600 h-3 rounded-full w-[5%]"></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Bottom Cards -->
-
-        <div
-            class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-
-            <div
-                data-aos="zoom-in"
-                class="bg-green-50 rounded-2xl p-6 text-center">
-
-                <h2 class="text-4xl font-bold text-green-600">
-
-                    94%
-
-                </h2>
-
-                <p class="mt-2 text-gray-600">
-
-                    Response Rate
-
-                </p>
-
-            </div>
-
-            <div
-                data-aos="zoom-in"
-                data-aos-delay="100"
-                class="bg-blue-50 rounded-2xl p-6 text-center">
-
-                <h2 class="text-4xl font-bold text-blue-600">
-
-                    08 Min
-
-                </h2>
-
-                <p class="mt-2 text-gray-600">
-
-                    Avg Response
-
-                </p>
-
-            </div>
-
-            <div
-                data-aos="zoom-in"
-                data-aos-delay="200"
-                class="bg-red-50 rounded-2xl p-6 text-center">
-
-                <h2 class="text-4xl font-bold text-red-600">
-
-                    248
-
-                </h2>
-
-                <p class="mt-2 text-gray-600">
-
-                    Active Cases
-
-                </p>
-
-            </div>
-
-            <div
-                data-aos="zoom-in"
-                data-aos-delay="300"
-                class="bg-yellow-50 rounded-2xl p-6 text-center">
-
-                <h2 class="text-4xl font-bold text-yellow-500">
-
-                    173
-
-                </h2>
-
-                <p class="mt-2 text-gray-600">
-
-                    Resolved Today
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-        <!-- ==========================================
-        AI PREDICTION & RECENT ACTIVITY
-========================================== -->
-
-<section class="py-20 bg-slate-100">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="grid lg:grid-cols-3 gap-8">
-
-            <!-- ==========================
-                    RECENT ACTIVITY
-            =========================== -->
-
-            <div class="lg:col-span-2 bg-white rounded-3xl shadow-xl p-8"
-                data-aos="fade-up">
-
-                <div class="flex items-center justify-between mb-10">
-
-                    <h2 class="text-3xl font-bold">
-
-                        Recent Activities
-
-                    </h2>
-
-                    <span
-                        class="bg-green-100 text-green-600 px-4 py-2 rounded-full font-semibold">
-
-                        Live
-
-                    </span>
-
-                </div>
-
-                <div class="relative border-l-4 border-green-600 ml-5">
-
-                    <!-- Activity -->
-
-                    <div class="relative mb-10">
+                    <div class="text-center">
 
                         <div
-                            class="absolute -left-[18px] w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white">
+                            id="step1Circle"
+                            class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto shadow-lg">
 
-                            🚨
-
-                        </div>
-
-                        <div class="ml-10">
-
-                            <h3 class="font-bold text-lg">
-
-                                Flood Emergency Reported
-
-                            </h3>
-
-                            <p class="text-gray-500">
-
-                                Dhaka • Mirpur
-
-                            </p>
-
-                            <span class="text-sm text-gray-400">
-
-                                10:15 AM
-
-                            </span>
+                            ✓
 
                         </div>
+
+                        <h4 class="font-bold mt-4">
+
+                            Submitted
+
+                        </h4>
+
+                        <p class="text-sm text-gray-500">
+
+                            Completed
+
+                        </p>
 
                     </div>
 
-                    <!-- Activity -->
+                    <!-- STEP 2 -->
 
-                    <div class="relative mb-10">
+                    <div class="text-center">
 
                         <div
-                            class="absolute -left-[18px] w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            id="step2Circle"
+                            class="w-12 h-12 bg-yellow-500 animate-pulse text-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+
+                            ⏳
+
+                        </div>
+
+                        <h4 class="font-bold mt-4">
+
+                            Review
+
+                        </h4>
+
+                        <p class="text-sm text-gray-500">
+
+                            Current
+
+                        </p>
+
+                    </div>
+
+                    <!-- STEP 3 -->
+
+                    <div class="text-center">
+
+                        <div
+                            id="step3Circle"
+                            class="w-12 h-12 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center mx-auto">
 
                             🚑
 
                         </div>
 
-                        <div class="ml-10">
+                        <h4 class="font-bold mt-4">
 
-                            <h3 class="font-bold text-lg">
+                            Team
 
-                                Ambulance Dispatched
+                        </h4>
 
-                            </h3>
+                        <p class="text-sm text-gray-500">
 
-                            <p class="text-gray-500">
+                            Waiting
 
-                                Unit A-12 Assigned
-
-                            </p>
-
-                            <span class="text-sm text-gray-400">
-
-                                10:19 AM
-
-                            </span>
-
-                        </div>
+                        </p>
 
                     </div>
 
-                    <!-- Activity -->
+                    <!-- STEP 4 -->
 
-                    <div class="relative mb-10">
+                    <div class="text-center">
 
                         <div
-                            class="absolute -left-[18px] w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white">
+                            id="step4Circle"
+                            class="w-12 h-12 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center mx-auto">
 
-                            🏥
-
-                        </div>
-
-                        <div class="ml-10">
-
-                            <h3 class="font-bold text-lg">
-
-                                Hospital Confirmed
-
-                            </h3>
-
-                            <p class="text-gray-500">
-
-                                Dhaka Medical Hospital
-
-                            </p>
-
-                            <span class="text-sm text-gray-400">
-
-                                10:23 AM
-
-                            </span>
+                            🚒
 
                         </div>
+
+                        <h4 class="font-bold mt-4">
+
+                            On The Way
+
+                        </h4>
+
+                        <p class="text-sm text-gray-500">
+
+                            Waiting
+
+                        </p>
 
                     </div>
 
-                    <!-- Activity -->
+                    <!-- STEP 5 -->
 
-                    <div class="relative mb-10">
-
-                        <div
-                            class="absolute -left-[18px] w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-white">
-
-                            👨‍🚒
-
-                        </div>
-
-                        <div class="ml-10">
-
-                            <h3 class="font-bold text-lg">
-
-                                Rescue Team Arrived
-
-                            </h3>
-
-                            <p class="text-gray-500">
-
-                                Bangladesh Army Team-03
-
-                            </p>
-
-                            <span class="text-sm text-gray-400">
-
-                                10:32 AM
-
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Activity -->
-
-                    <div class="relative">
+                    <div class="text-center">
 
                         <div
-                            class="absolute -left-[18px] w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white">
+                            id="step5Circle"
+                            class="w-12 h-12 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center mx-auto">
 
-                            ✅
-
-                        </div>
-
-                        <div class="ml-10">
-
-                            <h3 class="font-bold text-lg">
-
-                                Case Successfully Resolved
-
-                            </h3>
-
-                            <p class="text-gray-500">
-
-                                Citizen Moved to Safe Shelter
-
-                            </p>
-
-                            <span class="text-sm text-gray-400">
-
-                                10:48 AM
-
-                            </span>
+                            🛡
 
                         </div>
+
+                        <h4 class="font-bold mt-4">
+
+                            Completed
+
+                        </h4>
+
+                        <p class="text-sm text-gray-500">
+
+                            Waiting
+
+                        </p>
 
                     </div>
 
@@ -2013,93 +777,38 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
 
             </div>
 
-            <!-- ==========================
-                    AI PANEL
-            =========================== -->
+            <!-- Status -->
 
-            <div class="bg-gradient-to-br from-green-700 to-green-900 rounded-3xl shadow-xl p-8 text-white"
-                data-aos="fade-left">
+            <div
+                id="statusMessage"
+                class="mt-16 bg-yellow-50 border border-yellow-200 rounded-2xl p-6">
 
-                <span
-                    class="bg-white/20 px-4 py-2 rounded-full">
+                <div class="flex items-center gap-4">
 
-                    🤖 AI Prediction
+                    <div class="text-5xl">
 
-                </span>
-
-                <h2 class="text-3xl font-bold mt-6">
-
-                    Next 24 Hours
-
-                </h2>
-
-                <div class="space-y-5 mt-8">
-
-                    <div
-                        class="bg-white/10 rounded-2xl p-5">
-
-                        🌧
-
-                        <h3 class="font-bold mt-2">
-
-                            Flood Risk
-
-                        </h3>
-
-                        <p class="text-green-100 mt-2">
-
-                            High possibility in Sylhet & Sunamganj.
-
-                        </p>
+                        ⏳
 
                     </div>
 
-                    <div
-                        class="bg-white/10 rounded-2xl p-5">
+                    <div>
 
-                        🌪
+                        <h3 class="font-bold text-xl">
 
-                        <h3 class="font-bold mt-2">
-
-                            Cyclone Alert
+                            Government Review in Progress
 
                         </h3>
 
-                        <p class="text-green-100 mt-2">
+                        <p class="text-gray-600 mt-2">
 
-                            Coastal districts should stay prepared.
-
-                        </p>
-
-                    </div>
-
-                    <div
-                        class="bg-white/10 rounded-2xl p-5">
-
-                        🚑
-
-                        <h3 class="font-bold mt-2">
-
-                            Recommendation
-
-                        </h3>
-
-                        <p class="text-green-100 mt-2">
-
-                            Deploy 8 additional ambulances to Khulna Division.
+                            Your emergency request is currently being reviewed by the
+                            Government Emergency Response Center.
 
                         </p>
 
                     </div>
 
                 </div>
-
-                <button
-                    class="w-full mt-10 bg-white text-green-700 font-bold py-4 rounded-xl hover:scale-105 duration-300">
-
-                    Generate AI Report
-
-                </button>
 
             </div>
 
@@ -2109,150 +818,156 @@ class="fixed top-0 left-0 right-0 h-20 bg-white shadow-md z-50">
 
 </section>
 
-        <!-- Rescue Team -->
-
-        <!-- Analytics -->
 
 
 
-        <!-- ==========================================
-        REQUEST DETAILS MODAL
+<!-- ==========================================
+        REQUEST SUMMARY
 ========================================== -->
 
-<div
-id="requestModal"
-class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50 p-5">
+<section id="requestSummary" class="py-20 bg-white">
 
-    <div
-    class="bg-white w-full max-w-3xl rounded-3xl overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
 
-        <!-- Header -->
+        <!-- Heading -->
 
-        <div
-        class="bg-green-600 text-white p-6 flex justify-between items-center">
+        <div class="text-center mb-14">
 
-            <h2 class="text-2xl font-bold">
+            <span
+                class="inline-flex items-center gap-2 bg-green-100 text-green-700 px-5 py-2 rounded-full font-semibold">
 
-                Emergency Request Details
+                📄 Your Request Information
+
+            </span>
+
+            <h2 class="text-4xl font-bold mt-5">
+
+                Emergency Request Summary
 
             </h2>
 
-            <button
-            id="closeModal"
-            class="text-3xl">
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
 
-                &times;
+                Please review the information you submitted.
 
-            </button>
+            </p>
 
         </div>
 
-        <!-- Body -->
+        <!-- Card -->
 
-        <div class="p-8">
+        <div class="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
 
-            <div class="grid md:grid-cols-2 gap-6">
+            <!-- Header -->
 
-                <div>
+            <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-6">
 
-                    <h4 class="font-bold">
+                <h3 class="text-2xl font-bold">
 
-                        Tracking ID
+                    Submitted Information
 
-                    </h4>
+                </h3>
 
-                    <p id="mTracking"></p>
+                <p class="text-green-100 mt-2">
 
-                </div>
+                    The information below has been received successfully.
 
-                <div>
-
-                    <h4 class="font-bold">
-
-                        Applicant
-
-                    </h4>
-
-                    <p id="mName"></p>
-
-                </div>
-
-                <div>
-
-                    <h4 class="font-bold">
-
-                        Phone
-
-                    </h4>
-
-                    <p id="mPhone"></p>
-
-                </div>
-
-                <div>
-
-                    <h4 class="font-bold">
-
-                        Emergency
-
-                    </h4>
-
-                    <p id="mEmergency"></p>
-
-                </div>
-
-                <div>
-
-                    <h4 class="font-bold">
-
-                        Location
-
-                    </h4>
-
-                    <p id="mLocation"></p>
-
-                </div>
-
-                <div>
-
-                    <h4 class="font-bold">
-
-                        Status
-
-                    </h4>
-
-                    <p id="mStatus"></p>
-
-                </div>
+                </p>
 
             </div>
 
-            <div
-            class="grid md:grid-cols-3 gap-5 mt-10">
+            <!-- Body -->
 
-                <button
-                id="approveBtn"
-                class="bg-green-600 text-white py-3 rounded-xl">
+            <div class="p-8">
 
-                    ✅ Approve
+                <div class="grid md:grid-cols-2 gap-8">
 
-                </button>
+                    <!-- Name -->
 
-                <button
-                id="rejectBtn"
-                class="bg-red-600 text-white py-3 rounded-xl">
+                    <div class="summary-card">
 
-                    ❌ Reject
+                        <p class="summary-title">👤 Applicant Name</p>
 
-                </button>
+                        <h4 id="summaryName" class="summary-value">
 
-                <button
-                id="printBtn"
-                class="bg-blue-600 text-white py-3 rounded-xl">
+                            Loading...
 
-                    🖨 Print
+                        </h4>
 
-                </button>
+                    </div>
+
+                    <!-- Phone -->
+
+                    <div class="summary-card">
+
+                        <p class="summary-title">📱 Mobile Number</p>
+
+                        <h4 id="summaryPhone" class="summary-value">
+
+                            Loading...
+
+                        </h4>
+
+                    </div>
+
+                    <!-- Emergency -->
+
+                    <div class="summary-card">
+
+                        <p class="summary-title">🚨 Emergency Type</p>
+
+                        <h4 id="summaryEmergency" class="summary-value">
+
+                            Loading...
+
+                        </h4>
+
+                    </div>
+
+                    <!-- Priority -->
+
+                    <div class="summary-card">
+
+                        <p class="summary-title">🔥 Priority</p>
+
+                        <h4 id="summaryPriority" class="summary-value text-red-600">
+
+                            Loading...
+
+                        </h4>
+
+                    </div>
+
+                    <!-- Location -->
+
+                    <div class="summary-card md:col-span-2">
+
+                        <p class="summary-title">📍 Emergency Location</p>
+
+                        <h4 id="summaryLocation" class="summary-value">
+
+                            Loading...
+
+                        </h4>
+
+                    </div>
+
+                    <!-- Description -->
+
+                    <div class="summary-card md:col-span-2">
+
+                        <p class="summary-title">📝 Description</p>
+
+                        <p id="summaryDescription"
+                            class="text-gray-700 mt-2 leading-7">
+
+                            Loading...
+
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -2260,8 +975,246 @@ class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50 p-5">
 
     </div>
 
-</div>
+</section>
+
+
+<!-- ==========================================
+        RESPONSE INFORMATION
+========================================== -->
+
+<section class="py-20 bg-slate-100">
+
+    <div class="max-w-6xl mx-auto px-4">
+
+        <!-- Heading -->
+
+        <div class="text-center mb-14">
+
+            <span class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-5 py-2 rounded-full font-semibold">
+
+                🚑 Response Information
+
+            </span>
+
+            <h2 class="text-4xl font-bold mt-5">
+
+                Emergency Response Details
+
+            </h2>
+
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+
+                Your emergency request has been assigned to the nearest response unit.
+                Below is the latest response information.
+
+            </p>
+
+        </div>
+
+        <!-- Card -->
+
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+
+            <!-- Header -->
+
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6">
+
+                <h3 class="text-2xl font-bold">
+
+                    Response Information
+
+                </h3>
+
+                <p class="text-blue-100 mt-2">
+
+                    Latest emergency response details.
+
+                </p>
+
+            </div>
+
+            <!-- Body -->
+
+            <div class="p-8">
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <!-- Current Status -->
+
+                    <div class="response-card">
+
+                        <p class="response-title">
+
+                            🚨 Current Status
+
+                        </p>
+
+                        <h3
+                            id="responseStatus"
+                            class="response-value text-yellow-600">
+
+                            Under Review
+
+                        </h3>
+
+                    </div>
+
+                    <!-- Response Unit -->
+
+                    <div class="response-card">
+
+                        <p class="response-title">
+
+                            🚑 Assigned Response Unit
+
+                        </p>
+
+                        <h3
+                            id="responseUnit"
+                            class="response-value">
+
+                            Government Emergency Team
+
+                        </h3>
+
+                    </div>
+
+                    <!-- Estimated Arrival -->
+
+                    <div class="response-card">
+
+                        <p class="response-title">
+
+                            ⏱ Estimated Arrival
+
+                        </p>
+
+                        <h3
+                            id="arrivalTime"
+                            class="response-value text-green-600">
+
+                            8 Minutes
+
+                        </h3>
+
+                    </div>
+
+                    <!-- Emergency Contact -->
+
+                    <div class="response-card">
+
+                        <p class="response-title">
+
+                            ☎ Emergency Contact
+
+                        </p>
+
+                        <div class="flex items-center justify-between mt-3">
+
+                            <h3 class="response-value">
+
+                                999
+
+                            </h3>
+
+                            <a
+                                href="tel:999"
+                                class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-xl duration-300">
+
+                                Call
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Tracking -->
+
+                    <div class="response-card">
+
+                        <p class="response-title">
+
+                            🆔 Tracking ID
+
+                        </p>
+
+                        <div class="flex items-center justify-between mt-3">
+
+                            <h3
+                                id="trackingCard"
+                                class="response-value">
+
+                                Loading...
+
+                            </h3>
+
+                            <button
+                                id="copyTracking"
+                                class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl duration-300">
+
+                                Copy
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Officer -->
+
+                    <div class="response-card">
+
+                        <p class="response-title">
+
+                            👮 Response Officer
+
+                        </p>
+
+                        <h3
+                            id="responseOfficer"
+                            class="response-value">
+
+                            Emergency Unit-05
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
+
+
+
+
+
+
 
     <!-- Footer -->
 
