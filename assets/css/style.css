@@ -1,3 +1,72 @@
+/* ==============================
+==========NAVBAR========== */
+/* ==========================================
+        PREMIUM MEGA MENU
+========================================== */
+
+.megaMenu:hover .megaContent{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translate(-50%,0);
+
+}
+
+.megaMenu:hover .fa-chevron-down{
+
+    transform:rotate(180deg);
+
+}
+
+.megaContent{
+
+    transition:.35s ease;
+
+}
+
+.megaContent a{
+
+    transition:.3s ease;
+
+}
+
+.megaContent a:hover{
+
+    transform:translateX(6px);
+
+}
+
+.megaContent a:hover div:first-child{
+
+    transform:scale(1.08);
+
+}
+
+.megaContent a div:first-child{
+
+    transition:.3s;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===============================
    GLOBAL RESET
 ================================ */

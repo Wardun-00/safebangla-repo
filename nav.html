@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeBangla — Emergency Response Navbar</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --ink:#0E2A22;
+    --forest:#0B6E4F;
+    --forest-deep:#08543C;
+    --mist:#F4F8F6;
+    --alert:#E63946;
+    --alert-deep:#C62839;
+    --amber:#F2A541;
+}
+*{box-sizing:border-box;}
+body{
+    font-family:'Manrope','Hind Siliguri',system-ui,sans-serif;
+    background:var(--mist);
+    color:var(--ink);
+    padding-top:104px;
+}
+[lang-target="bn"]{font-family:'Hind Siliguri','Manrope',sans-serif;}
+
+/* ---------- utility bar ---------- */
+#utilityBar{
+    background:linear-gradient(90deg,var(--forest-deep),var(--forest));
+    transition:max-height .35s ease, opacity .3s ease, padding .35s ease;
+    max-height:44px;
+    overflow:hidden;
+}
+#utilityBar.collapsed{max-height:0;opacity:0;padding-top:0;padding-bottom:0;}
+
+.pulse-dot{position:relative;}
+.pulse-dot::after{
+    content:'';position:absolute;inset:0;border-radius:9999px;
+    background:rgba(255,255,255,.9);
+    animation:pulseRing 1.6s cubic-bezier(.4,0,.6,1) infinite;
+}
+@keyframes pulseRing{
+    0%{transform:scale(1);opacity:.7;}
+    100%{transform:scale(2.6);opacity:0;}
+}
+
+/* ---------- navbar shrink on scroll ---------- */
+#navbar{
+    transition:box-shadow .3s ease, height .3s ease;
+}
+#navbar.scrolled{box-shadow:0 8px 30px -12px rgba(11,110,79,.25);}
+#navbar.scrolled .nav-inner{height:72px;}
+.nav-inner{transition:height .3s ease;height:80px;}
+
+/* ---------- nav link underline ---------- */
+.nav-link{position:relative;}
+.nav-link::after{
+    content:'';position:absolute;left:0;bottom:14px;height:2px;width:0;
+    background:var(--forest);transition:width .25s ease;border-radius:2px;
+}
+.nav-link:hover::after{width:100%;}
+
+/* ---------- mega menu ---------- */
+.mega-wrap{position:static;}
+.mega-panel{
+    opacity:0;visibility:hidden;transform:translateY(10px) scale(.98);
+    transition:opacity .22s ease,transform .22s ease,visibility .22s;
+    pointer-events:none;
+    transform-origin:top center;
+}
+.mega-wrap:hover .mega-panel, .mega-panel.force-open{
+    opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto;
+}
+.mega-wrap > button i.fa-chevron-down{transition:transform .25s ease;}
+.mega-wrap:hover > button i.fa-chevron-down{transform:rotate(180deg);color:var(--forest);}
+
+.mega-item{
+    transition:background .2s ease, transform .2s ease, padding-left .2s ease;
+    border-radius:12px;
+}
+.mega-item:hover{background:var(--mist);transform:translateX(2px);}
+.mega-item:hover .mega-icon{transform:scale(1.12) rotate(-4deg);}
+.mega-icon{transition:transform .25s ease;}
+
+/* ---------- request help button ---------- */
+.btn-request{
+    background:linear-gradient(135deg,var(--alert),var(--alert-deep));
+    box-shadow:0 6px 18px -6px rgba(230,57,70,.55);
+    transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.btn-request:hover{transform:translateY(-2px);box-shadow:0 10px 26px -8px rgba(230,57,70,.65);filter:brightness(1.05);}
+.btn-request:active{transform:translateY(0) scale(.98);}
+
+/* ---------- language pill ---------- */
+.lang-pill{transition:background .25s ease,color .25s ease,transform .18s ease;}
+.lang-pill:hover{transform:translateY(-1px);}
+.lang-pill:active{transform:scale(.96);}
+
+/* ---------- logo ---------- */
+.logo-badge{transition:transform .3s ease;}
+a.logo-link:hover .logo-badge{transform:rotate(-8deg) scale(1.06);}
+
+/* ---------- mobile drawer ---------- */
+#overlay{
+    opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;
+}
+#overlay.show{opacity:1;visibility:visible;}
+#mobileMenu{
+    transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+#mobileMenu.open{transform:translateX(0);}
+
+.acc-icon{transition:transform .3s ease;}
+.accordion-content{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+
+.mobile-link{
+    opacity:0;transform:translateX(16px);
+    transition:opacity .35s ease,transform .35s ease;
+}
+#mobileMenu.open .mobile-link{opacity:1;transform:translateX(0);}
+#mobileMenu.open .mobile-link:nth-child(1){transition-delay:.05s;}
+#mobileMenu.open .mobile-link:nth-child(2){transition-delay:.1s;}
+#mobileMenu.open .mobile-link:nth-child(3){transition-delay:.15s;}
+#mobileMenu.open .mobile-link:nth-child(4){transition-delay:.2s;}
+#mobileMenu.open .mobile-link:nth-child(5){transition-delay:.25s;}
+#mobileMenu.open .mobile-link:nth-child(6){transition-delay:.3s;}
+
+/* focus visibility for accessibility */
+a:focus-visible, button:focus-visible{
+    outline:2px solid var(--forest);outline-offset:3px;border-radius:6px;
+}
+
+/* scrollbar for drawer */
+#mobileMenu ::-webkit-scrollbar{width:5px;}
+#mobileMenu ::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:10px;}
+
+@media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur z-50">
+
+    <!-- Utility strip: hotline -->
+    <div id="utilityBar" class="text-white text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-11 flex items-center justify-between">
+            <a href="tel:999" class="flex items-center gap-2 font-semibold hover:underline">
+                <span class="pulse-dot w-2 h-2 rounded-full bg-white inline-block"></span>
+                <i class="fa-solid fa-phone-volume"></i>
+                <span class="lang" data-key="hotline">National Emergency Hotline: 999</span>
+            </a>
+            <div class="hidden sm:flex items-center gap-4">
+                <span id="currentDate" class="opacity-90"></span>
+                <span id="currentTime" class="opacity-90 font-mono"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="nav-inner flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo-link flex items-center gap-3 shrink-0">
+                <div class="logo-badge w-11 h-11 rounded-full flex items-center justify-center shadow-md"
+                    style="background:linear-gradient(135deg,var(--forest),var(--forest-deep));">
+                    <i class="fa-solid fa-shield-heart text-white text-lg"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold leading-none lang" data-key="logo" style="color:var(--forest-deep);">SafeBangla</h2>
+                    <p class="text-[11px] text-gray-500 hidden sm:block lang" data-key="subtitle">Smart Emergency Response Platform</p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex items-center gap-7 font-semibold text-[15px]">
+
+                <li>
+                    <a href="index.html" class="nav-link lang hover:text-[var(--forest)] duration-200 py-8 inline-block" data-key="home">Home</a>
+                </li>
+
+                <!-- Emergency Mega Menu -->
+                <li class="mega-wrap relative">
+                    <button class="nav-link flex items-center gap-1.5 hover:text-[var(--forest)] duration-200 py-8">
+                        <span class="lang" data-key="emergency">Emergency</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                    </button>
+
+                    <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full w-[660px] bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 grid grid-cols-3 gap-4">
+
+                        <div>
+                            <p class="text-[11px] font-bold uppercase tracking-wider mb-2 lang" data-key="mega_e_h1" style="color:var(--alert-deep);">Immediate Help</p>
+                            <a href="emergency.html#ambulance" class="mega-item flex items-start gap-3 p-2 group">
+                                <span class="mega-icon w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-truck-medical text-red-600"></i>
+                                </span>
+                                <span>
+                                    <span class="block font-semibold lang" data-key="mega_e_1">Ambulance Request</span>
+                                    <span class="block text-xs text-gray-500 lang" data-key="mega_e_1d">Nearest available unit</span>
+                                </span>
+                            </a>
+                            <a href="emergency.html#fire" class="mega-item flex items-start gap-3 p-2 group">
+                                <span class="mega-icon w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-fire text-orange-600"></i>
+                                </span>
+                                <span>
+                                    <span class="block font-semibold lang" data-key="mega_e_2">Fire Service</span>
+                                    <span class="block text-xs text-gray-500 lang" data-key="mega_e_2d">Report fire incidents</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div>
+                            <p class="text-[11px] font-bold uppercase tracking-wider mb-2 lang" data-key="mega_e_h2" style="color:var(--alert-deep);">Safety & Rescue</p>
+                            <a href="emergency.html#police" class="mega-item flex items-start gap-3 p-2 group">
+                                <span class="mega-icon w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user-shield text-blue-600"></i>
+                                </span>
+                                <span>
+                                    <span class="block font-semibold lang" data-key="mega_e_3">Police Assistance</span>
+                                    <span class="block text-xs text-gray-500 lang" data-key="mega_e_3d">Nearby station contact</span>
+                                </span>
+                            </a>
+                            <a href="emergency.html#disaster" class="mega-item flex items-start gap-3 p-2 group">
+                                <span class="mega-icon w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-house-crack text-amber-600"></i>
+                                </span>
+                                <span>
+                                    <span class="block font-semibold lang" data-key="mega_e_4">Disaster Response</span>
+                                    <span class="block text-xs text-gray-500 lang" data-key="mega_e_4d">Flood, cyclone alerts</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="rounded-xl p-4 flex flex-col justify-between"
+                            style="background:linear-gradient(160deg,#FDECEE,#FFF);">
+                            <div>
+                                <p class="text-sm font-bold lang" data-key="mega_e_cta_t" style="color:var(--alert-deep);">Need help right now?</p>
+                                <p class="text-xs text-gray-600 mt-1 lang" data-key="mega_e_cta_d">Send your live location instantly to the nearest responder.</p>
+                            </div>
+                            <a href="emergency.html" class="btn-request mt-3 text-white text-sm text-center py-2.5 rounded-lg font-bold lang" data-key="request">Request Help</a>
+                        </div>
+
+                    </div>
+                </li>
+
+                <!-- Hospitals Mega Menu -->
+                <li class="mega-wrap relative">
+                    <button class="nav-link flex items-center gap-1.5 hover:text-[var(--forest)] duration-200 py-8">
+                        <span class="lang" data-key="hospital">Hospitals</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                    </button>
+
+                    <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full w-[580px] bg-white rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 grid grid-cols-2 gap-4">
+
+                        <div>
+                            <p class="text-[11px] font-bold uppercase tracking-wider mb-2 lang" data-key="mega_h_h1" style="color:var(--forest-deep);">Browse By</p>
+                            <a href="hospitals.html?filter=nearby" class="mega-item flex items-center gap-3 p-2">
+                                <span class="mega-icon w-9 h-9 rounded-lg bg-green-50 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot" style="color:var(--forest);"></i>
+                                </span>
+                                <span class="font-semibold lang" data-key="mega_h_1">Nearby Hospitals</span>
+                            </a>
+                            <a href="hospitals.html?filter=icu" class="mega-item flex items-center gap-3 p-2">
+                                <span class="mega-icon w-9 h-9 rounded-lg bg-green-50 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-bed-pulse" style="color:var(--forest);"></i>
+                                </span>
+                                <span class="font-semibold lang" data-key="mega_h_2">ICU / Bed Availability</span>
+                            </a>
+                            <a href="hospitals.html?filter=blood" class="mega-item flex items-center gap-3 p-2">
+                                <span class="mega-icon w-9 h-9 rounded-lg bg-green-50 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-droplet" style="color:var(--forest);"></i>
+                                </span>
+                                <span class="font-semibold lang" data-key="mega_h_3">Blood Bank</span>
+                            </a>
+                        </div>
+
+                        <div>
+                            <p class="text-[11px] font-bold uppercase tracking-wider mb-2 lang" data-key="mega_h_h2" style="color:var(--forest-deep);">Popular Cities</p>
+                            <a href="hospitals.html?city=dhaka" class="mega-item flex items-center justify-between p-2 lang" data-key="mega_h_c1">
+                                Dhaka <i class="fa-solid fa-arrow-right text-xs text-gray-300"></i>
+                            </a>
+                            <a href="hospitals.html?city=chattogram" class="mega-item flex items-center justify-between p-2 lang" data-key="mega_h_c2">
+                                Chattogram <i class="fa-solid fa-arrow-right text-xs text-gray-300"></i>
+                            </a>
+                            <a href="hospitals.html?city=khulna" class="mega-item flex items-center justify-between p-2 lang" data-key="mega_h_c3">
+                                Khulna <i class="fa-solid fa-arrow-right text-xs text-gray-300"></i>
+                            </a>
+                            <a href="hospitals.html?city=rajshahi" class="mega-item flex items-center justify-between p-2 lang" data-key="mega_h_c4">
+                                Rajshahi <i class="fa-solid fa-arrow-right text-xs text-gray-300"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <a href="dashboard.html" class="nav-link lang hover:text-[var(--forest)] duration-200 py-8 inline-block" data-key="dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-link lang hover:text-[var(--forest)] duration-200 py-8 inline-block" data-key="about">About</a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-link lang hover:text-[var(--forest)] duration-200 py-8 inline-block" data-key="contact">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Right controls -->
+            <div class="flex items-center gap-3">
+
+                <!-- Language -->
+                <button id="languageBtn"
+                    class="lang-pill hidden md:flex items-center gap-2 border-2 rounded-full px-4 py-2 font-semibold"
+                    style="border-color:var(--forest);color:var(--forest-deep);">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="languageText">বাংলা</span>
+                </button>
+
+                <!-- Button -->
+                <a href="emergency.html"
+                    class="btn-request hidden md:block text-white px-5 py-3 rounded-xl font-bold">
+                    <span class="lang" data-key="request">Request Help</span>
+                </a>
+
+                <!-- Mobile -->
+                <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-lg flex items-center justify-center text-xl"
+                    style="background:var(--mist);color:var(--forest-deep);" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<!-- ================= MOBILE DRAWER + OVERLAY ================= -->
+<div id="overlay" class="fixed inset-0 bg-black/40 z-40 lg:hidden"></div>
+
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-50 lg:hidden shadow-2xl flex flex-col">
+
+    <div class="flex items-center justify-between px-5 h-20 border-b shrink-0"
+        style="background:linear-gradient(135deg,var(--forest),var(--forest-deep));">
+        <div class="flex items-center gap-2 text-white">
+            <i class="fa-solid fa-shield-heart text-xl"></i>
+            <span class="font-extrabold text-lg lang" data-key="logo">SafeBangla</span>
+        </div>
+        <button id="closeMenuBtn" class="w-9 h-9 rounded-full bg-white/20 text-white flex items-center justify-center" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="p-5 overflow-y-auto grow">
+        <ul class="space-y-1">
+
+            <li class="mobile-link">
+                <a href="index.html" class="flex items-center gap-3 py-3 px-2 rounded-lg font-semibold hover:bg-[var(--mist)]">
+                    <i class="fa-solid fa-house w-5" style="color:var(--forest);"></i>
+                    <span class="lang" data-key="home">Home</span>
+                </a>
+            </li>
+
+            <!-- Emergency Accordion -->
+            <li class="mobile-link border-b pb-1">
+                <button class="acc-btn w-full flex items-center justify-between py-3 px-2 font-semibold rounded-lg hover:bg-[var(--mist)]">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-truck-medical w-5 text-red-600"></i>
+                        <span class="lang" data-key="emergency">Emergency</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-xs acc-icon"></i>
+                </button>
+                <div class="accordion-content pl-8">
+                    <a href="emergency.html#ambulance" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_e_1">Ambulance Request</a>
+                    <a href="emergency.html#fire" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_e_2">Fire Service</a>
+                    <a href="emergency.html#police" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_e_3">Police Assistance</a>
+                    <a href="emergency.html#disaster" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_e_4">Disaster Response</a>
+                </div>
+            </li>
+
+            <!-- Hospitals Accordion -->
+            <li class="mobile-link border-b pb-1">
+                <button class="acc-btn w-full flex items-center justify-between py-3 px-2 font-semibold rounded-lg hover:bg-[var(--mist)]">
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-hospital w-5" style="color:var(--forest);"></i>
+                        <span class="lang" data-key="hospital">Hospitals</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-down text-xs acc-icon"></i>
+                </button>
+                <div class="accordion-content pl-8">
+                    <a href="hospitals.html?filter=nearby" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_h_1">Nearby Hospitals</a>
+                    <a href="hospitals.html?filter=icu" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_h_2">ICU / Bed Availability</a>
+                    <a href="hospitals.html?filter=blood" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_h_3">Blood Bank</a>
+                    <a href="hospitals.html?city=dhaka" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_h_c1">Dhaka</a>
+                    <a href="hospitals.html?city=chattogram" class="lang block py-2.5 text-sm text-gray-600" data-key="mega_h_c2">Chattogram</a>
+                </div>
+            </li>
+
+            <li class="mobile-link">
+                <a href="dashboard.html" class="flex items-center gap-3 py-3 px-2 rounded-lg font-semibold hover:bg-[var(--mist)]">
+                    <i class="fa-solid fa-gauge w-5" style="color:var(--forest);"></i>
+                    <span class="lang" data-key="dashboard">Dashboard</span>
+                </a>
+            </li>
+            <li class="mobile-link">
+                <a href="about.html" class="flex items-center gap-3 py-3 px-2 rounded-lg font-semibold hover:bg-[var(--mist)]">
+                    <i class="fa-solid fa-circle-info w-5" style="color:var(--forest);"></i>
+                    <span class="lang" data-key="about">About</span>
+                </a>
+            </li>
+            <li class="mobile-link">
+                <a href="contact.html" class="flex items-center gap-3 py-3 px-2 rounded-lg font-semibold hover:bg-[var(--mist)]">
+                    <i class="fa-solid fa-envelope w-5" style="color:var(--forest);"></i>
+                    <span class="lang" data-key="contact">Contact</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Fixed bottom actions -->
+    <div class="p-5 border-t shrink-0 space-y-3">
+        <button id="languageBtnMobile" class="lang-pill w-full flex items-center justify-center gap-2 border-2 rounded-full px-4 py-3 font-semibold"
+            style="border-color:var(--forest);color:var(--forest-deep);">
+            <i class="fa-solid fa-globe"></i>
+            <span id="languageTextMobile">বাংলা</span>
+        </button>
+        <a href="emergency.html" class="btn-request block text-white text-center px-4 py-3 rounded-xl font-bold lang" data-key="request">Request Help</a>
+        <a href="tel:999" class="flex items-center justify-center gap-2 text-sm font-semibold" style="color:var(--alert-deep);">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span class="lang" data-key="hotline">National Emergency Hotline: 999</span>
+        </a>
+    </div>
+</div>
+
+<!-- ================= PAGE PLACEHOLDER CONTENT ================= -->
+
+
+
+
+<script src="./assets/js/nav-main.js"></script>
+
+</body>
+</html>

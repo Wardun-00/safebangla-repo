@@ -532,21 +532,7 @@
 
                 <option value="">Select Division</option>
 
-                <option>Dhaka</option>
-
-                <option>Chattogram</option>
-
-                <option>Rajshahi</option>
-
-                <option>Khulna</option>
-
-                <option>Barishal</option>
-
-                <option>Sylhet</option>
-
-                <option>Rangpur</option>
-
-                <option>Mymensingh</option>
+               
 
             </select>
 
@@ -604,27 +590,29 @@
 
     <div class="mt-6">
 
-        <button
+    <button
+        id="detectLocationBtn"
+        type="button"
+        class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold duration-300 shadow-lg">
 
-            id="gpsBtn"
+        <i class="fa-solid fa-location-crosshairs me-2"></i>
 
-            type="button"
+        Detect Current Location
 
-            class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold duration-300 shadow-lg">
+    </button>
 
-            <i class="fa-solid fa-location-crosshairs me-2"></i>
+    <input
+        type="text"
+        id="currentLocation"
+        readonly
+        placeholder="Current location will appear here..."
+        class="w-full mt-4 border rounded-xl px-4 py-3 bg-gray-50">
 
-            Detect Current Location
+    <p class="text-sm text-gray-500 mt-3">
+        Allow location access for faster emergency response.
+    </p>
 
-        </button>
-
-        <p class="text-sm text-gray-500 mt-3">
-
-            Allow location access for faster emergency response.
-
-        </p>
-
-    </div>
+</div>
 
 </div>
 
@@ -1216,6 +1204,921 @@
 </section>
 
 
+<!-- ============================ -->
+
+
+<!-- Government / Citizen Services -->
+<!-- ==========================================
+        CITIZEN COMPLAINT PORTAL
+========================================== -->
+
+<section id="citizen-services" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <!-- Heading -->
+
+        <div class="text-center mb-16" data-aos="fade-up">
+
+            <span
+                class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-5 py-2 rounded-full font-semibold">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                Citizen Complaint Portal
+
+            </span>
+
+            <h2
+                class="mt-5 text-4xl font-bold">
+
+                Report Public Problems
+
+            </h2>
+
+            <p
+                class="mt-4 max-w-3xl mx-auto text-gray-500">
+
+                Select a complaint category below to report public issues directly to the responsible government authority.
+
+            </p>
+
+        </div>
+
+        <!-- Complaint Cards -->
+
+        <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+            <!-- Road -->
+
+           <button
+    class="complaint-card group"
+
+    data-title="Road Damage Complaint"
+
+    data-desc="Report broken roads, potholes and damaged streets."
+
+    data-placeholder="Describe the road damage in detail...">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-red-100 flex items-center justify-center group-hover:scale-110 duration-300">
+
+                    <i class="fa-solid fa-road text-4xl text-red-600"></i>
+
+                </div>
+
+                <h3
+                    class="mt-5 text-xl font-bold">
+
+                    Road Damage
+
+                </h3>
+
+                <p
+                    class="mt-2 text-gray-500 text-sm">
+
+                    Broken road, potholes, damaged street
+
+                </p>
+
+            </button>
+
+            <!-- Street Light -->
+
+            <button
+    class="complaint-card group"
+
+    data-title="Street Light Complaint"
+
+    data-desc="Report broken or non-working street lights."
+
+    data-placeholder="Describe the street light problem...">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-yellow-100 flex items-center justify-center group-hover:scale-110 duration-300">
+
+                    <i class="fa-solid fa-lightbulb text-4xl text-yellow-500"></i>
+
+                </div>
+
+                <h3
+                    class="mt-5 text-xl font-bold">
+
+                    Street Light
+
+                </h3>
+
+                <p
+                    class="mt-2 text-gray-500 text-sm">
+
+                    Broken or non-working street lights
+
+                </p>
+
+            </button>
+
+            <!-- Tree -->
+
+         <button
+    class="complaint-card group"
+
+    data-title="Illegal Tree Cutting Complaint"
+
+    data-desc="Report illegal tree cutting in your area."
+
+    data-placeholder="Describe the tree cutting problem...">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-green-100 flex items-center justify-center group-hover:scale-110 duration-300">
+
+                    <i class="fa-solid fa-tree text-4xl text-green-600"></i>
+
+                </div>
+
+                <h3
+                    class="mt-5 text-xl font-bold">
+
+                    Tree Cutting
+
+                </h3>
+
+                <p
+                    class="mt-2 text-gray-500 text-sm">
+
+                    Illegal tree cutting complaint
+
+                </p>
+
+            </button>
+
+            <!-- Waste -->
+
+           <button
+    class="complaint-card group"
+
+    data-title="Waste Management Complaint"
+
+    data-desc="Report garbage collection or waste management issues."
+
+    data-placeholder="Describe the waste management problem...">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-gray-100 flex items-center justify-center group-hover:scale-110 duration-300">
+
+                    <i class="fa-solid fa-trash text-4xl text-gray-700"></i>
+
+                </div>
+
+                <h3
+                    class="mt-5 text-xl font-bold">
+
+                    Waste
+
+                </h3>
+
+                <p
+                    class="mt-2 text-gray-500 text-sm">
+
+                    Garbage and waste management
+
+                </p>
+
+            </button>
+
+            <!-- Electricity -->
+
+           <button
+    class="complaint-card group"
+
+    data-title="Electricity Complaint"
+
+    data-desc="Report electricity-related public issues."
+
+    data-placeholder="Describe the electricity problem...">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-orange-100 flex items-center justify-center group-hover:scale-110 duration-300">
+
+                    <i class="fa-solid fa-bolt text-4xl text-orange-500"></i>
+
+                </div>
+
+                <h3
+                    class="mt-5 text-xl font-bold">
+
+                    Electricity
+
+                </h3>
+
+                <p
+                    class="mt-2 text-gray-500 text-sm">
+
+                    Electrical public issues
+
+                </p>
+
+            </button>
+
+            <!-- Drainage -->
+
+           <button
+    class="complaint-card group"
+
+    data-title="Drainage Complaint"
+
+    data-desc="Report blocked drains or drainage system problems."
+
+    data-placeholder="Describe the drainage problem...">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-cyan-100 flex items-center justify-center group-hover:scale-110 duration-300">
+
+                    <i class="fa-solid fa-water text-4xl text-cyan-600"></i>
+
+                </div>
+
+                <h3
+                    class="mt-5 text-xl font-bold">
+
+                    Drainage
+
+                </h3>
+
+                <p
+                    class="mt-2 text-gray-500 text-sm">
+
+                    Water drainage problem
+
+                </p>
+
+            </button>
+
+            <!-- Water Logging -->
+
+           <button
+    class="complaint-card group"
+
+    data-title="Water Logging Complaint"
+
+    data-desc="Report water logging or flooded roads."
+
+    data-placeholder="Describe the water logging problem...">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-blue-100 flex items-center justify-center group-hover:scale-110 duration-300">
+
+                    <i class="fa-solid fa-house-flood-water text-4xl text-blue-600"></i>
+
+                </div>
+
+                <h3
+                    class="mt-5 text-xl font-bold">
+
+                    Water Logging
+
+                </h3>
+
+                <p
+                    class="mt-2 text-gray-500 text-sm">
+
+                    Flooded roads and areas
+
+                </p>
+
+            </button>
+
+            <!-- Others -->
+
+         <button
+    class="complaint-card group"
+
+    data-title="Other Public Complaint"
+
+    data-desc="Report any other public issue."
+
+    data-placeholder="Describe your complaint in detail...">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-purple-100 flex items-center justify-center group-hover:scale-110 duration-300">
+
+                    <i class="fa-solid fa-circle-question text-4xl text-purple-600"></i>
+
+                </div>
+
+                <h3
+                    class="mt-5 text-xl font-bold">
+
+                    Others
+
+                </h3>
+
+                <p
+                    class="mt-2 text-gray-500 text-sm">
+
+                    Other public complaints
+
+                </p>
+
+            </button>
+
+        </div>
+
+        <!-- Form Hidden -->
+
+
+            <!-- ==========================================
+        COMPLAINT FORM (STEP 2)
+========================================== -->
+
+<div id="complaintForm" class="hidden mt-20">
+     <form id="citizenComplaintForm">
+
+    <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-8 lg:p-10">
+
+        <!-- Dynamic Heading -->
+
+        <div class="flex items-center gap-4 mb-10">
+
+            <div
+                class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+
+                <i id="formIcon"
+                    class="fa-solid fa-circle-info text-3xl text-green-600"></i>
+
+            </div>
+
+            <div>
+
+                <h2
+                    id="formTitle"
+                    class="text-3xl font-bold text-gray-900">
+
+                    Complaint Form
+
+                </h2>
+
+                <p
+                    id="formSubtitle"
+                    class="text-gray-500 mt-2">
+
+                    Please provide the necessary information below.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Basic Information -->
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- Full Name -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+
+                    Full Name *
+
+                </label>
+
+                <input
+                    type="text"
+                    required
+                    placeholder="Enter your full name"
+                    class="w-full rounded-xl border px-5 py-4 focus:ring-2 focus:ring-green-500 outline-none">
+
+            </div>
+
+            <!-- Mobile -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+
+                    Mobile Number *
+
+                </label>
+
+                <input
+                    type="tel"
+                    required
+                    placeholder="01XXXXXXXXX"
+                    class="w-full rounded-xl border px-5 py-4 focus:ring-2 focus:ring-green-500 outline-none">
+
+            </div>
+
+        </div>
+
+        <!-- Location -->
+
+        <div class="grid lg:grid-cols-2 gap-6 mt-8">
+
+            <!-- Division -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+
+                    Division *
+
+                </label>
+
+                <select
+                    id="citizenDivision"
+                    class="w-full rounded-xl border px-5 py-4">
+
+                    <option>Select Division</option>
+
+                </select>
+
+            </div>
+
+            <!-- District -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+
+                    District *
+
+                </label>
+
+                <select
+                    id="citizenDistrict"
+                    class="w-full rounded-xl border px-5 py-4">
+
+                    <option>Select District</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- Upazila -->
+
+        <div class="mt-6">
+
+            <label class="block font-semibold mb-2">
+
+                Upazila *
+
+            </label>
+
+            <select
+                id="citizenUpazila"
+                class="w-full rounded-xl border px-5 py-4">
+
+                <option>Select Upazila</option>
+
+            </select>
+
+        </div>
+
+        <!-- Area -->
+
+        <div class="mt-6">
+
+            <label class="block font-semibold mb-2">
+
+                Area / Landmark *
+
+            </label>
+
+            <input
+                type="text"
+                placeholder="Road / Village / Landmark"
+                class="w-full rounded-xl border px-5 py-4 focus:ring-2 focus:ring-green-500 outline-none">
+
+        </div>
+
+        <!-- Description -->
+
+        <div class="mt-8">
+
+            <label class="block font-semibold mb-2">
+
+                Describe the Problem *
+
+            </label>
+
+            <textarea
+                id="problemDescription"
+                rows="6"
+                maxlength="500"
+                placeholder="Describe the problem..."
+                class="w-full rounded-xl border px-5 py-4 resize-none focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+
+            <div
+                class="flex justify-end mt-2">
+
+                <span
+                    id="charCount"
+                    class="text-sm text-gray-500">
+
+                    0 / 500
+
+                </span>
+
+            </div>
+
+        </div>
+
+    <!-- </div> -->
+
+
+
+
+<!-- ==========================================
+        EVIDENCE & LOCATION (STEP 3)
+========================================== -->
+
+<div class="mt-10 bg-white rounded-3xl shadow-xl border border-slate-200 p-8 lg:p-10">
+
+    <!-- Heading -->
+
+    <div class="flex items-center gap-4 mb-8">
+
+        <div
+            class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+
+            <i class="fa-solid fa-camera text-3xl text-blue-600"></i>
+
+        </div>
+
+        <div>
+
+            <h2 class="text-3xl font-bold">
+
+                Evidence & Location
+
+            </h2>
+
+            <p class="text-gray-500 mt-2">
+
+                Upload evidence and provide the exact location to help authorities verify your complaint faster.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Detect Location -->
+
+    <div
+        class="grid md:grid-cols-2 gap-6">
+
+        <button
+            type="button"
+            id="detectLocation"
+            class="bg-blue-600 hover:bg-blue-700 text-white rounded-2xl py-4 font-semibold duration-300">
+
+            <i class="fa-solid fa-location-crosshairs mr-2"></i>
+
+            Detect My Current Location
+
+        </button>
+
+        <input
+            type="text"
+            id="locationResult"
+            readonly
+            placeholder="Detected location will appear here"
+            class="rounded-2xl border px-5 py-4 bg-slate-50">
+
+    </div>
+
+    <!-- Upload -->
+
+    <div class="grid lg:grid-cols-3 gap-8 mt-10">
+
+        <!-- Photo -->
+
+        <div
+            class="border-2 border-dashed border-gray-300 rounded-3xl p-8 text-center hover:border-green-500 duration-300">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-full bg-green-100 flex items-center justify-center">
+
+                <i class="fa-solid fa-image text-4xl text-green-600"></i>
+
+            </div>
+
+            <h3
+                class="font-bold text-xl mt-5">
+
+                Upload Photos
+
+            </h3>
+
+            <p
+                class="text-gray-500 mt-2">
+
+                Maximum 5 Photos
+
+            </p>
+
+            <input
+                id="photoUpload"
+                type="file"
+                multiple
+                accept="image/*"
+                class="mt-6 w-full">
+
+            <!-- Preview -->
+
+            <div
+                id="photoPreview"
+
+                class="grid grid-cols-3 gap-3 mt-6">
+
+            </div>
+
+        </div>
+
+        <!-- Video -->
+
+        <div
+            class="border-2 border-dashed border-gray-300 rounded-3xl p-8 text-center hover:border-red-500 duration-300">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-full bg-red-100 flex items-center justify-center">
+
+                <i class="fa-solid fa-video text-4xl text-red-600"></i>
+
+            </div>
+
+            <h3
+                class="font-bold text-xl mt-5">
+
+                Upload Video
+
+            </h3>
+
+            <p
+                class="text-gray-500 mt-2">
+
+                Optional
+
+            </p>
+
+            <input
+                type="file"
+                accept="video/*"
+                class="mt-6 w-full">
+
+        </div>
+
+        <!-- Documents -->
+
+        <div
+            class="border-2 border-dashed border-gray-300 rounded-3xl p-8 text-center hover:border-blue-500 duration-300">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-full bg-blue-100 flex items-center justify-center">
+
+                <i class="fa-solid fa-file-pdf text-4xl text-blue-600"></i>
+
+            </div>
+
+            <h3
+                class="font-bold text-xl mt-5">
+
+                Upload Documents
+
+            </h3>
+
+            <p
+                class="text-gray-500 mt-2">
+
+                PDF / DOC / DOCX
+
+            </p>
+
+            <input
+                type="file"
+                accept=".pdf,.doc,.docx"
+                class="mt-6 w-full">
+
+        </div>
+
+    </div>
+
+    <!-- Emergency Notice -->
+
+    <div
+        class="mt-10 rounded-3xl bg-yellow-50 border border-yellow-200 p-6">
+
+        <div
+            class="flex gap-4">
+
+            <i
+                class="fa-solid fa-triangle-exclamation text-3xl text-yellow-500"></i>
+
+            <div>
+
+                <h4
+                    class="font-bold text-lg">
+
+                    Important
+
+                </h4>
+
+                <p
+                    class="text-gray-600 mt-2 leading-7">
+
+                    Please upload clear evidence.
+                    Clear photos and accurate location help the responsible authority verify and resolve your complaint much faster.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- ==========================================
+        REVIEW & SUBMIT (STEP 4)
+========================================== -->
+
+<div class="mt-10 bg-white rounded-3xl shadow-xl border border-slate-200 p-8 lg:p-10">
+
+    <!-- Heading -->
+
+    <div class="flex items-center gap-4 mb-8">
+
+        <div
+            class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+
+            <i class="fa-solid fa-paper-plane text-3xl text-green-600"></i>
+
+        </div>
+
+        <div>
+
+            <h2 class="text-3xl font-bold">
+
+                Review & Submit
+
+            </h2>
+
+            <p class="text-gray-500 mt-2">
+
+                Please review your information before submitting your complaint.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Privacy -->
+
+    <div
+        class="bg-green-50 border border-green-200 rounded-2xl p-6">
+
+        <div class="flex gap-4">
+
+            <i
+                class="fa-solid fa-user-shield text-3xl text-green-600 mt-1"></i>
+
+            <div>
+
+                <h4 class="font-bold text-lg">
+
+                    Privacy Protection
+
+                </h4>
+
+                <p class="text-gray-600 leading-7 mt-2">
+
+                    Your personal information and uploaded evidence will only
+                    be visible to authorized government officials responsible
+                    for reviewing and resolving your complaint.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Important Notice -->
+
+    <div
+        class="mt-8 bg-blue-50 border border-blue-200 rounded-2xl p-6">
+
+        <div class="flex gap-4">
+
+            <i
+                class="fa-solid fa-circle-info text-3xl text-blue-600 mt-1"></i>
+
+            <div>
+
+                <h4 class="font-bold text-lg">
+
+                    Important Notice
+
+                </h4>
+
+                <ul class="mt-3 space-y-2 text-gray-600 list-disc list-inside">
+
+                    <li>Provide accurate information.</li>
+
+                    <li>Upload clear photos if possible.</li>
+
+                    <li>False complaints may be rejected.</li>
+
+                    <li>Your complaint will be reviewed by the responsible authority.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Declaration -->
+
+    <div class="mt-8">
+
+        <label class="flex items-start gap-4 cursor-pointer">
+
+            <input
+                id="agree"
+                type="checkbox"
+                required
+                class="mt-1 w-5 h-5 accent-green-600">
+
+            <span class="leading-7 text-gray-700">
+
+                I confirm that the information I have provided is true and
+                accurate. I understand that false information may result in
+                rejection of this complaint.
+
+            </span>
+
+        </label>
+
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-5">
+
+        <button
+            type="reset"
+            class="sm:w-52 border border-gray-300 rounded-2xl py-4 hover:bg-gray-100 duration-300 font-semibold">
+
+            <i class="fa-solid fa-rotate-left mr-2"></i>
+
+            Reset Form
+
+        </button>
+
+        <button
+            id="submitComplaint"
+            type="submit"
+            class="flex-1 bg-green-600 hover:bg-green-700 text-white rounded-2xl py-4 font-semibold duration-300 shadow-lg hover:shadow-green-300">
+
+            <i class="fa-solid fa-paper-plane mr-2"></i>
+
+            Submit Complaint
+
+        </button>
+
+    </div>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+
+     
+
+
+
+
+
     </main>
 
 
@@ -1480,8 +2383,12 @@
     <script src="assets/js/app.js"></script>
 
     <script src="assets/js/components.js"></script>
+    <script src="assets/js/complement.js"></script>
 
-    <script src="assets/js/location.js"></script>
+    
+
+    <script src="assets/data/location.js"></script>
+    <!-- <script src="assets/js/locations.js"></script> -->
     <script src="assets/js/serviceData.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

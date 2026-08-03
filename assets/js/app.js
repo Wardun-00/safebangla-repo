@@ -65,49 +65,104 @@ if (document.getElementById("currentDate") && document.getElementById("currentTi
 
 const language = {
 
-    en: {
+  en: {
 
-        logo: "SafeBangla",
+    logo: "SafeBangla",
+    subtitle: "Smart Emergency Response Platform",
 
-        subtitle: "Smart Emergency Response Platform",
+    home: "Home",
+    emergency: "Emergency",
+    hospital: "Hospitals",
+    dashboard: "Dashboard",
+    about: "About",
+    contact: "Contact",
+    request: "Request Help",
 
-        home: "Home",
+    ambulance: "Ambulance",
+    police: "Police",
+    fire_service: "Fire Service",
+    blood_bank: "Blood Bank",
+    first_aid: "First Aid",
+    helpline: "Helpline",
+    emergency_services: "Emergency Services",
+select_emergency: "Select Your Emergency",
+select_emergency_desc: "Choose the emergency type to instantly request the appropriate government support.",
 
-        emergency: "Emergency",
+flood: "Flood",
+flood_desc: "Flood Rescue Support",
 
-        hospital: "Hospitals",
+fire: "Fire",
+fire_desc: "Fire Service Request",
 
-        dashboard: "Dashboard",
+earthquake: "Earthquake",
+earthquake_desc: "Earthquake Assistance",
 
-        about: "About",
+cyclone: "Cyclone",
+cyclone_desc: "Cyclone Emergency",
 
-        contact: "Contact",
+building_collapse: "Building Collapse",
+building_collapse_desc: "Structural Rescue",
 
-        request: "Request Help"
+road_accident: "Road Accident",
+road_accident_desc: "Ambulance Support",
 
-    },
+medical: "Medical",
+medical_desc: "Emergency Treatment",
 
-    bn: {
+others: "Others",
+others_desc: "Other Emergencies",
 
-        logo: "সেইফবাংলা",
+},
 
-        subtitle: "স্মার্ট জরুরি সেবা প্ল্যাটফর্ম",
+bn: {
 
-        home: "হোম",
+    logo: "সেইফবাংলা",
+    subtitle: "স্মার্ট জরুরি সেবা প্ল্যাটফর্ম",
 
-        emergency: "জরুরি সেবা",
+    home: "হোম",
+    emergency: "জরুরি সেবা",
+    hospital: "হাসপাতাল",
+    dashboard: "ড্যাশবোর্ড",
+    about: "আমাদের সম্পর্কে",
+    contact: "যোগাযোগ",
+    request: "সাহায্য চাই",
 
-        hospital: "হাসপাতাল",
+    ambulance: "অ্যাম্বুলেন্স",
+    police: "পুলিশ",
+    fire_service: "ফায়ার সার্ভিস",
+    blood_bank: "রক্ত ব্যাংক",
+    first_aid: "প্রাথমিক চিকিৎসা",
+    helpline: "হেল্পলাইন",
 
-        dashboard: "ড্যাশবোর্ড",
+emergency_services: "জরুরি সেবা",
+select_emergency: "আপনার জরুরি সেবা নির্বাচন করুন",
+select_emergency_desc: "দ্রুত সরকারি সহায়তা পাওয়ার জন্য জরুরি সেবার ধরন নির্বাচন করুন।",
 
-        about: "আমাদের সম্পর্কে",
+flood: "বন্যা",
+flood_desc: "বন্যা উদ্ধার সহায়তা",
 
-        contact: "যোগাযোগ",
+fire: "অগ্নিকাণ্ড",
+fire_desc: "ফায়ার সার্ভিসের সহায়তা",
 
-        request: "সাহায্য চাই"
+earthquake: "ভূমিকম্প",
+earthquake_desc: "ভূমিকম্প সহায়তা",
 
-    }
+cyclone: "ঘূর্ণিঝড়",
+cyclone_desc: "ঘূর্ণিঝড় জরুরি সহায়তা",
+
+building_collapse: "ভবন ধস",
+building_collapse_desc: "কাঠামোগত উদ্ধার",
+
+road_accident: "সড়ক দুর্ঘটনা",
+road_accident_desc: "অ্যাম্বুলেন্স সহায়তা",
+
+medical: "চিকিৎসা",
+medical_desc: "জরুরি চিকিৎসা",
+
+others: "অন্যান্য",
+others_desc: "অন্যান্য জরুরি সেবা",
+
+}
 
 };
 
@@ -117,31 +172,39 @@ const language = {
             LANGUAGE TOGGLE
 ========================================== */
 
-let currentLanguage = "en";
+let currentLanguage = localStorage.getItem("language") || "en";
 
 const languageBtn = document.getElementById("languageBtn");
 const languageText = document.getElementById("languageText");
 
-if (languageBtn && languageText) {
+function changeLanguage(lang) {
+
+    document.querySelectorAll(".lang").forEach(item => {
+
+        const key = item.dataset.key;
+
+        if (language[lang] && language[lang][key]) {
+            item.textContent = language[lang][key];
+        }
+
+    });
+
+    languageText.textContent = lang === "en" ? "বাংলা" : "English";
+
+    localStorage.setItem("language", lang);
+}
+
+// Page Load হলে Language Apply হবে
+changeLanguage(currentLanguage);
+
+// Button Click
+if (languageBtn) {
 
     languageBtn.addEventListener("click", () => {
 
         currentLanguage = currentLanguage === "en" ? "bn" : "en";
 
-        languageText.textContent =
-            currentLanguage === "en" ? "বাংলা" : "English";
-
-        document.querySelectorAll(".lang").forEach(item => {
-
-            const key = item.dataset.key;
-
-            if (language[currentLanguage][key]) {
-
-                item.textContent = language[currentLanguage][key];
-
-            }
-
-        });
+        changeLanguage(currentLanguage);
 
     });
 

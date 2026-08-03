@@ -52,9 +52,14 @@
 
     <header class="navbar-container">
 
-        <!-- ================= NAVBAR START ================= -->
+<!-- =====================================================
+                    PREMIUM NAVBAR
+====================================================== -->
 
-<nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+<!-- ==========================================
+                NAVBAR
+========================================== -->
+ <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -323,13 +328,34 @@
 
 </nav>
 
-<!-- ================= NAVBAR END ================= -->
+<!-- ==========================================
+            NAVBAR END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </header>
 
 
 
-    <!-- ===========================================
+
+
+
+
+
+
+</-- ==========================================
                     MAIN
     ============================================ -->
 
@@ -525,19 +551,25 @@
             <span
                 class="bg-red-100 text-red-600 px-5 py-2 rounded-full font-semibold">
 
-                Emergency Services
+               <span class="lang bg-red-100 text-red-600 px-5 py-2 rounded-full font-semibold"
+      data-key="emergency_services">
+    Emergency Services
+</span>
 
             </span>
 
             <h2
                 class="mt-5 text-4xl font-bold text-gray-900">
 
-                Select Your Emergency
+                <h2 class="lang mt-5 text-4xl font-bold text-gray-900"
+    data-key="select_emergency">
+    Select Your Emergency
+</h2>
 
             </h2>
 
-            <p
-                class="mt-4 text-gray-500 max-w-2xl mx-auto">
+            <p class="lang mt-4 text-gray-500 max-w-2xl mx-auto"
+   data-key="select_emergency_desc">
 
                 Choose the emergency type to instantly request
                 the appropriate government support.
@@ -554,32 +586,46 @@
 
             <!-- Flood -->
 
-            <a href="emergency.html"
+ <!-- Government / Citizen Services -->
 
-                data-aos="zoom-in"
+<a href="emergency.html#citizen-services"
 
-                class="group bg-white rounded-3xl shadow-lg hover:shadow-red-200 hover:-translate-y-3 duration-500 p-8 text-center">
+    data-aos="zoom-in"
 
-                <div
-                    class="w-20 h-20 mx-auto rounded-full bg-blue-100 flex items-center justify-center group-hover:rotate-12 duration-500">
+    class="group bg-white rounded-3xl shadow-lg hover:shadow-blue-200 hover:-translate-y-3 duration-500 p-8 text-center">
 
-                    <i class="fa-solid fa-water text-4xl text-blue-600"></i>
+    <!-- Icon -->
 
-                </div>
+    <div
+        class="w-20 h-20 mx-auto rounded-full bg-blue-100 flex items-center justify-center group-hover:scale-110 duration-500">
 
-                <h3 class="mt-6 text-2xl font-bold">
+        <!-- এখানে শুধু Icon Change করবে -->
 
-                    Flood
+        <i class="fa-solid fa-landmark text-4xl text-blue-600"></i>
 
-                </h3>
+    </div>
 
-                <p class="mt-3 text-gray-500">
+    <!-- Title -->
 
-                    Flood Rescue Support
+    <h3
+        class="lang mt-6 text-2xl font-bold"
+        data-key="citizen_services">
 
-                </p>
+        Government / Citizen Services
 
-            </a>
+    </h3>
+
+    <!-- Description -->
+
+    <p
+        class="lang mt-3 text-gray-500"
+        data-key="citizen_services_desc">
+
+        Government & Public Support Services
+
+    </p>
+
+</a>
 
 
             <!-- Fire -->
@@ -1850,9 +1896,12 @@
 
     </script>
 
-    <!-- ================= CUSTOM JS ================= -->
 
-    <script src="assets/js/nav.js"></script>
+
+
+    <!-- ================= CUSTOM JS ================= -->
+<script src="assets/js/nav-main.js"></script>
+    
 <script src="assets/js/app.js"></script>
 <script src="assets/js/components.js"></script>
 
