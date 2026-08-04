@@ -2242,6 +2242,168 @@
 
 </footer>
 
+    <button id="aiAssistBtn"
+class="fixed bottom-24 right-8 z-[999] bg-green-600 hover:bg-green-700 text-white rounded-full shadow-2xl px-5 py-4 flex items-center gap-2 duration-300">
+
+<i class="fa-solid fa-robot"></i>
+
+<span class="hidden sm:block font-semibold">
+
+AI Assist
+
+</span>
+
+</button>
+
+<!-- Chat Window -->
+
+<div id="aiChat"
+
+class="hidden fixed bottom-40 right-6 w-[370px] max-w-[95%] h-[560px] bg-white rounded-3xl shadow-2xl overflow-hidden z-[999] border border-gray-200">
+
+<!-- Header -->
+
+<div
+class="bg-gradient-to-r from-green-600 to-green-700 text-white p-5 flex items-center justify-between">
+
+<div>
+
+<h2 class="font-bold text-lg">
+
+🛡 Safe Bangla AI Assist
+
+</h2>
+
+<p class="text-sm text-green-100">
+
+Powered by AI
+
+</p>
+
+</div>
+
+<button id="closeAi">
+
+<i class="fa-solid fa-xmark text-xl"></i>
+
+</button>
+
+</div>
+
+<!-- Chat -->
+
+<div id="chatMessages"
+
+class="h-[395px] overflow-y-auto p-5 bg-slate-50">
+
+
+<!-- Suggested Questions -->
+
+<div class="px-4 pb-3 flex flex-wrap gap-2">
+
+<button class="aiSuggestion bg-green-100 hover:bg-green-200 text-green-700 px-3 py-2 rounded-full text-sm">
+
+🚑 First Aid
+
+</button>
+
+<button class="aiSuggestion bg-blue-100 hover:bg-blue-200 text-blue-700 px-3 py-2 rounded-full text-sm">
+
+🏥 Hospital
+
+</button>
+
+<button class="aiSuggestion bg-red-100 hover:bg-red-200 text-red-700 px-3 py-2 rounded-full text-sm">
+
+🚨 Emergency
+
+</button>
+
+<button class="aiSuggestion bg-yellow-100 hover:bg-yellow-200 text-yellow-700 px-3 py-2 rounded-full text-sm">
+
+📄 Passport
+
+</button>
+
+</div>
+
+
+
+
+<div
+class="bg-green-100 text-gray-800 rounded-2xl p-4 text-sm leading-7">
+
+👋 <b>Hello!</b>
+
+<br><br>
+
+আমি <b>Safe Bangla AI Assist</b>।
+
+<br><br>
+
+আমি আপনাকে সাহায্য করতে পারি—
+
+<br><br>
+
+✅ Emergency Service
+
+<br>
+
+✅ Government Service
+
+<br>
+
+✅ First Aid
+
+<br>
+
+✅ Hospitals
+
+<br>
+
+✅ Safety Tips
+
+<br><br>
+
+আপনি বাংলা অথবা English-এ প্রশ্ন করতে পারেন।
+
+</div>
+
+</div>
+
+<!-- Input -->
+
+<div
+class="border-t p-4 bg-white">
+
+<div class="flex gap-2">
+
+<input
+
+id="aiInput"
+
+type="text"
+
+placeholder="Ask me anything..."
+
+class="flex-1 border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-green-500">
+
+<button
+
+id="sendAi"
+
+class="bg-green-600 hover:bg-green-700 text-white rounded-xl px-5">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
     <!-- JS -->
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -2267,6 +2429,7 @@ AOS.init({
 
 
     <script src="assets/js/components.js"></script>
+    <script src="assets/js/ai-assist.js"></script>
 
 </body>
 
