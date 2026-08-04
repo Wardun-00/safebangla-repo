@@ -77,6 +77,9 @@ const language = {
 select_emergency: "Select Your Emergency",
 select_emergency_desc: "Choose the emergency type to instantly request the appropriate government support.",
 
+citizen_services: "Government / Citizen Services",
+citizen_services_desc: "Government & Public Support Services",
+
 flood: "Flood",
 flood_desc: "Flood Rescue Support",
 
@@ -100,6 +103,8 @@ medical_desc: "Emergency Treatment",
 
 others: "Others",
 others_desc: "Other Emergencies",
+
+
 
 },
 
@@ -126,6 +131,9 @@ bn: {
 emergency_services: "জরুরি সেবা",
 select_emergency: "আপনার জরুরি সেবা নির্বাচন করুন",
 select_emergency_desc: "দ্রুত সরকারি সহায়তা পাওয়ার জন্য জরুরি সেবার ধরন নির্বাচন করুন।",
+
+citizen_services: "সরকার / নাগরিক সেবা",
+citizen_services_desc: "সরকারি এবং জনসম্প্রদায়ের সমর্থন সেবা",
 
 flood: "বন্যা",
 flood_desc: "বন্যা উদ্ধার সহায়তা",

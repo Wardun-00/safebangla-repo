@@ -243,22 +243,40 @@ if (detectLocationBtn && currentLocation) {
 
             },
 
-            () => {
+        
+            (error) => {
 
-                Swal.fire({
+    console.log(error);
 
-                    icon: "error",
+    Swal.fire({
 
-                    title: "Unable to Detect Location"
+        icon: "error",
 
-                });
+        title: "Location Error",
 
-                detectLocationBtn.disabled = false;
+        html: `
+            <b>Error Code:</b> ${error.code}<br><br>
+            <b>Message:</b><br>${error.message}
+        `
 
-                detectLocationBtn.innerHTML =
-                '<i class="fa-solid fa-location-crosshairs me-2"></i>Detect Current Location';
+    });
 
-            }
+    detectLocationBtn.disabled = false;
+
+    detectLocationBtn.innerHTML =
+    '<i class="fa-solid fa-location-crosshairs me-2"></i>Detect Current Location';
+
+}
+
+
+
+
+
+
+
+
+
+
 
         );
 
