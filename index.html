@@ -461,7 +461,7 @@
                     class="w-full max-w-xs sm:max-w-md lg:max-w-xl">
 
                 <!-- Floating Card -->
-                <div class="hidden xl:flex absolute top-8 -left-8 bg-white shadow-xl rounded-xl p-4 items-center gap-3">
+                <div class="animate-bounce hidden xl:flex absolute top-8 -left-8 bg-white shadow-xl rounded-xl p-4 items-center gap-3">
 
                     <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
                         🚑
@@ -482,7 +482,7 @@
                 </div>
 
                 <!-- Floating Card -->
-                <div class="hidden xl:flex absolute bottom-8 -right-8 bg-white shadow-xl rounded-xl p-4 items-center gap-3">
+                <div class="animate-pulse hidden xl:flex absolute bottom-8 -right-8 bg-white shadow-xl rounded-xl p-4 items-center gap-3">
 
                     <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
                         🏥
@@ -509,6 +509,87 @@
     </div>
 
 </section>
+
+<!-- ==========================================
+            SAFE BANGLA MARQUEE
+========================================== -->
+
+<section class="bg-gradient-to-r from-red-600 via-red-500 to-orange-500 overflow-hidden">
+<div class="marquee-container">
+    <div class="marquee-track">
+
+        <!-- First -->
+        <div class="marquee-content">
+            <span>🚨 জরুরি ঘোষণা: আপনার এলাকার যেকোনো সমস্যা Safe Bangla-তে রিপোর্ট করুন।</span>
+            <span>🚑 Ambulance</span>
+            <span>🚒 Fire Service</span>
+            <span>👮 Police</span>
+            <span>⚡ Electricity</span>
+            <span>🌍 Together, Let's Build a Safer Bangladesh.</span>
+        </div>
+
+        <!-- Duplicate -->
+        <div class="marquee-content">
+            <span>🚨 জরুরি ঘোষণা: আপনার এলাকার যেকোনো সমস্যা Safe Bangla-তে রিপোর্ট করুন।</span>
+            <span>🚑 Ambulance</span>
+            <span>🚒 Fire Service</span>
+            <span>👮 Police</span>
+            <span>⚡ Electricity</span>
+            <span>🌍 Together, Let's Build a Safer Bangladesh.</span>
+        </div>
+
+    </div>
+</div>
+
+</section>
+
+<style>
+/* ==========================================
+            MARQUEE ANIMATION
+========================================== */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, #b91c1c, #dc2626, #ef4444);
+    color: #fff;
+    padding: 13px 0;
+    border-top: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.marquee-content span {
+    margin-right: 100px;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .2px;
+    line-height: 1;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(10%);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+</style>
+
+
 
     <!-- ==========================================
             EMERGENCY SERVICES
